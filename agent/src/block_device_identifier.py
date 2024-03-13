@@ -33,5 +33,14 @@ def full_path_of_mounted_folder(mount_point, folder_path):
 
     if os.path.exists(mounted_folder_path):
         print("Full path of the mounted folder in snapshot:", mounted_folder_path)
+        return mounted_folder_path
     else:
         print("Error: Folder not found in snapshot.")
+
+def backup_to_local(mounted_folder_path, backup_location):
+    rsync_cmd = ['rsync', '-av', mounted_folder_path, backup_location]
+    
+    subprocess.run(rsync_cmd)
+
+#reverting can be done by using rsync again with --delete, --inplace, --partial
+#need to be careful with --inplace

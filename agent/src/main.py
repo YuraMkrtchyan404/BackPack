@@ -18,6 +18,8 @@ def main():
     mount_point = "/home/aivanyan/OS_capstone/OS_Snapshots/mnt"
     mount_snapshot(snapshot_device, mount_point)
     #find the folder in the mounted point
-    full_path_of_mounted_folder(mount_point, folder_path)
+    mounted_folder_path = full_path_of_mounted_folder(mount_point, folder_path)
+    backup_location = "/home/aivanyan/OS_capstone/OS_Snapshots/backup"
+    backup_to_local(mounted_folder_path, backup_location)
 if __name__ == "__main__":
     main()
