@@ -32,7 +32,7 @@ def get_free_minor():
     return minor
 
 def mount_snapshot(snapshot_device, mount_point):
-    mount_cmd = ['mount', snapshot_device, mount_point]
+    mount_cmd = ['sudo', 'mount', snapshot_device, mount_point]
     mount_output = subprocess.run(mount_cmd)
 
     if mount_output.returncode != 0:
