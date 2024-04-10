@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
 #TODO We should add permission to elioctl, mount and so on during the "make" process
 
 def load_config():
-    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open("agent/config.toml", "r") as file:
         config = toml.load(file)
     return config
 
@@ -39,8 +39,6 @@ def destroy_snapshot(minor, max_retries=15, retry_delay=5):
 
 def get_block_device_for_folder(folder_path):
     abs_folder_path = os.path.abspath(folder_path)
-
-    print(abs_folder_path)
     cmd = ['df', '-h', abs_folder_path]
     df_output = subprocess.run(cmd, capture_output=True, text=True)
 
@@ -94,7 +92,7 @@ def umount_snapshot(snapshot_path):
     return True
 
 def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
-    abs_folder_path = os.path.abspath(folder_path)   #TODO absolute path checking
+    abs_folder_path = os.path.abspath(folder_path)
     snapshot_dir = os.path.join(mount_point, os.path.basename(snapshot_path))
     mounted_folder_path = os.path.join(snapshot_dir, abs_folder_path.lstrip('/'))
 
@@ -132,8 +130,14 @@ def setup_snapshot():
     if not minor:
         return False
     
-    cow_directory = "/var/OS_Snapshot/cow"  #TODO cow files in the same block device
-    cow_file_path =  f"{cow_directory}/cow_file{minor}"
+    folder_directory = os.path.dirname(os.path.abspath(folder_path))
+    
+    if not folder_directory:
+        folder_directory = "/var/OS_Snapshot/cow"
+        os.makedirs(folder_directory, exist_ok=True)
+    
+
+    cow_file_path = os.path.join(folder_directory, f"cow_file{minor}")
     
     cmd = ['sudo', 'elioctl', 'setup-snapshot', block_device, cow_file_path, minor]
     setup_output = subprocess.run(cmd)
@@ -158,7 +162,6 @@ def setup_snapshot():
         destroy_snapshot(minor)
         return False
     
-    # Unmount the snapshot after backup
     umount_snapshot(snapshot_path)
     destroy_snapshot(minor)
 
