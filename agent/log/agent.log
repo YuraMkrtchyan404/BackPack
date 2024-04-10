@@ -1,0 +1,23 @@
+2024-04-10 01:21:22 ERROR: Failed to setup snapshot and backup.
+2024-04-10 01:25:41 ERROR: Error occurred while creating snapshot.
+2024-04-10 01:25:41 ERROR: Failed to setup snapshot and backup.
+2024-04-10 01:47:37 ERROR: Error occurred while creating snapshot.
+2024-04-10 01:48:08 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:08:27 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:09:00 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:15:42 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:52:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-10 02:52:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-10 02:52:23 INFO: Backup to server completed successfully.
+2024-04-10 02:52:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-10 02:52:25 INFO: Snapshot setup and backup completed successfully.
+2024-04-10 02:55:59 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-10 02:56:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-10 02:56:04 INFO: Backup to server completed successfully.
+2024-04-10 02:56:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-10 02:56:04 INFO: Snapshot setup and backup completed successfully.
+2024-04-10 02:57:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-10 02:57:24 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-10 02:57:34 INFO: Backup to server completed successfully.
+2024-04-10 02:57:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-10 02:57:35 INFO: Snapshot setup and backup completed successfully.

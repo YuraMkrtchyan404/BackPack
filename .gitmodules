@@ -1,0 +1,3 @@
+[submodule "elastio-snap"]
+	path = elastio-snap
+	url = https://github.com/elastio/elastio-snap.git
