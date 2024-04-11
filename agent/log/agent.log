@@ -1,0 +1,446 @@
+2024-04-10 01:21:22 ERROR: Failed to setup snapshot and backup.
+2024-04-10 01:25:41 ERROR: Error occurred while creating snapshot.
+2024-04-10 01:25:41 ERROR: Failed to setup snapshot and backup.
+2024-04-10 01:47:37 ERROR: Error occurred while creating snapshot.
+2024-04-10 01:48:08 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:08:27 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:09:00 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:15:42 ERROR: Error occurred while creating snapshot.
+2024-04-10 02:52:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-10 02:52:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-10 02:52:23 INFO: Backup to server completed successfully.
+2024-04-10 02:52:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-10 02:52:25 INFO: Snapshot setup and backup completed successfully.
+2024-04-10 02:55:59 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-10 02:56:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-10 02:56:04 INFO: Backup to server completed successfully.
+2024-04-10 02:56:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-10 02:56:04 INFO: Snapshot setup and backup completed successfully.
+2024-04-10 02:57:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-10 02:57:24 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-10 02:57:34 INFO: Backup to server completed successfully.
+2024-04-10 02:57:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-10 02:57:35 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 00:29:47 ERROR: Error occurred while running df command.
+2024-04-11 00:30:15 ERROR: Error occurred while running df command.
+2024-04-11 00:30:25 ERROR: Error occurred while running df command.
+2024-04-11 00:32:59 ERROR: Error occurred while running df command.
+2024-04-11 00:33:01 ERROR: Error occurred while running df command.
+2024-04-11 00:33:01 ERROR: Error occurred while running df command.
+2024-04-11 00:33:53 ERROR: Error occurred while running df command.
+2024-04-11 00:34:20 ERROR: Error occurred while running df command.
+2024-04-11 00:34:24 ERROR: Error occurred while running df command.
+2024-04-11 00:35:14 ERROR: Error occurred while running df command.
+2024-04-11 00:35:33 ERROR: Error occurred while running df command.
+2024-04-11 00:35:35 ERROR: Error occurred while running df command.
+2024-04-11 00:36:09 ERROR: Error occurred while running df command.
+2024-04-11 00:36:30 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:37:28 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:37:41 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:39:08 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:39:58 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:41:09 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:42:16 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:53:54 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:54:50 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:55:15 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:57:00 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:57:26 ERROR: Error occurred while creating snapshot.
+2024-04-11 00:59:32 ERROR: Error occurred while creating snapshot.
+2024-04-11 01:00:50 ERROR: Error occurred while creating snapshot.
+2024-04-11 01:09:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 01:09:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 01:12:34 ERROR: Error occurred while backing up to the server.
+2024-04-11 01:12:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 01:17:05 ERROR: Error occurred while creating snapshot.
+2024-04-11 01:20:50 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 01:20:51 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 01:20:55 INFO: Backup to server completed successfully.
+2024-04-11 01:20:55 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 01:20:55 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 01:30:55 ERROR: Error occurred while creating snapshot.
+2024-04-11 01:31:05 ERROR: Error occurred while creating snapshot.
+2024-04-11 01:31:18 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 01:31:18 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 01:31:22 INFO: Backup to server completed successfully.
+2024-04-11 01:31:22 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 01:31:22 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 01:47:00 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 01:47:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 01:47:03 INFO: Backup to server completed successfully.
+2024-04-11 01:47:03 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 01:47:03 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 01:49:42 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 01:49:42 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 01:49:48 INFO: Backup to server completed successfully.
+2024-04-11 01:49:48 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 01:49:48 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:38:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:38:54 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 02:38:57 INFO: Backup to server completed successfully.
+2024-04-11 02:38:57 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:38:57 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:40:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:40:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 02:40:21 INFO: Backup to server completed successfully.
+2024-04-11 02:40:21 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:40:21 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:41:34 ERROR: Error occurred while running df command.
+2024-04-11 02:41:34 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:41:40 ERROR: Error occurred while running df command.
+2024-04-11 02:41:40 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:41:59 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:41:59 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 02:42:03 INFO: Backup to server completed successfully.
+2024-04-11 02:42:03 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 02:42:09 INFO: Backup to server completed successfully.
+2024-04-11 02:42:09 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:42:10 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:43:42 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:43:42 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 02:43:45 INFO: Backup to server completed successfully.
+2024-04-11 02:43:45 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 02:43:47 INFO: Backup to server completed successfully.
+2024-04-11 02:43:47 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:43:47 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:44:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:44:08 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
+2024-04-11 02:44:11 INFO: Backup to server completed successfully.
+2024-04-11 02:44:11 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 02:44:13 INFO: Backup to server completed successfully.
+2024-04-11 02:44:13 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 02:44:15 INFO: Backup to server completed successfully.
+2024-04-11 02:44:15 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:44:15 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:53:13 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:53:14 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 02:53:18 INFO: Backup to server completed successfully.
+2024-04-11 02:53:18 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 02:53:22 INFO: Backup to server completed successfully.
+2024-04-11 02:53:22 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 02:53:37 INFO: Backup to server completed successfully.
+2024-04-11 02:53:37 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:53:37 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 02:53:47 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 02:53:48 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 02:53:51 INFO: Backup to server completed successfully.
+2024-04-11 02:53:51 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 02:53:55 INFO: Backup to server completed successfully.
+2024-04-11 02:53:55 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 02:53:57 INFO: Backup to server completed successfully.
+2024-04-11 02:53:57 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 02:53:58 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:03:49 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:03:49 ERROR: Folder not found in snapshot.
+2024-04-11 03:03:49 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:04:28 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:04:28 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:04:31 INFO: Backup to server completed successfully.
+2024-04-11 03:04:31 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 03:04:35 INFO: Backup to server completed successfully.
+2024-04-11 03:04:35 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 03:04:37 INFO: Backup to server completed successfully.
+2024-04-11 03:04:37 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:04:37 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:04:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:04:54 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:05:00 INFO: Backup to server completed successfully.
+2024-04-11 03:05:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 03:05:02 INFO: Backup to server completed successfully.
+2024-04-11 03:05:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 03:05:04 INFO: Backup to server completed successfully.
+2024-04-11 03:05:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:05:04 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:05:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:05:12 ERROR: Folder not found in snapshot.
+2024-04-11 03:05:12 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:07:02 ERROR: Error occurred while running df command.
+2024-04-11 03:07:02 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:07:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:07:06 INFO: Backup to server completed successfully.
+2024-04-11 03:07:06 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 03:07:08 INFO: Backup to server completed successfully.
+2024-04-11 03:07:08 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 03:07:09 INFO: Backup to server completed successfully.
+2024-04-11 03:07:10 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:07:10 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:12:40 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:12:40 ERROR: Folder not found in snapshot.
+2024-04-11 03:12:40 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:13:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:13:12 ERROR: Folder not found in snapshot.
+2024-04-11 03:13:12 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:14:05 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:14:05 ERROR: Folder not found in snapshot.
+2024-04-11 03:14:05 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:14:31 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:14:31 ERROR: Folder not found in snapshot.
+2024-04-11 03:14:31 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:16:30 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:16:30 ERROR: Folder not found in snapshot.
+2024-04-11 03:16:30 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:17:30 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:17:30 ERROR: Folder not found in snapshot.
+2024-04-11 03:17:30 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:17:36 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:17:36 ERROR: Folder not found in snapshot.
+2024-04-11 03:18:40 ERROR: Error occurred while creating snapshot.
+2024-04-11 03:19:41 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:19:41 ERROR: Folder not found in snapshot.
+2024-04-11 03:21:21 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:21:21 ERROR: Folder not found in snapshot.
+2024-04-11 03:28:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:28:12 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:28:22 INFO: Backup to server completed successfully.
+2024-04-11 03:28:22 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:28:22 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:29:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:29:21 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:29:23 INFO: Backup to server completed successfully.
+2024-04-11 03:29:23 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:29:23 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:31:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:31:56 ERROR: Folder not found in snapshot.
+2024-04-11 03:32:13 ERROR: Error occurred while creating snapshot.
+2024-04-11 03:32:21 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:32:21 ERROR: Folder not found in snapshot.
+2024-04-11 03:34:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:34:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:34:18 INFO: Backup to server completed successfully.
+2024-04-11 03:34:18 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:34:18 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 03:38:25 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:38:25 ERROR: Folder not found in snapshot.
+2024-04-11 03:39:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:39:16 ERROR: Folder not found in snapshot.
+2024-04-11 03:40:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:40:24 ERROR: Folder not found in snapshot.
+2024-04-11 03:44:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:44:08 ERROR: Folder not found in snapshot.
+2024-04-11 03:59:32 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 03:59:32 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 03:59:34 INFO: Backup to server completed successfully.
+2024-04-11 03:59:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 03:59:35 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:00:17 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:00:17 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 04:00:19 INFO: Backup to server completed successfully.
+2024-04-11 04:00:19 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:01:19 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:01:19 ERROR: Folder not found in snapshot.
+2024-04-11 04:02:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:02:38 ERROR: Folder not found in snapshot.
+2024-04-11 04:15:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:15:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 04:17:23 ERROR: Error occurred while backing up to the server.
+2024-04-11 04:17:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 04:18:02 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:18:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 04:18:04 INFO: Backup to server completed successfully.
+2024-04-11 04:18:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 04:18:05 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:19:14 ERROR: Error occurred while running df command.
+2024-04-11 04:19:14 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:19:22 ERROR: Error occurred while running df command.
+2024-04-11 04:19:22 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:26:13 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:26:13 ERROR: Folder not found in snapshot.
+2024-04-11 04:26:31 ERROR: Error occurred while running df command.
+2024-04-11 04:26:31 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:27:02 ERROR: Error occurred while running df command.
+2024-04-11 04:27:02 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:27:28 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:27:28 ERROR: Folder not found in snapshot.
+2024-04-11 04:33:22 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:33:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:39:17 ERROR: Error occurred while running df command.
+2024-04-11 04:39:17 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:45:44 ERROR: Error occurred while running df command.
+2024-04-11 04:45:44 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:46:53 ERROR: Error occurred while running df command.
+2024-04-11 04:46:53 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:56:04 ERROR: Error occurred while running df command.
+2024-04-11 04:56:04 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 04:58:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 04:58:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 04:58:20 INFO: Backup to server completed successfully.
+2024-04-11 04:58:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 04:58:22 INFO: Backup to server completed successfully.
+2024-04-11 04:58:22 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 04:58:24 INFO: Backup to server completed successfully.
+2024-04-11 04:58:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 04:58:24 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 22:51:34 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 22:51:34 ERROR: Folder not found in snapshot.
+2024-04-11 22:51:55 ERROR: Error occurred while creating snapshot.
+2024-04-11 22:52:37 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 22:52:37 ERROR: Folder not found in snapshot.
+2024-04-11 22:54:13 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 22:54:13 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 22:54:16 INFO: Backup to server completed successfully.
+2024-04-11 22:54:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-11 22:54:19 INFO: Backup to server completed successfully.
+2024-04-11 22:54:19 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-11 22:54:21 INFO: Backup to server completed successfully.
+2024-04-11 22:54:21 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-11 22:54:21 INFO: Snapshot setup and backup completed successfully.
+2024-04-11 22:55:29 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 22:55:29 ERROR: Folder not found in snapshot.
+2024-04-11 23:04:17 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 23:04:17 ERROR: Folder not found in mounted snapshot.
+2024-04-11 23:06:18 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 23:06:18 ERROR: Folder not found in mounted snapshot.
+2024-04-11 23:06:44 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 23:06:44 ERROR: Folder not found in mounted snapshot.
+2024-04-11 23:08:04 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-11 23:08:04 ERROR: Folder not found in mounted snapshot.
+2024-04-11 23:21:44 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap1.
+2024-04-11 23:21:44 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap1/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-11 23:21:59 INFO: Backup to server completed successfully.
+2024-04-11 23:21:59 INFO: Snapshot umounted successfully at /dev/elastio-snap1.
+2024-04-11 23:22:00 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 00:21:57 ERROR: Error occurred while creating snapshot.
+2024-04-12 00:22:34 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 00:22:34 ERROR: Folder not found in mounted snapshot.
+2024-04-12 00:24:41 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 00:24:41 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
+2024-04-12 00:24:44 INFO: Backup to server completed successfully.
+2024-04-12 00:24:45 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 00:24:45 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 00:30:21 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 00:30:21 ERROR: Folder not found in mounted snapshot.
+2024-04-12 00:30:21 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 00:31:33 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 00:31:33 ERROR: Folder not found in mounted snapshot.
+2024-04-12 00:31:33 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 00:44:15 ERROR: Error occurred while running df command.
+2024-04-12 00:44:15 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 00:44:28 ERROR: Error occurred while running df command.
+2024-04-12 00:44:28 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 00:46:46 ERROR: Error occurred while running df command.
+2024-04-12 00:46:49 ERROR: Error occurred while running df command.
+2024-04-12 00:52:43 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 00:52:43 ERROR: Folder not found in mounted snapshot.
+2024-04-12 00:52:43 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 00:58:20 ERROR: Error occurred while running df command.
+2024-04-12 00:59:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 00:59:54 ERROR: Folder not found in mounted snapshot.
+2024-04-12 00:59:54 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:01:46 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:01:46 ERROR: Folder not found in mounted snapshot.
+2024-04-12 01:01:46 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:03:25 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:03:25 ERROR: Folder not found in mounted snapshot.
+2024-04-12 01:03:25 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:08:45 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:08:45 ERROR: Folder not found in mounted snapshot.
+2024-04-12 01:08:45 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:09:44 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:09:44 ERROR: Folder not found in mounted snapshot.
+2024-04-12 01:09:44 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:41:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:41:12 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:41:15 INFO: Backup to server completed successfully.
+2024-04-12 01:41:16 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:41:16 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:42:36 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:42:36 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:42:39 INFO: Backup to server completed successfully.
+2024-04-12 01:42:39 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:42:40 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:42:40 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:42:43 INFO: Backup to server completed successfully.
+2024-04-12 01:42:43 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:42:43 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:44:36 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:44:36 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:44:38 INFO: Backup to server completed successfully.
+2024-04-12 01:44:39 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:44:39 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:44:40 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:44:42 INFO: Backup to server completed successfully.
+2024-04-12 01:44:42 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:44:42 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:45:59 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:45:59 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:46:01 INFO: Backup to server completed successfully.
+2024-04-12 01:46:01 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:46:02 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:46:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:46:04 INFO: Backup to server completed successfully.
+2024-04-12 01:46:04 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 01:46:06 INFO: Backup to server completed successfully.
+2024-04-12 01:46:06 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:46:07 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:51:43 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:51:43 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:51:54 INFO: Backup to server completed successfully.
+2024-04-12 01:51:54 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 01:52:10 INFO: Backup to server completed successfully.
+2024-04-12 01:52:10 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:52:11 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:52:11 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:52:15 INFO: Backup to server completed successfully.
+2024-04-12 01:52:15 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:52:15 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:53:01 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:53:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:53:04 INFO: Backup to server completed successfully.
+2024-04-12 01:53:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:53:05 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:53:05 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:53:11 INFO: Backup to server completed successfully.
+2024-04-12 01:53:11 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 01:53:25 INFO: Backup to server completed successfully.
+2024-04-12 01:53:25 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:53:25 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:58:32 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:58:32 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:58:35 INFO: Backup to server completed successfully.
+2024-04-12 01:58:35 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 01:58:44 INFO: Backup to server completed successfully.
+2024-04-12 01:58:44 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:58:45 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:58:45 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:58:54 INFO: Backup to server completed successfully.
+2024-04-12 01:58:54 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:58:54 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 01:59:32 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:59:32 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 01:59:35 INFO: Backup to server completed successfully.
+2024-04-12 01:59:35 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 01:59:37 INFO: Backup to server completed successfully.
+2024-04-12 01:59:37 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:59:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 01:59:38 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 01:59:41 INFO: Backup to server completed successfully.
+2024-04-12 01:59:41 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 01:59:41 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 02:30:36 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 02:30:36 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 02:30:39 INFO: Backup to server completed successfully.
+2024-04-12 02:30:39 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 02:30:39 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 02:30:40 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 02:30:43 INFO: Backup to server completed successfully.
+2024-04-12 02:30:43 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 02:30:45 INFO: Backup to server completed successfully.
+2024-04-12 02:30:45 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 02:30:45 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 02:31:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 02:31:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 02:31:18 INFO: Backup to server completed successfully.
+2024-04-12 02:31:19 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 02:31:19 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 02:37:22 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 02:37:22 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/my_folder
+2024-04-12 02:37:25 INFO: Backup to server completed successfully.
+2024-04-12 02:37:25 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 02:37:26 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-12 02:37:26 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
+2024-04-12 02:37:29 INFO: Backup to server completed successfully.
+2024-04-12 02:37:29 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
+2024-04-12 02:37:31 INFO: Backup to server completed successfully.
+2024-04-12 02:37:31 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-12 02:37:31 INFO: Snapshot setup and backup completed successfully.
+2024-04-12 02:38:54 ERROR: Error occurred while running df command.

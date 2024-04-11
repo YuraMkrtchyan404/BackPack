@@ -1,0 +1,4 @@
+folders = ["/home/aivanyan/OS_capstone/OS_Snapshots/test1", "/mnt/my_folder/my_folder", "/home/aivanyan/OS_capstone/OS_Snapshots/test2"]
+server_ip = "5.77.254.92"
+port = 9122
+server_username = "user1808"
