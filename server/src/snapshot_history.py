@@ -12,7 +12,6 @@ logging.basicConfig(level=logging.INFO,
                     ])
 
 def create_snapshot(folder_name):
-    # Define paths
     snapshot_history_zfs_path = f"backup-pool/snapshot_history/{folder_name}"
 
     # Check if the folder exists in snapshot history dataset

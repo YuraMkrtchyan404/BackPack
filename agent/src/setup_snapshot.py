@@ -3,23 +3,44 @@ import os
 import logging
 import time
 import toml
+import socket
 from datetime import datetime
+
+from grpc_handler import notify_server_about_rsync_completion
+
+def load_config():
+    with open("config.toml", "r") as file:
+        config = toml.load(file)
+    return config
+
+config = load_config()
+server_ip = config.get("server_ip")
+server_username = config.get("server_username")
+port = config.get("port")
+folders = config.get("folders")
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("agent/log/agent.log"),
+                        logging.FileHandler("log/agent.log"),
                         logging.StreamHandler()
                     ])
 
+def check_port(host, port):
+    """Attempt to bind to a port and return the socket if successful."""
+    sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    try:
+        sock.bind((host, port))
+        return sock
+    except socket.error as e:
+        sock.close()
+        logging.error(f"Port {port} is in use: {e}")
+        return None
+
 #TODO We should add permission to elioctl, mount and so on during the "make" process
 #TODO something is off with absolute paths
-
-def load_config():
-    with open("agent/config.toml", "r") as file:
-        config = toml.load(file)
-    return config
 
 def destroy_snapshot(minor, max_retries=15, retry_delay=5):
     retries = 0
@@ -28,25 +49,25 @@ def destroy_snapshot(minor, max_retries=15, retry_delay=5):
         destroy_output = subprocess.run(destroy_cmd)
         
         if destroy_output.returncode == 0:
-            print(f"Snapshot {minor} successfully destroyed.")
+            logging.info(f"Snapshot {minor} successfully destroyed.")
             return True
         else:
-            print(f"Failed to destroy snapshot {minor}. Retrying...")
+            logging.error(f"Failed to destroy snapshot {minor}. Retrying...")
             retries += 1
             time.sleep(retry_delay)
 
-    print(f"Unable to destroy snapshot {minor} after {max_retries} retries.")
+    logging.error(f"Unable to destroy snapshot {minor} after {max_retries} retries.")
     return False
 
 def get_block_device_for_folder(folder_path):
-   # print(f"folder_path {folder_path}")
     abs_folder_path = os.path.abspath(folder_path)
-    #print(f"Lets check {abs_folder_path}")
     cmd = ['df', '-h', abs_folder_path]
     df_output = subprocess.run(cmd, capture_output=True, text=True)
 
     if df_output.returncode != 0:
-        logging.error("Error occurred while running df command.")
+        error_msg = "Error occurred while running df command."
+        original_error = df_output.stderr
+        logging.error(f"{error_msg}\n{original_error}")
         return None
 
     lines = df_output.stdout.strip().split('\n')
@@ -56,13 +77,14 @@ def get_block_device_for_folder(folder_path):
         if len(columns) > 0:
             return columns[0]
 
-    logging.error("Block device not found for the specified folder.")
+    logging.error("Block device not found for the specified folder")
     return None
 
 def get_free_minor():
     minor_output = subprocess.run(['sudo', 'elioctl', 'get-free-minor'], capture_output=True, text=True)
     if minor_output.returncode != 0:
-        logging.error("Error occurred while getting a free minor.")
+        original_error = minor_output.stderr
+        logging.error(f"Error occurred while getting a free minor: {original_error}")
         return None
 
     minor = minor_output.stdout.strip()
@@ -110,11 +132,6 @@ def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
         return None
 
 def backup_to_server(mounted_folder_path):
-    config = load_config()
-    server_ip = config.get("server_ip")
-    server_username = config.get("server_username")
-    port = config.get("port")
-
     rsync_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {port}', mounted_folder_path, f'{server_username}@{server_ip}:/backup-pool/backup_data']
     rsync_output = subprocess.run(rsync_cmd)
 
@@ -127,11 +144,8 @@ def backup_to_server(mounted_folder_path):
 
 
 def setup_snapshot():
-    config = load_config()
-    folders = config.get("folders")
     block_devices = set()  
     folder_mapping = {}
-
 
     for folder in folders:
         block_device = get_block_device_for_folder(folder)
@@ -174,14 +188,15 @@ def setup_snapshot():
         for folder in device_folders:
             mounted_folder_path = full_path_of_mounted_folder(mount_point, snapshot_path, folder)
             if not mounted_folder_path:
-                #umount_snapshot(snapshot_path)
-                #destroy_snapshot(minor)
+                umount_snapshot(snapshot_path)
+                destroy_snapshot(minor)
                 return False
 
             if not backup_to_server(mounted_folder_path):
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)
                 return False
+            notify_server_about_rsync_completion(folder, server_ip, port)
             
         umount_snapshot(snapshot_path)
         destroy_snapshot(minor)

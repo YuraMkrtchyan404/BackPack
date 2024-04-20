@@ -1,4 +1,4 @@
-folders = ["test1", "test2", "test3"]
+folders = ["/home/yura/capstone/test_folder"]
 server_ip = "5.77.254.92"
 port = 9122
 server_username = "user1808"
