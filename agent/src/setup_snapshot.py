@@ -16,7 +16,8 @@ def load_config():
 config = load_config()
 server_ip = config.get("server_ip")
 server_username = config.get("server_username")
-port = config.get("port")
+rsync_port = config.get("rsync_port")
+grpc_port = config.get("grpc_port")
 folders = config.get("folders")
 
 logging.basicConfig(level=logging.INFO,
@@ -132,7 +133,7 @@ def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
         return None
 
 def backup_to_server(mounted_folder_path):
-    rsync_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {port}', mounted_folder_path, f'{server_username}@{server_ip}:/backup-pool/backup_data']
+    rsync_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {rsync_port}', mounted_folder_path, f'{server_username}@{server_ip}:/backup-pool/backup_data']
     rsync_output = subprocess.run(rsync_cmd)
 
     if rsync_output.returncode != 0:
@@ -196,7 +197,7 @@ def setup_snapshot():
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)
                 return False
-            notify_server_about_rsync_completion(folder, server_ip, port)
+            notify_server_about_rsync_completion(folder, server_ip, grpc_port)
             
         umount_snapshot(snapshot_path)
         destroy_snapshot(minor)

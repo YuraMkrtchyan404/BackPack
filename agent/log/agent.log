@@ -412,3 +412,43 @@ df: /home/yura/capstone/OS_Snapshots/test3: No such file or directory
 2024-04-20 03:52:31 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
 2024-04-20 03:52:32 INFO: Snapshot 0 successfully destroyed.
 2024-04-20 03:52:32 INFO: Snapshot setup and backup completed successfully.
+2024-04-20 20:09:06 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-20 20:09:06 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-20 20:09:10 INFO: Backup to server completed successfully.
+2024-04-20 20:09:15 ERROR: Port 50051 on 5.77.254.92 is not reachable: timed out
+2024-04-20 20:09:15 ERROR: Cannot establish gRPC channel, port 50051 is busy or not accessible.
+2024-04-20 20:09:15 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-20 20:09:15 INFO: Snapshot 0 successfully destroyed.
+2024-04-20 20:09:15 INFO: Snapshot setup and backup completed successfully.
+2024-04-20 21:45:27 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-20 21:45:27 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-20 21:45:31 INFO: Backup to server completed successfully.
+2024-04-20 21:45:31 INFO: GRPC insecure channel established: 5.77.254.92:9122
+2024-04-20 21:45:31 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNAVAILABLE: ipv4:5.77.254.92:9122: Failed parsing HTTP/2
+2024-04-20 21:45:32 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-20 21:45:34 INFO: Snapshot 0 successfully destroyed.
+2024-04-20 21:45:34 INFO: Snapshot setup and backup completed successfully.
+2024-04-21 21:51:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-21 21:51:38 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-21 21:51:44 INFO: Backup to server completed successfully.
+2024-04-21 21:51:49 ERROR: Port 8080 on 5.77.254.92 is not reachable: timed out
+2024-04-21 21:51:49 ERROR: Cannot establish gRPC channel, port 8080 is busy or not accessible.
+2024-04-21 21:51:49 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-21 21:51:50 INFO: Snapshot 0 successfully destroyed.
+2024-04-21 21:51:50 INFO: Snapshot setup and backup completed successfully.
+2024-04-21 22:09:04 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-21 22:09:04 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-21 22:09:06 INFO: Backup to server completed successfully.
+2024-04-21 22:09:06 INFO: GRPC insecure channel established: 5.77.254.92:8080
+2024-04-21 22:09:26 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: Failed to connect to remote host: FD Shutdown
+2024-04-21 22:09:26 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-21 22:09:26 INFO: Snapshot 0 successfully destroyed.
+2024-04-21 22:09:26 INFO: Snapshot setup and backup completed successfully.
+2024-04-21 22:10:17 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-21 22:10:17 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-21 22:10:21 INFO: Backup to server completed successfully.
+2024-04-21 22:10:22 INFO: GRPC insecure channel established: 5.77.254.92:8080
+2024-04-21 22:10:42 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: tcp handshaker shutdown
+2024-04-21 22:10:42 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-21 22:10:42 INFO: Snapshot 0 successfully destroyed.
+2024-04-21 22:10:42 INFO: Snapshot setup and backup completed successfully.
