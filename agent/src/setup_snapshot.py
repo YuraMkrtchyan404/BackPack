@@ -19,6 +19,7 @@ server_username = config.get("server_username")
 rsync_port = config.get("rsync_port")
 grpc_port = config.get("grpc_port")
 folders = config.get("folders")
+standard_recovery_path = config.get("standard_recovery_path")
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
@@ -40,9 +41,10 @@ def check_port(host, port):
         logging.error(f"Port {port} is in use: {e}")
         return None
 
-def insert_metadata_file(mounted_folder_path, original_folder_path):
+def insert_metadata_file(mounted_folder_path, original_folder_path, standard_recovery_path):
     metadata = {
-        "original_path": original_folder_path
+        "original_path": original_folder_path,
+        "standard_recovery_path": standard_recovery_path
     }
     metadata_file_path = os.path.join(mounted_folder_path, 'metadata.json')
     with open(metadata_file_path, 'w') as file:
@@ -141,9 +143,9 @@ def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
         logging.error("Folder not found in snapshot.")
         return None
 
-def backup_to_server(mounted_folder_path, original_folder_path):
+def backup_to_server(mounted_folder_path, original_folder_path, standard_recovery_path):
     try:
-        insert_metadata_file(mounted_folder_path, original_folder_path)
+        insert_metadata_file(mounted_folder_path, original_folder_path, standard_recovery_path)
     except Exception as e:
         logging.error("Failed to create metadata file: %s", e)
         return False
@@ -208,7 +210,7 @@ def setup_snapshot():
                 destroy_snapshot(minor)
                 return False
 
-            if not backup_to_server(mounted_folder_path, folder):
+            if not backup_to_server(mounted_folder_path, folder, standard_recovery_path):
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)
                 return False
