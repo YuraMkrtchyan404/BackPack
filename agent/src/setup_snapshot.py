@@ -4,7 +4,7 @@ import logging
 import time
 import toml
 import socket
-from datetime import datetime
+import json
 
 from grpc_handler import notify_server_about_rsync_completion
 
@@ -39,6 +39,15 @@ def check_port(host, port):
         sock.close()
         logging.error(f"Port {port} is in use: {e}")
         return None
+
+def insert_metadata_file(mounted_folder_path, original_folder_path):
+    metadata = {
+        "original_path": original_folder_path
+    }
+    metadata_file_path = os.path.join(mounted_folder_path, 'metadata.json')
+    with open(metadata_file_path, 'w') as file:
+        json.dump(metadata, file)
+    logging.info("Metadata file created at: %s", metadata_file_path)
 
 #TODO We should add permission to elioctl, mount and so on during the "make" process
 #TODO something is off with absolute paths
@@ -132,7 +141,13 @@ def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
         logging.error("Folder not found in snapshot.")
         return None
 
-def backup_to_server(mounted_folder_path):
+def backup_to_server(mounted_folder_path, original_folder_path):
+    try:
+        insert_metadata_file(mounted_folder_path, original_folder_path)
+    except Exception as e:
+        logging.error("Failed to create metadata file: %s", e)
+        return False
+    
     rsync_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {rsync_port}', mounted_folder_path, f'{server_username}@{server_ip}:/backup-pool/backup_data']
     rsync_output = subprocess.run(rsync_cmd)
 
@@ -193,7 +208,7 @@ def setup_snapshot():
                 destroy_snapshot(minor)
                 return False
 
-            if not backup_to_server(mounted_folder_path):
+            if not backup_to_server(mounted_folder_path, folder):
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)
                 return False

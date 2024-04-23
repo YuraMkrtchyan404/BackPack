@@ -452,3 +452,38 @@ df: /home/yura/capstone/OS_Snapshots/test3: No such file or directory
 2024-04-21 22:10:42 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
 2024-04-21 22:10:42 INFO: Snapshot 0 successfully destroyed.
 2024-04-21 22:10:42 INFO: Snapshot setup and backup completed successfully.
+2024-04-23 12:10:27 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:10:27 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:10:29 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:10:30 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:10:30 INFO: Snapshot 0 successfully destroyed.
+2024-04-23 12:11:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:11:15 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:11:16 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:11:16 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:11:17 INFO: Snapshot 0 successfully destroyed.
+2024-04-23 12:14:01 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:14:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:14:01 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:14:01 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:14:01 INFO: Snapshot 0 successfully destroyed.
+2024-04-23 12:16:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:16:09 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:16:09 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:16:09 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:16:09 INFO: Snapshot 0 successfully destroyed.
+2024-04-23 12:18:01 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:18:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:18:02 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:18:02 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:18:02 INFO: Snapshot 0 successfully destroyed.
+2024-04-23 12:19:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:19:55 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:19:55 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:19:55 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:19:55 INFO: Snapshot 0 successfully destroyed.
+2024-04-23 12:20:26 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-23 12:20:26 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-04-23 12:20:27 ERROR: Error occurred while backing up to the server.
+2024-04-23 12:20:27 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-23 12:20:27 INFO: Snapshot 0 successfully destroyed.
