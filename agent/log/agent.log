@@ -1,489 +1,178 @@
-2024-04-10 01:21:22 ERROR: Failed to setup snapshot and backup.
-2024-04-10 01:25:41 ERROR: Error occurred while creating snapshot.
-2024-04-10 01:25:41 ERROR: Failed to setup snapshot and backup.
-2024-04-10 01:47:37 ERROR: Error occurred while creating snapshot.
-2024-04-10 01:48:08 ERROR: Error occurred while creating snapshot.
-2024-04-10 02:08:27 ERROR: Error occurred while creating snapshot.
-2024-04-10 02:09:00 ERROR: Error occurred while creating snapshot.
-2024-04-10 02:15:42 ERROR: Error occurred while creating snapshot.
-2024-04-10 02:52:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-10 02:52:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-10 02:52:23 INFO: Backup to server completed successfully.
-2024-04-10 02:52:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-10 02:52:25 INFO: Snapshot setup and backup completed successfully.
-2024-04-10 02:55:59 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-10 02:56:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-10 02:56:04 INFO: Backup to server completed successfully.
-2024-04-10 02:56:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-10 02:56:04 INFO: Snapshot setup and backup completed successfully.
-2024-04-10 02:57:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-10 02:57:24 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-10 02:57:34 INFO: Backup to server completed successfully.
-2024-04-10 02:57:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-10 02:57:35 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 00:29:47 ERROR: Error occurred while running df command.
-2024-04-11 00:30:15 ERROR: Error occurred while running df command.
-2024-04-11 00:30:25 ERROR: Error occurred while running df command.
-2024-04-11 00:32:59 ERROR: Error occurred while running df command.
-2024-04-11 00:33:01 ERROR: Error occurred while running df command.
-2024-04-11 00:33:01 ERROR: Error occurred while running df command.
-2024-04-11 00:33:53 ERROR: Error occurred while running df command.
-2024-04-11 00:34:20 ERROR: Error occurred while running df command.
-2024-04-11 00:34:24 ERROR: Error occurred while running df command.
-2024-04-11 00:35:14 ERROR: Error occurred while running df command.
-2024-04-11 00:35:33 ERROR: Error occurred while running df command.
-2024-04-11 00:35:35 ERROR: Error occurred while running df command.
-2024-04-11 00:36:09 ERROR: Error occurred while running df command.
-2024-04-11 00:36:30 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:37:28 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:37:41 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:39:08 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:39:58 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:41:09 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:42:16 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:53:54 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:54:50 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:55:15 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:57:00 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:57:26 ERROR: Error occurred while creating snapshot.
-2024-04-11 00:59:32 ERROR: Error occurred while creating snapshot.
-2024-04-11 01:00:50 ERROR: Error occurred while creating snapshot.
-2024-04-11 01:09:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 01:09:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 01:12:34 ERROR: Error occurred while backing up to the server.
-2024-04-11 01:12:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 01:17:05 ERROR: Error occurred while creating snapshot.
-2024-04-11 01:20:50 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 01:20:51 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 01:20:55 INFO: Backup to server completed successfully.
-2024-04-11 01:20:55 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 01:20:55 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 01:30:55 ERROR: Error occurred while creating snapshot.
-2024-04-11 01:31:05 ERROR: Error occurred while creating snapshot.
-2024-04-11 01:31:18 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 01:31:18 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 01:31:22 INFO: Backup to server completed successfully.
-2024-04-11 01:31:22 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 01:31:22 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 01:47:00 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 01:47:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 01:47:03 INFO: Backup to server completed successfully.
-2024-04-11 01:47:03 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 01:47:03 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 01:49:42 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 01:49:42 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 01:49:48 INFO: Backup to server completed successfully.
-2024-04-11 01:49:48 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 01:49:48 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:38:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:38:54 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 02:38:57 INFO: Backup to server completed successfully.
-2024-04-11 02:38:57 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:38:57 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:40:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:40:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 02:40:21 INFO: Backup to server completed successfully.
-2024-04-11 02:40:21 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:40:21 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:41:34 ERROR: Error occurred while running df command.
-2024-04-11 02:41:34 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:41:40 ERROR: Error occurred while running df command.
-2024-04-11 02:41:40 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:41:59 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:41:59 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 02:42:03 INFO: Backup to server completed successfully.
-2024-04-11 02:42:03 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 02:42:09 INFO: Backup to server completed successfully.
-2024-04-11 02:42:09 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:42:10 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:43:42 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:43:42 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 02:43:45 INFO: Backup to server completed successfully.
-2024-04-11 02:43:45 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 02:43:47 INFO: Backup to server completed successfully.
-2024-04-11 02:43:47 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:43:47 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:44:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:44:08 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test
-2024-04-11 02:44:11 INFO: Backup to server completed successfully.
-2024-04-11 02:44:11 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 02:44:13 INFO: Backup to server completed successfully.
-2024-04-11 02:44:13 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 02:44:15 INFO: Backup to server completed successfully.
-2024-04-11 02:44:15 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:44:15 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:53:13 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:53:14 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 02:53:18 INFO: Backup to server completed successfully.
-2024-04-11 02:53:18 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 02:53:22 INFO: Backup to server completed successfully.
-2024-04-11 02:53:22 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 02:53:37 INFO: Backup to server completed successfully.
-2024-04-11 02:53:37 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:53:37 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 02:53:47 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 02:53:48 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 02:53:51 INFO: Backup to server completed successfully.
-2024-04-11 02:53:51 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 02:53:55 INFO: Backup to server completed successfully.
-2024-04-11 02:53:55 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 02:53:57 INFO: Backup to server completed successfully.
-2024-04-11 02:53:57 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 02:53:58 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:03:49 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:03:49 ERROR: Folder not found in snapshot.
-2024-04-11 03:03:49 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:04:28 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:04:28 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:04:31 INFO: Backup to server completed successfully.
-2024-04-11 03:04:31 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 03:04:35 INFO: Backup to server completed successfully.
-2024-04-11 03:04:35 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 03:04:37 INFO: Backup to server completed successfully.
-2024-04-11 03:04:37 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:04:37 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:04:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:04:54 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:05:00 INFO: Backup to server completed successfully.
-2024-04-11 03:05:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 03:05:02 INFO: Backup to server completed successfully.
-2024-04-11 03:05:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 03:05:04 INFO: Backup to server completed successfully.
-2024-04-11 03:05:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:05:04 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:05:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:05:12 ERROR: Folder not found in snapshot.
-2024-04-11 03:05:12 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:07:02 ERROR: Error occurred while running df command.
-2024-04-11 03:07:02 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:07:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:07:06 INFO: Backup to server completed successfully.
-2024-04-11 03:07:06 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 03:07:08 INFO: Backup to server completed successfully.
-2024-04-11 03:07:08 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 03:07:09 INFO: Backup to server completed successfully.
-2024-04-11 03:07:10 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:07:10 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:12:40 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:12:40 ERROR: Folder not found in snapshot.
-2024-04-11 03:12:40 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:13:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:13:12 ERROR: Folder not found in snapshot.
-2024-04-11 03:13:12 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:14:05 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:14:05 ERROR: Folder not found in snapshot.
-2024-04-11 03:14:05 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:14:31 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:14:31 ERROR: Folder not found in snapshot.
-2024-04-11 03:14:31 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:16:30 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:16:30 ERROR: Folder not found in snapshot.
-2024-04-11 03:16:30 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:17:30 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:17:30 ERROR: Folder not found in snapshot.
-2024-04-11 03:17:30 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:17:36 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:17:36 ERROR: Folder not found in snapshot.
-2024-04-11 03:18:40 ERROR: Error occurred while creating snapshot.
-2024-04-11 03:19:41 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:19:41 ERROR: Folder not found in snapshot.
-2024-04-11 03:21:21 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:21:21 ERROR: Folder not found in snapshot.
-2024-04-11 03:28:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:28:12 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:28:22 INFO: Backup to server completed successfully.
-2024-04-11 03:28:22 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:28:22 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:29:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:29:21 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:29:23 INFO: Backup to server completed successfully.
-2024-04-11 03:29:23 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:29:23 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:31:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:31:56 ERROR: Folder not found in snapshot.
-2024-04-11 03:32:13 ERROR: Error occurred while creating snapshot.
-2024-04-11 03:32:21 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:32:21 ERROR: Folder not found in snapshot.
-2024-04-11 03:34:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:34:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:34:18 INFO: Backup to server completed successfully.
-2024-04-11 03:34:18 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:34:18 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 03:38:25 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:38:25 ERROR: Folder not found in snapshot.
-2024-04-11 03:39:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:39:16 ERROR: Folder not found in snapshot.
-2024-04-11 03:40:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:40:24 ERROR: Folder not found in snapshot.
-2024-04-11 03:44:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:44:08 ERROR: Folder not found in snapshot.
-2024-04-11 03:59:32 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 03:59:32 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 03:59:34 INFO: Backup to server completed successfully.
-2024-04-11 03:59:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 03:59:35 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:00:17 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:00:17 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 04:00:19 INFO: Backup to server completed successfully.
-2024-04-11 04:00:19 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:01:19 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:01:19 ERROR: Folder not found in snapshot.
-2024-04-11 04:02:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:02:38 ERROR: Folder not found in snapshot.
-2024-04-11 04:15:20 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:15:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 04:17:23 ERROR: Error occurred while backing up to the server.
-2024-04-11 04:17:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 04:18:02 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:18:02 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 04:18:04 INFO: Backup to server completed successfully.
-2024-04-11 04:18:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 04:18:05 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:19:14 ERROR: Error occurred while running df command.
-2024-04-11 04:19:14 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:19:22 ERROR: Error occurred while running df command.
-2024-04-11 04:19:22 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:26:13 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:26:13 ERROR: Folder not found in snapshot.
-2024-04-11 04:26:31 ERROR: Error occurred while running df command.
-2024-04-11 04:26:31 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:27:02 ERROR: Error occurred while running df command.
-2024-04-11 04:27:02 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:27:28 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:27:28 ERROR: Folder not found in snapshot.
-2024-04-11 04:33:22 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:33:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:39:17 ERROR: Error occurred while running df command.
-2024-04-11 04:39:17 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:45:44 ERROR: Error occurred while running df command.
-2024-04-11 04:45:44 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:46:53 ERROR: Error occurred while running df command.
-2024-04-11 04:46:53 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:56:04 ERROR: Error occurred while running df command.
-2024-04-11 04:56:04 INFO: Snapshot setup and backup completed successfully.
-2024-04-11 04:58:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-11 04:58:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test1
-2024-04-11 04:58:20 INFO: Backup to server completed successfully.
-2024-04-11 04:58:20 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test2
-2024-04-11 04:58:22 INFO: Backup to server completed successfully.
-2024-04-11 04:58:22 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/aivanyan/OS_capstone/OS_Snapshots/test3
-2024-04-11 04:58:24 INFO: Backup to server completed successfully.
-2024-04-11 04:58:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-11 04:58:24 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 17:42:24 ERROR: Error occurred while running df command.
-2024-04-14 17:42:24 ERROR: Error occurred while running df command.
-2024-04-14 17:42:24 ERROR: Error occurred while running df command.
-2024-04-14 17:42:24 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 17:45:48 ERROR: Error occurred while running df command.
-2024-04-14 17:45:48 ERROR: Error occurred while running df command.
-2024-04-14 17:45:48 ERROR: Error occurred while running df command.
-2024-04-14 17:45:48 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 17:49:26 ERROR: Error occurred while running df command.
-df: /home/yura/capstone/OS_Snapshots/test1: No such file or directory
-
-2024-04-14 17:49:26 ERROR: Error occurred while running df command.
-df: /home/yura/capstone/OS_Snapshots/test2: No such file or directory
-
-2024-04-14 17:49:26 ERROR: Error occurred while running df command.
-df: /home/yura/capstone/OS_Snapshots/test3: No such file or directory
-
-2024-04-14 17:49:26 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 17:52:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-14 17:52:09 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-14 17:52:12 INFO: Backup to server completed successfully.
-2024-04-14 17:52:13 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-14 17:52:14 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 18:14:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-14 18:14:25 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-14 18:14:31 INFO: Backup to server completed successfully.
-2024-04-14 18:14:31 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-14 18:14:32 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 18:29:04 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-14 18:29:05 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-14 18:29:07 INFO: Backup to server completed successfully.
-2024-04-14 18:29:07 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-14 18:29:08 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 18:29:32 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-14 18:29:32 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-14 18:29:34 INFO: Backup to server completed successfully.
-2024-04-14 18:29:34 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-14 18:29:35 INFO: Snapshot setup and backup completed successfully.
-2024-04-14 18:35:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-14 18:35:56 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-14 18:36:00 INFO: Backup to server completed successfully.
-2024-04-14 18:36:00 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-14 18:36:00 INFO: Snapshot setup and backup completed successfully.
-2024-04-16 16:49:51 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-16 16:49:51 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-16 16:49:56 INFO: Backup to server completed successfully.
-2024-04-16 16:49:57 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-16 16:49:57 INFO: Snapshot 0 successfully destroyed.
-2024-04-16 16:57:04 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-16 16:57:04 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-16 16:57:11 INFO: Backup to server completed successfully.
-2024-04-16 16:57:11 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-16 16:57:12 INFO: Snapshot 0 successfully destroyed.
-2024-04-16 17:13:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-16 17:13:13 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-16 17:13:13 ERROR: Error occurred while backing up to the server.
-2024-04-16 17:13:13 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-16 17:13:14 INFO: Snapshot 0 successfully destroyed.
-2024-04-16 17:20:22 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-16 17:20:22 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-16 17:20:25 INFO: Backup to server completed successfully.
-2024-04-16 17:20:26 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-16 17:20:26 INFO: Snapshot 0 successfully destroyed.
-2024-04-16 17:21:29 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-16 17:21:29 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-16 17:25:02 ERROR: Error occurred while creating snapshot.
-2024-04-16 17:26:47 ERROR: Error occurred while creating snapshot.
-2024-04-16 17:28:26 ERROR: Error occurred while creating snapshot.
-2024-04-16 17:30:51 ERROR: Error occurred while creating snapshot.
-2024-04-16 17:33:29 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-16 17:33:29 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-16 17:33:33 INFO: Backup to server completed successfully.
-2024-04-16 17:33:33 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-16 17:33:33 INFO: Snapshot 0 successfully destroyed.
-2024-04-18 00:21:00 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-18 00:21:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-18 00:21:07 INFO: Backup to server completed successfully.
-2024-04-18 00:21:07 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-18 00:21:08 INFO: Snapshot 0 successfully destroyed.
-2024-04-18 00:26:18 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-18 00:26:18 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-18 00:26:27 INFO: Backup to server completed successfully.
-2024-04-18 00:28:17 ERROR: Error occurred while creating snapshot.
-2024-04-18 00:28:41 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-18 00:28:41 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-18 00:28:45 INFO: Backup to server completed successfully.
-2024-04-18 01:19:59 ERROR: Error occurred while creating snapshot.
-2024-04-18 01:20:12 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-18 01:20:12 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-18 01:20:17 INFO: Backup to server completed successfully.
-2024-04-20 01:11:49 ERROR: Error occurred while creating snapshot.
-2024-04-20 01:12:05 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 01:12:05 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 01:12:08 INFO: Backup to server completed successfully.
-2024-04-20 01:38:40 ERROR: Error occurred while creating snapshot.
-2024-04-20 01:38:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 01:38:57 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 01:39:00 INFO: Backup to server completed successfully.
-2024-04-20 02:04:41 ERROR: Error occurred while creating snapshot.
-2024-04-20 02:04:50 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 02:04:50 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 02:04:53 INFO: Backup to server completed successfully.
-2024-04-20 03:25:19 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 03:25:19 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 03:25:22 INFO: Backup to server completed successfully.
-2024-04-20 03:25:22 ERROR: Port 9122 on 5.77.254.92 is busy: [Errno 99] Cannot assign requested address
-2024-04-20 03:25:22 ERROR: Cannot establish gRPC channel, port 9122 is busy.
-2024-04-20 03:25:22 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 03:25:22 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 03:25:22 INFO: Snapshot setup and backup completed successfully.
-2024-04-20 03:30:35 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 03:30:35 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 03:30:38 INFO: Backup to server completed successfully.
-2024-04-20 03:30:38 INFO: GRPC insecure channel established: 5.77.254.92:9122
-2024-04-20 03:30:38 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNAVAILABLE: ipv4:5.77.254.92:9122: Failed parsing HTTP/2
-2024-04-20 03:30:38 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 03:30:39 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 03:30:39 INFO: Snapshot setup and backup completed successfully.
-2024-04-20 03:46:53 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 03:46:53 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 03:46:58 INFO: Backup to server completed successfully.
-2024-04-20 03:46:59 INFO: GRPC insecure channel established: 5.77.254.92:9122
-2024-04-20 03:46:59 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNAVAILABLE: ipv4:5.77.254.92:9122: Failed parsing HTTP/2
-2024-04-20 03:46:59 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 03:47:00 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 03:47:00 INFO: Snapshot setup and backup completed successfully.
-2024-04-20 03:49:44 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 03:49:44 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 03:49:47 INFO: Backup to server completed successfully.
-2024-04-20 03:49:47 INFO: GRPC insecure channel established: 5.77.254.92:9122
-2024-04-20 03:49:47 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNAVAILABLE: ipv4:5.77.254.92:9122: Failed parsing HTTP/2
-2024-04-20 03:49:48 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 03:49:48 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 03:49:48 INFO: Snapshot setup and backup completed successfully.
-2024-04-20 03:52:28 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 03:52:28 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 03:52:30 INFO: Backup to server completed successfully.
-2024-04-20 03:52:31 INFO: GRPC insecure channel established: 5.77.254.92:9122
-2024-04-20 03:52:31 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNAVAILABLE: ipv4:5.77.254.92:9122: Failed parsing HTTP/2
-2024-04-20 03:52:31 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 03:52:32 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 03:52:32 INFO: Snapshot setup and backup completed successfully.
-2024-04-20 20:09:06 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 20:09:06 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 20:09:10 INFO: Backup to server completed successfully.
-2024-04-20 20:09:15 ERROR: Port 50051 on 5.77.254.92 is not reachable: timed out
-2024-04-20 20:09:15 ERROR: Cannot establish gRPC channel, port 50051 is busy or not accessible.
-2024-04-20 20:09:15 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 20:09:15 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 20:09:15 INFO: Snapshot setup and backup completed successfully.
-2024-04-20 21:45:27 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-20 21:45:27 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-20 21:45:31 INFO: Backup to server completed successfully.
-2024-04-20 21:45:31 INFO: GRPC insecure channel established: 5.77.254.92:9122
-2024-04-20 21:45:31 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNAVAILABLE: ipv4:5.77.254.92:9122: Failed parsing HTTP/2
-2024-04-20 21:45:32 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-20 21:45:34 INFO: Snapshot 0 successfully destroyed.
-2024-04-20 21:45:34 INFO: Snapshot setup and backup completed successfully.
-2024-04-21 21:51:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-21 21:51:38 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-21 21:51:44 INFO: Backup to server completed successfully.
-2024-04-21 21:51:49 ERROR: Port 8080 on 5.77.254.92 is not reachable: timed out
-2024-04-21 21:51:49 ERROR: Cannot establish gRPC channel, port 8080 is busy or not accessible.
-2024-04-21 21:51:49 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-21 21:51:50 INFO: Snapshot 0 successfully destroyed.
-2024-04-21 21:51:50 INFO: Snapshot setup and backup completed successfully.
-2024-04-21 22:09:04 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-21 22:09:04 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-21 22:09:06 INFO: Backup to server completed successfully.
-2024-04-21 22:09:06 INFO: GRPC insecure channel established: 5.77.254.92:8080
-2024-04-21 22:09:26 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: Failed to connect to remote host: FD Shutdown
-2024-04-21 22:09:26 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-21 22:09:26 INFO: Snapshot 0 successfully destroyed.
-2024-04-21 22:09:26 INFO: Snapshot setup and backup completed successfully.
-2024-04-21 22:10:17 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-21 22:10:17 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-21 22:10:21 INFO: Backup to server completed successfully.
-2024-04-21 22:10:22 INFO: GRPC insecure channel established: 5.77.254.92:8080
-2024-04-21 22:10:42 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: tcp handshaker shutdown
-2024-04-21 22:10:42 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-21 22:10:42 INFO: Snapshot 0 successfully destroyed.
-2024-04-21 22:10:42 INFO: Snapshot setup and backup completed successfully.
-2024-04-23 12:10:27 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:10:27 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:10:29 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:10:30 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:10:30 INFO: Snapshot 0 successfully destroyed.
-2024-04-23 12:11:15 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:11:15 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:11:16 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:11:16 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:11:17 INFO: Snapshot 0 successfully destroyed.
-2024-04-23 12:14:01 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:14:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:14:01 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:14:01 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:14:01 INFO: Snapshot 0 successfully destroyed.
-2024-04-23 12:16:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:16:09 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:16:09 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:16:09 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:16:09 INFO: Snapshot 0 successfully destroyed.
-2024-04-23 12:18:01 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:18:01 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:18:02 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:18:02 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:18:02 INFO: Snapshot 0 successfully destroyed.
-2024-04-23 12:19:54 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:19:55 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:19:55 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:19:55 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:19:55 INFO: Snapshot 0 successfully destroyed.
-2024-04-23 12:20:26 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
-2024-04-23 12:20:26 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
-2024-04-23 12:20:27 ERROR: Error occurred while backing up to the server.
-2024-04-23 12:20:27 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-04-23 12:20:27 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 01:54:53 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 01:54:54 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 01:54:54 INFO: Metadata file created at: /tmp/tmpszj42muv/metadata.json
+2024-04-25 01:54:56 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/test_folder1/']' returned non-zero exit status 11.
+2024-04-25 01:54:56 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 01:54:57 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 01:56:51 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 01:56:51 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 01:56:51 INFO: Metadata file created at: /tmp/tmp3ovxpmqo/metadata.json
+2024-04-25 01:56:52 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/test_folder1/']' returned non-zero exit status 11.
+2024-04-25 01:56:53 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 01:56:53 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 01:57:42 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 01:57:42 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 01:57:42 INFO: Metadata file created at: /tmp/tmp8rh0qpce/metadata.json
+2024-04-25 01:57:45 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/test_folder1']' returned non-zero exit status 11.
+2024-04-25 01:57:45 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 01:57:46 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 01:59:18 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 01:59:18 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 01:59:18 INFO: Metadata file created at: /tmp/tmpqgtxdvkq/metadata.json
+2024-04-25 02:00:05 INFO: Backup to server completed successfully.
+2024-04-25 02:00:05 INFO: GRPC insecure channel established: 5.77.254.92:8080
+2024-04-25 02:00:25 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: tcp handshaker shutdown
+2024-04-25 02:00:25 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:00:25 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:00:25 INFO: Snapshot setup and backup completed successfully.
+2024-04-25 02:01:16 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:01:16 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:01:16 INFO: Metadata file created at: /tmp/tmpp58n3g8z/metadata.json
+2024-04-25 02:01:19 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/test_folder1']' returned non-zero exit status 11.
+2024-04-25 02:01:19 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:01:19 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:02:06 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:02:06 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:02:06 INFO: Metadata file created at: /tmp/tmpciui9dt8/metadata.json
+2024-04-25 02:02:09 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/test_folder1_']' returned non-zero exit status 11.
+2024-04-25 02:02:09 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:02:09 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:02:56 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:02:57 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:02:57 INFO: Metadata file created at: /tmp/tmp6zhgztqj/metadata.json
+2024-04-25 02:02:59 INFO: Backup folder successfully synchronized to the server.
+2024-04-25 02:03:09 INFO: Metadata file successfully synchronized to the backup folder on the server.
+2024-04-25 02:03:09 INFO: GRPC insecure channel established: 5.77.254.92:8080
+2024-04-25 02:03:29 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: tcp handshaker shutdown
+2024-04-25 02:28:06 ERROR: Error occurred while creating snapshot.
+2024-04-25 02:28:31 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:28:32 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:28:32 INFO: Metadata file created at: /tmp/tmptc91rqul/metadata.json
+2024-04-25 02:28:36 ERROR: Failed during backup operation: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:28:36 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:28:37 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:29:24 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:29:25 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:29:25 INFO: Metadata file created at: /tmp/tmpn9njhp98/metadata.json
+2024-04-25 02:29:32 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/']' returned non-zero exit status 11.
+2024-04-25 02:29:32 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:29:32 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:32:06 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:32:07 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:33:00 ERROR: Error occurred while creating snapshot.
+2024-04-25 02:33:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:33:08 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:33:08 INFO: Metadata file created at: /tmp/tmpfl947pdm/metadata.json
+2024-04-25 02:33:08 ERROR: Failed during backup operation: expected str, bytes or os.PathLike object, not int
+2024-04-25 02:33:08 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:33:09 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:41:07 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:41:07 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:41:22 ERROR: Error occurred while creating snapshot.
+2024-04-25 02:41:30 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:41:30 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:41:30 INFO: Metadata file created at: /tmp/tmp41lxav_9/metadata.json
+2024-04-25 02:41:30 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:41:30 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 "mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"
+2024-04-25 02:41:41 ERROR: Failed to create directories on server: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:41:41 ERROR: Failed during backup operation: Failed to create server directories: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:41:41 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:41:41 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:44:49 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:44:49 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:44:49 INFO: Metadata file created at: /tmp/tmpljci3nbs/metadata.json
+2024-04-25 02:44:49 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:44:49 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 02:44:51 INFO: Server directories prepared successfully.
+2024-04-25 02:44:51 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-04-25 02:44:56 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/']' returned non-zero exit status 11.
+2024-04-25 02:44:56 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:44:57 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:48:29 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:48:29 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:48:29 INFO: Metadata file created at: /tmp/tmp9rqn06sd/metadata.json
+2024-04-25 02:48:29 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:48:29 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 "mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"
+2024-04-25 02:48:35 ERROR: Failed to create directories on server: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:48:35 ERROR: Failed during backup operation: Failed to create server directories: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:48:35 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:48:36 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:52:52 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:52:52 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:52:52 INFO: Metadata file created at: /tmp/tmp_kduxihl/metadata.json
+2024-04-25 02:52:52 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:52:52 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 02:52:54 INFO: Server directories prepared successfully.
+2024-04-25 02:52:54 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-04-25 02:52:57 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/']' returned non-zero exit status 11.
+2024-04-25 02:52:58 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:52:58 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:54:17 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:54:17 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:54:17 INFO: Metadata file created at: /tmp/tmpjvt43ziz/metadata.json
+2024-04-25 02:54:17 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:54:17 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 "mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"
+2024-04-25 02:54:20 ERROR: Failed to create directories on server: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:54:20 ERROR: Failed during backup operation: Failed to create server directories: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:54:20 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:54:21 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:56:11 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:56:11 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:56:11 INFO: Metadata file created at: /tmp/tmprbl3iy0_/metadata.json
+2024-04-25 02:56:11 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:56:11 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 "mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"
+2024-04-25 02:56:14 ERROR: Failed to create directories on server: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:56:14 ERROR: Failed during backup operation: Failed to create server directories: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:56:14 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:56:15 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 02:57:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 02:57:38 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 02:57:38 INFO: Metadata file created at: /tmp/tmp0il1e6nl/metadata.json
+2024-04-25 02:57:38 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 02:57:38 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 "mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"
+2024-04-25 02:57:40 ERROR: Failed to create directories on server: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:57:40 ERROR: Failed during backup operation: Failed to create server directories: Command '['ssh', '-p', '9122', 'user1808@5.77.254.92', '"mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/"']' returned non-zero exit status 127.
+2024-04-25 02:57:40 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 02:57:41 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 03:00:03 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 03:00:03 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 03:00:03 INFO: Metadata file created at: /tmp/tmpewsrrrth/metadata.json
+2024-04-25 03:00:03 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 03:00:03 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 mkdir -p user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/ user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:00:06 INFO: Server directories prepared successfully.
+2024-04-25 03:00:06 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-04-25 03:00:09 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '/var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1/', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/']' returned non-zero exit status 11.
+2024-04-25 03:00:09 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 03:00:10 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 03:06:25 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 03:06:25 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 03:06:25 INFO: Metadata file created at: /tmp/tmp8xbxh17x/metadata.json
+2024-04-25 03:06:25 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 03:06:25 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 mkdir -p /backup-pool/backup_data/test_folder1/data/ /backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:06:33 INFO: Server directories prepared successfully.
+2024-04-25 03:06:33 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-04-25 03:06:36 INFO: Backup data rsync completed successfully.
+2024-04-25 03:06:36 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:07:16 INFO: Metadata file rsync completed successfully.
+2024-04-25 03:07:16 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:07:24 ERROR: Failed during backup operation: Command '['sudo', 'rsync', '-av', '-e', 'ssh -p 9122', '../config.toml', 'user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/']' returned non-zero exit status 23.
+2024-04-25 03:07:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 03:07:25 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 03:09:51 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-04-25 03:09:52 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-04-25 03:09:52 INFO: Metadata file created at: /tmp/tmp4_32m0c1/metadata.json
+2024-04-25 03:09:52 INFO: Metadata file prepared and stored temporarily.
+2024-04-25 03:09:52 INFO: Preparing server directories with command: ssh -p 9122 user1808@5.77.254.92 mkdir -p /backup-pool/backup_data/test_folder1/data/ /backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:09:58 INFO: Server directories prepared successfully.
+2024-04-25 03:09:58 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-04-25 03:10:01 INFO: Backup data rsync completed successfully.
+2024-04-25 03:10:01 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:10:26 INFO: Metadata file rsync completed successfully.
+2024-04-25 03:10:26 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-04-25 03:10:29 INFO: Configuration file rsync completed successfully.
+2024-04-25 03:10:29 INFO: Backup to server completed successfully.
+2024-04-25 03:10:29 INFO: GRPC insecure channel established: 5.77.254.92:8080
+2024-04-25 03:10:49 ERROR: gRPC call failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:8080: tcp handshaker shutdown
+2024-04-25 03:10:49 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-04-25 03:10:51 INFO: Snapshot 0 successfully destroyed.
+2024-04-25 03:10:51 INFO: Snapshot setup and backup completed successfully.

@@ -5,8 +5,8 @@ import grpc
 import communication_pb2
 import communication_pb2_grpc
 import os
-os.environ['GRPC_VERBOSITY'] = 'DEBUG'
-os.environ['GRPC_TRACE'] = 'all'
+# os.environ['GRPC_VERBOSITY'] = 'DEBUG'
+# os.environ['GRPC_TRACE'] = 'all'
 
 def load_config():
     with open("config.toml", "r") as file:
