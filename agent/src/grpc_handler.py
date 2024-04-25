@@ -9,7 +9,7 @@ import os
 # os.environ['GRPC_TRACE'] = 'all'
 
 def load_config():
-    with open("config.toml", "r") as file:
+    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
         config = toml.load(file)
     return config
 
@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("log/agent.log"),
+                        logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
                         logging.StreamHandler()
                     ])
 

@@ -29,9 +29,9 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=5))
     add_RsyncNotificationsServicer_to_server(RsyncNotificationsService(), server)
-    server.add_insecure_port('[::]:50052')
+    server.add_insecure_port('[::]:50051')
     server.start()
-    logging.info("Server started. Listening on port 50052.")
+    logging.info("Server started. Listening on port 50051.")
     server.wait_for_termination()
 
 if __name__ == '__main__':
