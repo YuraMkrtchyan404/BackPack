@@ -1,3 +1,4 @@
 backup
 .venv
 *.pyc
+agent/log/agent.log

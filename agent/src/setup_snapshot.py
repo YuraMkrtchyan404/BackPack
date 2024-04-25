@@ -10,7 +10,7 @@ import tempfile
 from grpc_handler import notify_server_about_rsync_completion
 
 def load_config():
-    with open("config.toml", "r") as file:
+    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
         config = toml.load(file)
     return config
 
@@ -21,14 +21,14 @@ rsync_port = config.get("rsync_port")
 grpc_port = config.get("grpc_port")
 folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
-config_path = "./config.toml"
+config_path = "/home/yura/capstone/OS_Snapshots/agent/config.toml"
 ssh_password = config.get("ssh_password")
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("log/agent.log"),
+                        logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
                         logging.StreamHandler()
                     ])
 
@@ -195,7 +195,7 @@ def backup_to_server(mounted_folder_path, original_folder_path, standard_recover
             subprocess.run(rsync_metadata_cmd, check=True)
             logging.info("Metadata file rsync completed successfully.")
 
-            # Optional: Rsync additional configuration files like config.toml to the etc directory
+            # Optional: Rsync additional configuration files like /home/yura/capstone/OS_Snapshots/agent/config.toml to the etc directory
             rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                 config_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
