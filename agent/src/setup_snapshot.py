@@ -3,31 +3,64 @@ import os
 import logging
 import time
 import toml
-from datetime import datetime
+import socket
+import json
+import tempfile
+
+from grpc_handler import notify_server_about_rsync_completion
+
+def load_config():
+    with open("config.toml", "r") as file:
+        config = toml.load(file)
+    return config
+
+config = load_config()
+server_ip = config.get("server_ip")
+server_username = config.get("server_username")
+rsync_port = config.get("rsync_port")
+grpc_port = config.get("grpc_port")
+folders = config.get("folders")
+standard_recovery_path = config.get("standard_recovery_path")
+config_path = "./config.toml"
+ssh_password = config.get("ssh_password")
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("agent/log/agent.log"),
+                        logging.FileHandler("log/agent.log"),
                         logging.StreamHandler()
                     ])
 
-#TODO We should add permission to elioctl, mount and so on during the "make" process
-#TODO Require user to give the absolute path only
+# def check_port(host, port):
+#     """Attempt to bind to a port and return the socket if successful."""
+#     sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+#     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#     try:
+#         sock.bind((host, port))
+#         return sock
+#     except socket.error as e:
+#         sock.close()
+#         logging.error(f"Port {port} is in use: {e}")
+#         return None
 
-def get_mount_point(folder_path):
+def insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path):
+    metadata = {
+        "original_path": original_folder_path,
+        "standard_recovery_path": standard_recovery_path
+    }
+    metadata_file_path = os.path.join(temp_dir, 'metadata.json')
     try:
-        df_output = subprocess.check_output(['df', '-h', folder_path]).decode('utf-8')
-        mount_point = df_output.strip().split('\n')[1].split()[-1]
-        return mount_point
-    except subprocess.CalledProcessError:
-        return None
+        with open(metadata_file_path, 'w') as file:
+            json.dump(metadata, file)
+        logging.info(f"Metadata file created at: {metadata_file_path}")
+        return metadata_file_path
+    except IOError as e:
+        logging.error(f"Failed to write metadata file: {e}")
+        raise
 
-def load_config():
-    with open("agent/config.toml", "r") as file:
-        config = toml.load(file)
-    return config
+#TODO We should add permission to elioctl, mount and so on during the "make" process
+#TODO something is off with absolute paths
 
 def destroy_snapshot(minor, max_retries=15, retry_delay=5):
     retries = 0
@@ -36,22 +69,25 @@ def destroy_snapshot(minor, max_retries=15, retry_delay=5):
         destroy_output = subprocess.run(destroy_cmd)
         
         if destroy_output.returncode == 0:
-            print(f"Snapshot {minor} successfully destroyed.")
+            logging.info(f"Snapshot {minor} successfully destroyed.")
             return True
         else:
-            print(f"Failed to destroy snapshot {minor}. Retrying...")
+            logging.error(f"Failed to destroy snapshot {minor}. Retrying...")
             retries += 1
             time.sleep(retry_delay)
 
-    print(f"Unable to destroy snapshot {minor} after {max_retries} retries.")
+    logging.error(f"Unable to destroy snapshot {minor} after {max_retries} retries.")
     return False
 
 def get_block_device_for_folder(folder_path):
-    cmd = ['df', '-h', folder_path]
+    abs_folder_path = os.path.abspath(folder_path)
+    cmd = ['df', '-h', abs_folder_path]
     df_output = subprocess.run(cmd, capture_output=True, text=True)
 
     if df_output.returncode != 0:
-        logging.error("Error occurred while running df command.")
+        error_msg = "Error occurred while running df command."
+        original_error = df_output.stderr
+        logging.error(f"{error_msg}\n{original_error}")
         return None
 
     lines = df_output.stdout.strip().split('\n')
@@ -61,13 +97,14 @@ def get_block_device_for_folder(folder_path):
         if len(columns) > 0:
             return columns[0]
 
-    logging.error("Block device not found for the specified folder.")
+    logging.error("Block device not found for the specified folder")
     return None
 
 def get_free_minor():
     minor_output = subprocess.run(['sudo', 'elioctl', 'get-free-minor'], capture_output=True, text=True)
     if minor_output.returncode != 0:
-        logging.error("Error occurred while getting a free minor.")
+        original_error = minor_output.stderr
+        logging.error(f"Error occurred while getting a free minor: {original_error}")
         return None
 
     minor = minor_output.stdout.strip()
@@ -75,6 +112,8 @@ def get_free_minor():
 
 def mount_snapshot(snapshot_path, mount_point):
     snapshot_dir = os.path.join(mount_point, os.path.basename(snapshot_path))
+    #print(f"mount dir {snapshot_dir}")
+    #print(f"Heree path  {snapshot_path}")
     
     os.makedirs(snapshot_dir, exist_ok=True)
 
@@ -101,42 +140,77 @@ def umount_snapshot(snapshot_path):
     return True
 
 def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
+    abs_folder_path = os.path.abspath(folder_path)
     snapshot_dir = os.path.join(mount_point, os.path.basename(snapshot_path))
-    mount = get_mount_point(folder_path)
-    #print(f"finding the mount point {mount}")
-    relative_path = os.path.relpath(folder_path, mount) 
-    mounted_folder_path = os.path.join(snapshot_dir, relative_path.lstrip('/'))
-    #print(f"inside mounted folder{mounted_folder_path}")
+    mounted_folder_path = os.path.join(snapshot_dir, abs_folder_path.lstrip('/'))
+   # print(mounted_folder_path)
     if os.path.exists(mounted_folder_path):
         logging.info("Full path of the mounted folder in snapshot: %s", mounted_folder_path)
         return mounted_folder_path
     else:
-        logging.error("Folder not found in mounted snapshot.")
+        logging.error("Folder not found in snapshot.")
         return None
 
-def backup_to_server(mounted_folder_path):
-    config = load_config()
-    server_ip = config.get("server_ip")
-    server_username = config.get("server_username")
-    port = config.get("port")
+def prepare_server_directories(server_backup_data_dir, server_backup_etc_dir, server_username, server_ip, rsync_port):
+    try:
+        remote_command = f'mkdir -p {server_backup_data_dir} {server_backup_etc_dir}'
+        command = [
+            'sudo', 'sshpass', '-p', str(ssh_password), 'sudo', 'ssh', '-p', str(rsync_port), f'{server_username}@{server_ip}', remote_command
+        ]
+        # print("command: ", ' '.join(command))
+        logging.info(f"Preparing server directories with command: {' '.join(command)}")
+        subprocess.run(command, check=True)
+        logging.info("Server directories prepared successfully.")
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Failed to create directories on server: {e}")
+        raise RuntimeError(f"Failed to create server directories: {e}")
 
-    rsync_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {port}', mounted_folder_path, f'{server_username}@{server_ip}:/backup-pool/backup_data']
-    rsync_output = subprocess.run(rsync_cmd)
+def backup_to_server(mounted_folder_path, original_folder_path, standard_recovery_path):
+    try:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Prepare metadata file
+            metadata_file_path = insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path)
+            logging.info("Metadata file prepared and stored temporarily.")
 
-    if rsync_output.returncode != 0:
-        logging.error("Error occurred while backing up to the server.")
+            # Directory on the server where the backup folder resides
+            folder_name = os.path.basename(mounted_folder_path)
+            server_backup_dir = f"{server_username}@{server_ip}:/backup-pool/backup_data/{folder_name}"
+            server_backup_data_dir = f"{server_backup_dir}/data/"
+            server_backup_etc_dir = f"{server_backup_dir}/etc/"
+
+            # Ensure remote directories exist
+            prepare_server_directories(server_backup_data_dir.split(':')[1], server_backup_etc_dir.split(':')[1], server_username, server_ip, rsync_port)
+
+            # Rsync the mounted folder to the data directory on the server
+            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+                                mounted_folder_path + '/', server_backup_data_dir]
+            logging.info(f"Starting rsync for backup data to {server_backup_data_dir}")
+            subprocess.run(rsync_folder_cmd, check=True)
+            logging.info("Backup data rsync completed successfully.")
+
+            # Rsync the metadata file to the etc directory on the server
+            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+                                  metadata_file_path, server_backup_etc_dir]
+            logging.info(f"Starting rsync for metadata file to {server_backup_etc_dir}")
+            subprocess.run(rsync_metadata_cmd, check=True)
+            logging.info("Metadata file rsync completed successfully.")
+
+            # Optional: Rsync additional configuration files like config.toml to the etc directory
+            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+                                config_path, server_backup_etc_dir]
+            logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
+            subprocess.run(rsync_config_cmd, check=True)
+            logging.info("Configuration file rsync completed successfully.")
+
+            logging.info("Backup to server completed successfully.")
+            return True
+    except Exception as e:
+        logging.error(f"Failed during backup operation: {e}")
         return False
 
-    logging.info("Backup to server completed successfully.")
-    return True
-
-
 def setup_snapshot():
-    config = load_config()
-    folders = config.get("folders")
     block_devices = set()  
     folder_mapping = {}
-
 
     for folder in folders:
         block_device = get_block_device_for_folder(folder)
@@ -146,8 +220,6 @@ def setup_snapshot():
                 folder_mapping[block_device].append(folder)
             else:
                 folder_mapping[block_device] = [folder]
-        else:
-            return False
 
     for block_device in block_devices:
         minor = get_free_minor()
@@ -185,10 +257,11 @@ def setup_snapshot():
                 destroy_snapshot(minor)
                 return False
 
-            if not backup_to_server(mounted_folder_path):
+            if not backup_to_server(mounted_folder_path, folder, standard_recovery_path):
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)
                 return False
+            notify_server_about_rsync_completion(folder, server_ip, grpc_port)
             
         umount_snapshot(snapshot_path)
         destroy_snapshot(minor)
