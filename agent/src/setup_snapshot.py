@@ -22,6 +22,7 @@ grpc_port = config.get("grpc_port")
 folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
 config_path = "./config.toml"
+ssh_password = config.get("ssh_password")
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
@@ -31,17 +32,17 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-def check_port(host, port):
-    """Attempt to bind to a port and return the socket if successful."""
-    sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    try:
-        sock.bind((host, port))
-        return sock
-    except socket.error as e:
-        sock.close()
-        logging.error(f"Port {port} is in use: {e}")
-        return None
+# def check_port(host, port):
+#     """Attempt to bind to a port and return the socket if successful."""
+#     sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+#     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#     try:
+#         sock.bind((host, port))
+#         return sock
+#     except socket.error as e:
+#         sock.close()
+#         logging.error(f"Port {port} is in use: {e}")
+#         return None
 
 def insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path):
     metadata = {
@@ -154,10 +155,9 @@ def prepare_server_directories(server_backup_data_dir, server_backup_etc_dir, se
     try:
         remote_command = f'mkdir -p {server_backup_data_dir} {server_backup_etc_dir}'
         command = [
-            'ssh', '-p', str(rsync_port), f'{server_username}@{server_ip}',
-            remote_command  # No need for additional quotes, subprocess handles it
+            'sudo', 'sshpass', '-p', str(ssh_password), 'sudo', 'ssh', '-p', str(rsync_port), f'{server_username}@{server_ip}', remote_command
         ]
-        print("command: ", ' '.join(command))  # For debugging
+        # print("command: ", ' '.join(command))
         logging.info(f"Preparing server directories with command: {' '.join(command)}")
         subprocess.run(command, check=True)
         logging.info("Server directories prepared successfully.")
@@ -182,21 +182,21 @@ def backup_to_server(mounted_folder_path, original_folder_path, standard_recover
             prepare_server_directories(server_backup_data_dir.split(':')[1], server_backup_etc_dir.split(':')[1], server_username, server_ip, rsync_port)
 
             # Rsync the mounted folder to the data directory on the server
-            rsync_folder_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                 mounted_folder_path + '/', server_backup_data_dir]
             logging.info(f"Starting rsync for backup data to {server_backup_data_dir}")
             subprocess.run(rsync_folder_cmd, check=True)
             logging.info("Backup data rsync completed successfully.")
 
             # Rsync the metadata file to the etc directory on the server
-            rsync_metadata_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                   metadata_file_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for metadata file to {server_backup_etc_dir}")
             subprocess.run(rsync_metadata_cmd, check=True)
             logging.info("Metadata file rsync completed successfully.")
 
             # Optional: Rsync additional configuration files like config.toml to the etc directory
-            rsync_config_cmd = ['sudo', 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                 config_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
             subprocess.run(rsync_config_cmd, check=True)

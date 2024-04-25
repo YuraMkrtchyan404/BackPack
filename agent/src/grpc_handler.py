@@ -47,13 +47,13 @@ def notify_server_about_rsync_completion(folder, server_ip, grpc_port):
     try:
         with grpc.insecure_channel(f'{server_ip}:{grpc_port}') as channel:
             logging.info(f"GRPC insecure channel established: {server_ip}:{grpc_port}")
-            print(1)
+            # print(1)
             stub = communication_pb2_grpc.RsyncNotificationsStub(channel)
-            print(2)
+            # print(2)
             request = communication_pb2.RsyncCompletionRequest(folder_name=folder)
-            print(3)
+            # print(3)
             response = stub.TakeSnapshotAfterRsyncCompletion(request)
-            print(4)
+            # print(4)
             if response.success:
                 logging.info(response.message)
             else:
