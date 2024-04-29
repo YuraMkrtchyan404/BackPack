@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommunication.proto\"-\n\x16RsyncCompletionRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\">\n\x1aSnapshotCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2n\n\x12RsyncNotifications\x12X\n TakeSnapshotAfterRsyncCompletion\x12\x17.RsyncCompletionRequest\x1a\x1b.SnapshotCompletionResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommunication.proto\"-\n\x16RsyncCompletionRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\">\n\x1aSnapshotCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"(\n\x11RsyncStartRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\"A\n\x1dPreparationCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xc4\x01\n\x12RsyncNotifications\x12X\n TakeSnapshotAfterRsyncCompletion\x12\x17.RsyncCompletionRequest\x1a\x1b.SnapshotCompletionResponse\x12T\n\x1ePrepareDatasetBeforeRsyncStart\x12\x12.RsyncStartRequest\x1a\x1e.PreparationCompletionResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,6 +25,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_RSYNCCOMPLETIONREQUEST']._serialized_end=68
   _globals['_SNAPSHOTCOMPLETIONRESPONSE']._serialized_start=70
   _globals['_SNAPSHOTCOMPLETIONRESPONSE']._serialized_end=132
-  _globals['_RSYNCNOTIFICATIONS']._serialized_start=134
-  _globals['_RSYNCNOTIFICATIONS']._serialized_end=244
+  _globals['_RSYNCSTARTREQUEST']._serialized_start=134
+  _globals['_RSYNCSTARTREQUEST']._serialized_end=174
+  _globals['_PREPARATIONCOMPLETIONRESPONSE']._serialized_start=176
+  _globals['_PREPARATIONCOMPLETIONRESPONSE']._serialized_end=241
+  _globals['_RSYNCNOTIFICATIONS']._serialized_start=244
+  _globals['_RSYNCNOTIFICATIONS']._serialized_end=440
 # @@protoc_insertion_point(module_scope)

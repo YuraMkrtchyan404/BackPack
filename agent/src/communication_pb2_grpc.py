@@ -20,6 +20,11 @@ class RsyncNotificationsStub(object):
                 request_serializer=communication__pb2.RsyncCompletionRequest.SerializeToString,
                 response_deserializer=communication__pb2.SnapshotCompletionResponse.FromString,
                 )
+        self.PrepareDatasetBeforeRsyncStart = channel.unary_unary(
+                '/RsyncNotifications/PrepareDatasetBeforeRsyncStart',
+                request_serializer=communication__pb2.RsyncStartRequest.SerializeToString,
+                response_deserializer=communication__pb2.PreparationCompletionResponse.FromString,
+                )
 
 
 class RsyncNotificationsServicer(object):
@@ -33,6 +38,12 @@ class RsyncNotificationsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PrepareDatasetBeforeRsyncStart(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_RsyncNotificationsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -40,6 +51,11 @@ def add_RsyncNotificationsServicer_to_server(servicer, server):
                     servicer.TakeSnapshotAfterRsyncCompletion,
                     request_deserializer=communication__pb2.RsyncCompletionRequest.FromString,
                     response_serializer=communication__pb2.SnapshotCompletionResponse.SerializeToString,
+            ),
+            'PrepareDatasetBeforeRsyncStart': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareDatasetBeforeRsyncStart,
+                    request_deserializer=communication__pb2.RsyncStartRequest.FromString,
+                    response_serializer=communication__pb2.PreparationCompletionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,5 +82,22 @@ class RsyncNotifications(object):
         return grpc.experimental.unary_unary(request, target, '/RsyncNotifications/TakeSnapshotAfterRsyncCompletion',
             communication__pb2.RsyncCompletionRequest.SerializeToString,
             communication__pb2.SnapshotCompletionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PrepareDatasetBeforeRsyncStart(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/RsyncNotifications/PrepareDatasetBeforeRsyncStart',
+            communication__pb2.RsyncStartRequest.SerializeToString,
+            communication__pb2.PreparationCompletionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

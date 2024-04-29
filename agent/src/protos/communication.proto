@@ -4,6 +4,7 @@ syntax = "proto3";
 service RsyncNotifications {
   // Notify the server about a successful rsync transfer
   rpc TakeSnapshotAfterRsyncCompletion (RsyncCompletionRequest) returns (SnapshotCompletionResponse);
+  rpc PrepareDatasetBeforeRsyncStart (RsyncStartRequest) returns (PreparationCompletionResponse);
 }
 
 // Request message for notifying rsync completion
@@ -13,6 +14,15 @@ message RsyncCompletionRequest {
 
 // Response message for rsync completion notification
 message SnapshotCompletionResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message RsyncStartRequest {
+  string folder_name = 1;
+}
+
+message PreparationCompletionResponse {
   bool success = 1;
   string message = 2;
 }
