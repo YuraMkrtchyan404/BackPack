@@ -43,23 +43,29 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
 
         logging.info(f"Received rsync preparation notification for folder '{folder_name}'")
         try:
-            if not os.path.exists(dataset_path):
+            # Check and create the main dataset if not exists
+            result = subprocess.run(['sudo', 'zfs', 'list', dataset_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if result.returncode != 0:
                 subprocess.run(['sudo', 'zfs', 'create', dataset_path], check=True)
                 logging.info(f"Dataset created successfully for folder '{folder_name}'")
-                subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', dataset_path], check=True)
-                logging.info(f"ZFS permissions set for user 'user1808' on '{dataset_path}'")
+            
+            # Set ZFS permissions
+            subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', dataset_path], check=True)
+            logging.info(f"ZFS permissions set for user 'user1808' on '{dataset_path}'")
 
+            # Process each sub-dataset (data and etc)
             for sub_dataset in [data_dataset_path, etc_dataset_path]:
-                if not os.path.exists(sub_dataset):
+                # Check and create sub-datasets if they do not exist
+                result = subprocess.run(['sudo', 'zfs', 'list', sub_dataset], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                if result.returncode != 0:
                     subprocess.run(['sudo', 'zfs', 'create', sub_dataset], check=True)
                     logging.info(f"Child dataset '{sub_dataset}' created successfully")
-                    
-                    subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', sub_dataset], check=True)
-                    logging.info(f"ZFS permissions set for user 'user1808' on '{sub_dataset}'")
 
-                    subprocess.run(['sudo', 'chown', '-R', 'user1808:user1808', f"/{sub_dataset}"], check=True)
-                    subprocess.run(['sudo', 'chmod', '-R', 'u+rwX', f"/{sub_dataset}"], check=True)
-                    logging.info(f"File system permissions configured for '{sub_dataset}'")
+                # Set ZFS and file system permissions
+                subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', sub_dataset], check=True)
+                subprocess.run(['sudo', 'chown', '-R', 'user1808:user1808', f"/{sub_dataset}"], check=True)
+                subprocess.run(['sudo', 'chmod', '-R', 'u+rwX', f"/{sub_dataset}"], check=True)
+                logging.info(f"Permissions configured for '{sub_dataset}'")
 
             return SnapshotCompletionResponse(success=True, message=f"Dataset {folder_name} prepared successfully")
         except Exception as e:
