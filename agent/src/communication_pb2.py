@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommunication.proto\"-\n\x16RsyncCompletionRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\">\n\x1aSnapshotCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"(\n\x11RsyncStartRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\"A\n\x1dPreparationCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xc4\x01\n\x12RsyncNotifications\x12X\n TakeSnapshotAfterRsyncCompletion\x12\x17.RsyncCompletionRequest\x1a\x1b.SnapshotCompletionResponse\x12T\n\x1ePrepareDatasetBeforeRsyncStart\x12\x12.RsyncStartRequest\x1a\x1e.PreparationCompletionResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x63ommunication.proto\"-\n\x16RsyncCompletionRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\">\n\x1aSnapshotCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"(\n\x11RsyncStartRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\"A\n\x1dPreparationCompletionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"+\n\x14ListSnapshotsRequest\x12\x13\n\x0b\x66older_name\x18\x01 \x01(\t\"L\n\x15ListSnapshotsResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\tsnapshots\x18\x03 \x03(\t2\x84\x02\n\x12RsyncNotifications\x12X\n TakeSnapshotAfterRsyncCompletion\x12\x17.RsyncCompletionRequest\x1a\x1b.SnapshotCompletionResponse\x12T\n\x1ePrepareDatasetBeforeRsyncStart\x12\x12.RsyncStartRequest\x1a\x1e.PreparationCompletionResponse\x12>\n\rListSnapshots\x12\x15.ListSnapshotsRequest\x1a\x16.ListSnapshotsResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,6 +29,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_RSYNCSTARTREQUEST']._serialized_end=174
   _globals['_PREPARATIONCOMPLETIONRESPONSE']._serialized_start=176
   _globals['_PREPARATIONCOMPLETIONRESPONSE']._serialized_end=241
-  _globals['_RSYNCNOTIFICATIONS']._serialized_start=244
-  _globals['_RSYNCNOTIFICATIONS']._serialized_end=440
+  _globals['_LISTSNAPSHOTSREQUEST']._serialized_start=243
+  _globals['_LISTSNAPSHOTSREQUEST']._serialized_end=286
+  _globals['_LISTSNAPSHOTSRESPONSE']._serialized_start=288
+  _globals['_LISTSNAPSHOTSRESPONSE']._serialized_end=364
+  _globals['_RSYNCNOTIFICATIONS']._serialized_start=367
+  _globals['_RSYNCNOTIFICATIONS']._serialized_end=627
 # @@protoc_insertion_point(module_scope)

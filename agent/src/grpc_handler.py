@@ -52,3 +52,19 @@ def notify_server_about_rsync_completion(folder, server_ip, grpc_port):
                 logging.error(response.message)
     except grpc.RpcError as e:
         logging.error(f"gRPC call for taking a zfs snapshot failed: {e.details()}")
+        
+def request_snapshot_list_from_server(folder, server_ip, grpc_port):
+    try:
+        with grpc.insecure_channel(f'{server_ip}:{grpc_port}') as channel:
+            logging.info(f"GRPC insecure channel established for listing snapshots: {server_ip}:{grpc_port}")
+            stub = communication_pb2_grpc.RsyncNotificationsStub(channel)
+            request = communication_pb2.ListSnapshotsRequest(folder_name=folder)
+            response = stub.ListSnapshots(request)
+            if response.success:
+                logging.info(f"Successfully retrieved snapshot list: {response.snapshots}")
+                return response.snapshots
+            else:
+                logging.error(f"Failed to retrieve snapshot list: {response.message}")
+    except grpc.RpcError as e:
+        logging.error(f"gRPC call for listing snapshots failed: {e.details()}")
+        return None

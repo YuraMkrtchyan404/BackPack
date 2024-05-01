@@ -182,3 +182,28 @@
 2024-04-30 01:46:10 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
 2024-04-30 01:46:10 INFO: Snapshot 0 successfully destroyed.
 2024-04-30 01:46:10 INFO: Snapshot setup and backup completed successfully.
+2024-05-02 00:08:28 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-02 00:08:28 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder4
+2024-05-02 00:08:28 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-02 00:08:39 INFO: Dataset test_folder4 prepared successfully
+2024-05-02 00:08:39 INFO: Metadata file created at: /tmp/tmpq0gan1dn/metadata.json
+2024-05-02 00:08:39 INFO: Metadata file prepared and stored temporarily.
+2024-05-02 00:08:39 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder4/data/
+2024-05-02 00:08:39 INFO: Backup data rsync completed successfully.
+2024-05-02 00:08:39 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder4/etc/
+2024-05-02 00:08:40 INFO: Metadata file rsync completed successfully.
+2024-05-02 00:08:40 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder4/etc/
+2024-05-02 00:08:40 INFO: Configuration file rsync completed successfully.
+2024-05-02 00:08:40 INFO: Backup to server completed successfully.
+2024-05-02 00:08:40 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-02 00:08:40 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-02 00:08:40 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-02 00:08:41 INFO: Snapshot 0 successfully destroyed.
+2024-05-02 00:08:41 INFO: Snapshot setup and backup completed successfully.
+2024-05-02 02:14:43 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-02 02:16:53 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-02 02:16:58 INFO: Successfully retrieved snapshot list: ['backup-pool/backup_data/test_folder4@20240502000840_test_folder4', 'backup-pool/backup_data/test_folder4@20240430014610_test_folder4', 'backup-pool/backup_data/test_folder4@20240430013426_test_folder4', 'backup-pool/backup_data/test_folder4@20240430012743_test_folder4', 'backup-pool/backup_data/test_folder4@20240430011803_test_folder4']
+2024-05-02 02:20:50 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-02 02:20:50 INFO: Successfully retrieved snapshot list: ['backup-pool/backup_data/test_folder4@20240502000840_test_folder4', 'backup-pool/backup_data/test_folder4@20240430014610_test_folder4', 'backup-pool/backup_data/test_folder4@20240430013426_test_folder4', 'backup-pool/backup_data/test_folder4@20240430012743_test_folder4', 'backup-pool/backup_data/test_folder4@20240430011803_test_folder4']
+2024-05-02 02:21:03 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-02 02:21:03 ERROR: Failed to retrieve snapshot list: Error listing snapshots: cannot open 'backup-pool/backup_data/test_folder': dataset does not exist
