@@ -6,8 +6,7 @@ import communication_pb2 as communication__pb2
 
 
 class RsyncNotificationsStub(object):
-    """Define the service for notifying the server about rsync completion
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -25,20 +24,29 @@ class RsyncNotificationsStub(object):
                 request_serializer=communication__pb2.RsyncStartRequest.SerializeToString,
                 response_deserializer=communication__pb2.PreparationCompletionResponse.FromString,
                 )
+        self.ListSnapshots = channel.unary_unary(
+                '/RsyncNotifications/ListSnapshots',
+                request_serializer=communication__pb2.ListSnapshotsRequest.SerializeToString,
+                response_deserializer=communication__pb2.ListSnapshotsResponse.FromString,
+                )
 
 
 class RsyncNotificationsServicer(object):
-    """Define the service for notifying the server about rsync completion
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def TakeSnapshotAfterRsyncCompletion(self, request, context):
-        """Notify the server about a successful rsync transfer
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PrepareDatasetBeforeRsyncStart(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSnapshots(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -57,6 +65,11 @@ def add_RsyncNotificationsServicer_to_server(servicer, server):
                     request_deserializer=communication__pb2.RsyncStartRequest.FromString,
                     response_serializer=communication__pb2.PreparationCompletionResponse.SerializeToString,
             ),
+            'ListSnapshots': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSnapshots,
+                    request_deserializer=communication__pb2.ListSnapshotsRequest.FromString,
+                    response_serializer=communication__pb2.ListSnapshotsResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'RsyncNotifications', rpc_method_handlers)
@@ -65,8 +78,7 @@ def add_RsyncNotificationsServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class RsyncNotifications(object):
-    """Define the service for notifying the server about rsync completion
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def TakeSnapshotAfterRsyncCompletion(request,
@@ -99,5 +111,22 @@ class RsyncNotifications(object):
         return grpc.experimental.unary_unary(request, target, '/RsyncNotifications/PrepareDatasetBeforeRsyncStart',
             communication__pb2.RsyncStartRequest.SerializeToString,
             communication__pb2.PreparationCompletionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSnapshots(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/RsyncNotifications/ListSnapshots',
+            communication__pb2.ListSnapshotsRequest.SerializeToString,
+            communication__pb2.ListSnapshotsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

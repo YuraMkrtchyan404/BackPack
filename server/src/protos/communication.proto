@@ -1,18 +1,15 @@
 syntax = "proto3";
 
-// Define the service for notifying the server about rsync completion
 service RsyncNotifications {
-  // Notify the server about a successful rsync transfer
   rpc TakeSnapshotAfterRsyncCompletion (RsyncCompletionRequest) returns (SnapshotCompletionResponse);
   rpc PrepareDatasetBeforeRsyncStart (RsyncStartRequest) returns (PreparationCompletionResponse);
+  rpc ListSnapshots (ListSnapshotsRequest) returns (ListSnapshotsResponse);
 }
 
-// Request message for notifying rsync completion
 message RsyncCompletionRequest {
   string folder_name = 1;
 }
 
-// Response message for rsync completion notification
 message SnapshotCompletionResponse {
   bool success = 1;
   string message = 2;
@@ -25,4 +22,14 @@ message RsyncStartRequest {
 message PreparationCompletionResponse {
   bool success = 1;
   string message = 2;
+}
+
+message ListSnapshotsRequest {
+  string folder_name = 1; // Optional argument
+}
+
+message ListSnapshotsResponse {
+  bool success = 1;
+  string message = 2;
+  repeated string snapshots = 3;
 }

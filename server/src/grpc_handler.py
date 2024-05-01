@@ -1,10 +1,10 @@
 from concurrent import futures
 import logging
-import os
 import subprocess
 import grpc
-from communication_pb2 import RsyncCompletionRequest, SnapshotCompletionResponse
+from communication_pb2 import SnapshotCompletionResponse, ListSnapshotsResponse
 from communication_pb2_grpc import RsyncNotificationsServicer, add_RsyncNotificationsServicer_to_server
+
 from snapshot_history import create_snapshot
 from os.path import basename
 
@@ -16,24 +16,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-class RsyncNotificationsService(RsyncNotificationsServicer):
-    def TakeSnapshotAfterRsyncCompletion(self, request, context):
-        full_folder_path = request.folder_name
-        folder_name = basename(full_folder_path)
-
-        logging.info(f"Received rsync completion notification for folder '{folder_name}'")
-        try:
-            if create_snapshot(folder_name):
-                logging.info(f"Snapshot created successfully for folder '{folder_name}'")
-
-                return SnapshotCompletionResponse(success=True, message="Snapshot successfully added to the ZFS history on the server")
-            else:
-                raise Exception("Snapshot creation reported failure without exception.")
-        except Exception as e:
-            error_msg = f"Failed to create ZFS snapshot for folder '{folder_name}': {str(e)}"
-            logging.error(error_msg, exc_info=True)
-            return SnapshotCompletionResponse(success=False, message=error_msg)
-    
+class RsyncNotificationsService(RsyncNotificationsServicer):    
     def PrepareDatasetBeforeRsyncStart(self, request, context):
         full_folder_path = request.folder_name
         folder_name = basename(full_folder_path)
@@ -73,6 +56,46 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             logging.error(error_msg, exc_info=True)
             return SnapshotCompletionResponse(success=False, message=error_msg)
 
+    def TakeSnapshotAfterRsyncCompletion(self, request, context):
+        full_folder_path = request.folder_name
+        folder_name = basename(full_folder_path)
+
+        logging.info(f"Received rsync completion notification for folder '{folder_name}'")
+        try:
+            if create_snapshot(folder_name):
+                logging.info(f"Snapshot created successfully for folder '{folder_name}'")
+
+                return SnapshotCompletionResponse(success=True, message="Snapshot successfully added to the ZFS history on the server")
+            else:
+                raise Exception("Snapshot creation reported failure without exception.")
+        except Exception as e:
+            error_msg = f"Failed to create ZFS snapshot for folder '{folder_name}': {str(e)}"
+            logging.error(error_msg, exc_info=True)
+            return SnapshotCompletionResponse(success=False, message=error_msg)
+        
+    def ListSnapshots(self, request, context):
+        folder_name = request.folder_name
+        logging.info(f"Request to list snapshots for folder: '{folder_name}' (empty means all)")
+        try:
+            if folder_name:
+                snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', f"backup-pool/backup_data/{folder_name}"]
+            else:
+                snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', 'backup-pool/backup_data']
+
+            result = subprocess.run(snapshot_search_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            if result.returncode == 0:
+                snapshots = result.stdout.strip().split('\n')[1:][::-1]
+                logging.info(f"Snapshots retrieved successfully: {snapshots}")
+                return ListSnapshotsResponse(success=True, snapshots=snapshots, message="Snapshots listed successfully")
+            else:
+                error_msg = f"Error listing snapshots: {result.stderr.strip()}"
+                logging.error(error_msg)
+                return ListSnapshotsResponse(success=False, message=error_msg)
+        except Exception as e:
+            error_msg = f"Failed to list snapshots: {str(e)}"
+            logging.error(error_msg, exc_info=True)
+            return ListSnapshotsResponse(success=False, message=error_msg)
+        
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=5))
     add_RsyncNotificationsServicer_to_server(RsyncNotificationsService(), server)
