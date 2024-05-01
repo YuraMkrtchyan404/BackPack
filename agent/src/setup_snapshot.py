@@ -7,7 +7,7 @@ import socket
 import json
 import tempfile
 
-from grpc_handler import notify_server_about_rsync_completion
+from grpc_handler import notify_server_about_rsync_completion, notify_server_about_rsync_start
 
 def load_config():
     with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
@@ -31,18 +31,6 @@ logging.basicConfig(level=logging.INFO,
                         logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
                         logging.StreamHandler()
                     ])
-
-# def check_port(host, port):
-#     """Attempt to bind to a port and return the socket if successful."""
-#     sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
-#     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-#     try:
-#         sock.bind((host, port))
-#         return sock
-#     except socket.error as e:
-#         sock.close()
-#         logging.error(f"Port {port} is in use: {e}")
-#         return None
 
 def insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path):
     metadata = {
@@ -112,30 +100,21 @@ def get_free_minor():
 
 def mount_snapshot(snapshot_path, mount_point):
     snapshot_dir = os.path.join(mount_point, os.path.basename(snapshot_path))
-    #print(f"mount dir {snapshot_dir}")
-    #print(f"Heree path  {snapshot_path}")
-    
     os.makedirs(snapshot_dir, exist_ok=True)
-
     mount_cmd = ['sudo', 'mount', snapshot_path, snapshot_dir]
     mount_output = subprocess.run(mount_cmd)
-
     if mount_output.returncode != 0:
         logging.error("Error occurred while mounting snapshot.")
         return False
-
     logging.info(f"Snapshot mounted successfully at {snapshot_dir}.")
     return True
 
 def umount_snapshot(snapshot_path):
-
     umount_cmd = ['sudo', 'umount', snapshot_path]
     umount_output = subprocess.run(umount_cmd)
-
     if umount_output.returncode != 0:
         logging.error("Error occurred while umounting snapshot.")
         return False
-
     logging.info(f"Snapshot umounted successfully at {snapshot_path}.")
     return True
 
@@ -143,7 +122,6 @@ def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
     abs_folder_path = os.path.abspath(folder_path)
     snapshot_dir = os.path.join(mount_point, os.path.basename(snapshot_path))
     mounted_folder_path = os.path.join(snapshot_dir, abs_folder_path.lstrip('/'))
-   # print(mounted_folder_path)
     if os.path.exists(mounted_folder_path):
         logging.info("Full path of the mounted folder in snapshot: %s", mounted_folder_path)
         return mounted_folder_path
@@ -151,51 +129,29 @@ def full_path_of_mounted_folder(mount_point, snapshot_path, folder_path):
         logging.error("Folder not found in snapshot.")
         return None
 
-def prepare_server_directories(server_backup_data_dir, server_backup_etc_dir, server_username, server_ip, rsync_port):
-    try:
-        remote_command = f'mkdir -p {server_backup_data_dir} {server_backup_etc_dir}'
-        command = [
-            'sudo', 'sshpass', '-p', str(ssh_password), 'sudo', 'ssh', '-p', str(rsync_port), f'{server_username}@{server_ip}', remote_command
-        ]
-        # print("command: ", ' '.join(command))
-        logging.info(f"Preparing server directories with command: {' '.join(command)}")
-        subprocess.run(command, check=True)
-        logging.info("Server directories prepared successfully.")
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Failed to create directories on server: {e}")
-        raise RuntimeError(f"Failed to create server directories: {e}")
-
 def backup_to_server(mounted_folder_path, original_folder_path, standard_recovery_path):
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
-            # Prepare metadata file
             metadata_file_path = insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path)
             logging.info("Metadata file prepared and stored temporarily.")
 
-            # Directory on the server where the backup folder resides
             folder_name = os.path.basename(mounted_folder_path)
             server_backup_dir = f"{server_username}@{server_ip}:/backup-pool/backup_data/{folder_name}"
             server_backup_data_dir = f"{server_backup_dir}/data/"
             server_backup_etc_dir = f"{server_backup_dir}/etc/"
 
-            # Ensure remote directories exist
-            prepare_server_directories(server_backup_data_dir.split(':')[1], server_backup_etc_dir.split(':')[1], server_username, server_ip, rsync_port)
-
-            # Rsync the mounted folder to the data directory on the server
             rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                 mounted_folder_path + '/', server_backup_data_dir]
             logging.info(f"Starting rsync for backup data to {server_backup_data_dir}")
             subprocess.run(rsync_folder_cmd, check=True)
             logging.info("Backup data rsync completed successfully.")
 
-            # Rsync the metadata file to the etc directory on the server
             rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                   metadata_file_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for metadata file to {server_backup_etc_dir}")
             subprocess.run(rsync_metadata_cmd, check=True)
             logging.info("Metadata file rsync completed successfully.")
 
-            # Optional: Rsync additional configuration files like /home/yura/capstone/OS_Snapshots/agent/config.toml to the etc directory
             rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
                                 config_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
@@ -256,7 +212,7 @@ def setup_snapshot():
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)
                 return False
-
+            notify_server_about_rsync_start(folder, server_ip, grpc_port)
             if not backup_to_server(mounted_folder_path, folder, standard_recovery_path):
                 umount_snapshot(snapshot_path)
                 destroy_snapshot(minor)

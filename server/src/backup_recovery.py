@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-# TODO Send config with every backup. Retrienve these from the config file. 
+# TODO Send config with every backup. Retrieve these from the config file. 
 backup_image_root = "/backup-pool/backup_data"
 snapshot_root = "backup-pool/snapshot_history"
 server_username = "user1808"
