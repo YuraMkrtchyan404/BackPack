@@ -4,6 +4,7 @@ service RsyncNotifications {
   rpc TakeSnapshotAfterRsyncCompletion (RsyncCompletionRequest) returns (SnapshotCompletionResponse);
   rpc PrepareDatasetBeforeRsyncStart (RsyncStartRequest) returns (PreparationCompletionResponse);
   rpc ListSnapshots (ListSnapshotsRequest) returns (ListSnapshotsResponse);
+  rpc RecoverSnapshot (RecoverSnapshotRequest) returns (RecoverSnapshotResponse);
 }
 
 message RsyncCompletionRequest {
@@ -32,4 +33,19 @@ message ListSnapshotsResponse {
   bool success = 1;
   string message = 2;
   repeated string snapshots = 3;
+}
+
+message RecoverSnapshotRequest {
+  string snapshot_name = 1;
+  RecoveryMode mode = 2;
+}
+
+message RecoverSnapshotResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+enum RecoveryMode {
+  ORIGINAL = 0;
+  STANDARD = 1;
 }

@@ -207,3 +207,25 @@
 2024-05-02 02:20:50 INFO: Successfully retrieved snapshot list: ['backup-pool/backup_data/test_folder4@20240502000840_test_folder4', 'backup-pool/backup_data/test_folder4@20240430014610_test_folder4', 'backup-pool/backup_data/test_folder4@20240430013426_test_folder4', 'backup-pool/backup_data/test_folder4@20240430012743_test_folder4', 'backup-pool/backup_data/test_folder4@20240430011803_test_folder4']
 2024-05-02 02:21:03 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
 2024-05-02 02:21:03 ERROR: Failed to retrieve snapshot list: Error listing snapshots: cannot open 'backup-pool/backup_data/test_folder': dataset does not exist
+2024-05-03 00:47:18 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-03 00:47:19 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder
+2024-05-03 00:47:19 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-03 00:47:25 INFO: Dataset test_folder prepared successfully
+2024-05-03 00:47:25 INFO: Metadata file created at: /tmp/tmpo_xj_42l/metadata.json
+2024-05-03 00:47:25 INFO: Metadata file prepared and stored temporarily.
+2024-05-03 00:47:25 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder/data/
+2024-05-03 00:47:26 INFO: Backup data rsync completed successfully.
+2024-05-03 00:47:26 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder/etc/
+2024-05-03 00:47:26 INFO: Metadata file rsync completed successfully.
+2024-05-03 00:47:26 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder/etc/
+2024-05-03 00:47:27 INFO: Configuration file rsync completed successfully.
+2024-05-03 00:47:27 INFO: Backup to server completed successfully.
+2024-05-03 00:47:27 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-03 00:47:27 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-03 00:47:28 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-03 00:47:28 INFO: Snapshot 0 successfully destroyed.
+2024-05-03 00:47:28 INFO: Snapshot setup and backup completed successfully.
+2024-05-03 02:25:00 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-03 02:25:00 ERROR: gRPC call for listing snapshots failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:50051: Failed to connect to remote host: Connection refused
+2024-05-03 02:25:29 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-03 02:25:35 INFO: Successfully retrieved snapshot list: ['backup-pool/backup_data/test_folder@20240503004727_test_folder', 'backup-pool/backup_data/test_folder4@20240502000840_test_folder4', 'backup-pool/backup_data/test_folder4@20240430014610_test_folder4', 'backup-pool/backup_data/test_folder4@20240430013426_test_folder4', 'backup-pool/backup_data/test_folder4@20240430012743_test_folder4', 'backup-pool/backup_data/test_folder4@20240430011803_test_folder4']

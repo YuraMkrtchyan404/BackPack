@@ -26,25 +26,20 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
 
         logging.info(f"Received rsync preparation notification for folder '{folder_name}'")
         try:
-            # Check and create the main dataset if not exists
             result = subprocess.run(['sudo', 'zfs', 'list', dataset_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if result.returncode != 0:
                 subprocess.run(['sudo', 'zfs', 'create', dataset_path], check=True)
                 logging.info(f"Dataset created successfully for folder '{folder_name}'")
             
-            # Set ZFS permissions
             subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', dataset_path], check=True)
             logging.info(f"ZFS permissions set for user 'user1808' on '{dataset_path}'")
 
-            # Process each sub-dataset (data and etc)
             for sub_dataset in [data_dataset_path, etc_dataset_path]:
-                # Check and create sub-datasets if they do not exist
                 result = subprocess.run(['sudo', 'zfs', 'list', sub_dataset], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 if result.returncode != 0:
                     subprocess.run(['sudo', 'zfs', 'create', sub_dataset], check=True)
                     logging.info(f"Child dataset '{sub_dataset}' created successfully")
 
-                # Set ZFS and file system permissions
                 subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', sub_dataset], check=True)
                 subprocess.run(['sudo', 'chown', '-R', 'user1808:user1808', f"/{sub_dataset}"], check=True)
                 subprocess.run(['sudo', 'chmod', '-R', 'u+rwX', f"/{sub_dataset}"], check=True)
@@ -59,12 +54,10 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
     def TakeSnapshotAfterRsyncCompletion(self, request, context):
         full_folder_path = request.folder_name
         folder_name = basename(full_folder_path)
-
         logging.info(f"Received rsync completion notification for folder '{folder_name}'")
         try:
             if create_snapshot(folder_name):
                 logging.info(f"Snapshot created successfully for folder '{folder_name}'")
-
                 return SnapshotCompletionResponse(success=True, message="Snapshot successfully added to the ZFS history on the server")
             else:
                 raise Exception("Snapshot creation reported failure without exception.")
@@ -81,7 +74,6 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
                 snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', f"backup-pool/backup_data/{folder_name}"]
             else:
                 snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', 'backup-pool/backup_data']
-
             result = subprocess.run(snapshot_search_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             if result.returncode == 0:
                 snapshots = result.stdout.strip().split('\n')[1:][::-1]

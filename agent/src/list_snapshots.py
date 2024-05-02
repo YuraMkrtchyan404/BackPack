@@ -16,7 +16,6 @@ def main():
     parser.add_argument('--folder_name', type=str, help='Specify a folder name to list snapshots for that folder only', default='')
     args = parser.parse_args()
     
-    # Fetch snapshots from the server
     snapshots = grpc_handler.request_snapshot_list_from_server(args.folder_name, server_ip, grpc_port)
     
     if snapshots:
