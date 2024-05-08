@@ -1,3 +1,4 @@
+import getpass
 import subprocess
 import os
 import logging
@@ -9,8 +10,10 @@ import tempfile
 
 from grpc_handler import notify_server_about_rsync_completion, notify_server_about_rsync_start
 
+user_name = getpass.getuser()
+config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
 def load_config():
-    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open(config_path, "r") as file:
         config = toml.load(file)
     return config
 
@@ -21,27 +24,40 @@ rsync_port = config.get("rsync_port")
 grpc_port = config.get("grpc_port")
 folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
-config_path = "/home/yura/capstone/OS_Snapshots/agent/config.toml"
 ssh_password = config.get("ssh_password")
 
+log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
+                        logging.FileHandler(log_path),
                         logging.StreamHandler()
                     ])
 
+def get_client_ip():
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.connect(("8.8.8.8", 80))  # Does not actually send data
+            return s.getsockname()[0]
+    except Exception as e:
+        logging.error(f"Failed to detect IP address: {e}")
+        return "Unable to detect IP"
+
 def insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path):
+    client_ip = get_client_ip()  
+    client_username = getpass.getuser()
     metadata = {
         "original_path": original_folder_path,
-        "standard_recovery_path": standard_recovery_path
+        "standard_recovery_path": standard_recovery_path,
+        "client_ip": client_ip,
+        "client_username": client_username 
     }
     metadata_file_path = os.path.join(temp_dir, 'metadata.json')
     try:
         with open(metadata_file_path, 'w') as file:
             json.dump(metadata, file)
-        logging.info(f"Metadata file created at: {metadata_file_path}")
+        logging.info(f"Metadata file created with IP and username at: {metadata_file_path}")
         return metadata_file_path
     except IOError as e:
         logging.error(f"Failed to write metadata file: {e}")

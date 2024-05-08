@@ -1,5 +1,4 @@
 import subprocess
-import os
 import logging
 from datetime import datetime
 
@@ -16,7 +15,7 @@ def create_snapshot(folder_name):
     snapshot_name = datetime.now().strftime("%Y%m%d%H%M%S") + "_" + folder_name
 
     try:
-        subprocess.run(['sudo', 'zfs', 'snapshot', f'{dataset_path}@{snapshot_name}'], check=True)
+        subprocess.run(['sudo', 'zfs', 'snapshot', '-r', f'{dataset_path}@{snapshot_name}'], check=True)
         logging.info(f"Snapshot '{snapshot_name}' created for dataset '{dataset_path}'.")
         return True
     except subprocess.CalledProcessError as e:
