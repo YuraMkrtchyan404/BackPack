@@ -111,13 +111,17 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             else:
                 raise ValueError("Invalid recovery mode specified")
 
-            # Perform the recovery using rsync
-            source_directory = f"{dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/*"
-            rsync_command = ['sudo', 'rsync', '-a', '--delete', source_directory, target_directory]
+            # Assuming the client's IP address and user are part of the recovery mode configuration
+            client_ip = metadata['client_ip']
+            client_username = metadata['client_username']
+            remote_target_directory = f"{client_username}@{client_ip}:{target_directory}"
+
+            ssh_options = "-e 'ssh -p 22'"  # Define SSH options
+            rsync_command = ['sudo', 'rsync', '-av', '--delete', ssh_options, f"{dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/", remote_target_directory]
             result = subprocess.run(rsync_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             
             if result.returncode == 0:
-                logging.info(f"Snapshot '{snapshot_name}' recovered successfully to {target_directory}")
+                logging.info(f"Snapshot '{snapshot_name}' recovered successfully to {target_directory} on remote client {client_ip}")
                 return SnapshotCompletionResponse(success=True, message="Snapshot recovered successfully")
             else:
                 raise subprocess.CalledProcessError(result.returncode, ' '.join(rsync_command), result.stderr)

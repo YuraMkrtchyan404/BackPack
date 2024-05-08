@@ -1,3 +1,4 @@
+import getpass
 import subprocess
 import os
 import logging
@@ -32,16 +33,29 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
+def get_client_ip():
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+            s.connect(("8.8.8.8", 80))  # Does not actually send data
+            return s.getsockname()[0]
+    except Exception as e:
+        logging.error(f"Failed to detect IP address: {e}")
+        return "Unable to detect IP"
+
 def insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path):
+    client_ip = get_client_ip()  
+    client_username = getpass.getuser()
     metadata = {
         "original_path": original_folder_path,
-        "standard_recovery_path": standard_recovery_path
+        "standard_recovery_path": standard_recovery_path,
+        "client_ip": client_ip,
+        "client_username": client_username 
     }
     metadata_file_path = os.path.join(temp_dir, 'metadata.json')
     try:
         with open(metadata_file_path, 'w') as file:
             json.dump(metadata, file)
-        logging.info(f"Metadata file created at: {metadata_file_path}")
+        logging.info(f"Metadata file created with IP and username at: {metadata_file_path}")
         return metadata_file_path
     except IOError as e:
         logging.error(f"Failed to write metadata file: {e}")
