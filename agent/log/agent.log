@@ -601,3 +601,47 @@ drwxrwxr-x 2 yura yura 4096 Մայ  3 00:46 justFolder/
 2024-05-09 01:35:07 ERROR: Failed to retrieve snapshot list: Error listing snapshots: cannot open 'backup-pool/backup_data/': trailing slash in name
 2024-05-09 01:36:54 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
 2024-05-09 01:36:54 INFO: Successfully retrieved snapshot list: ['test_folder@20240508014820_test_folder', 'test_folder@20240508015623_test_folder', 'test_folder@20240508023953_test_folder', 'test_folder@20240508024036_test_folder', 'test_folder@20240508031630_test_folder', 'test_folder1@20240509011149_test_folder1']
+2024-05-09 02:29:24 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-09 02:29:28 INFO: Successfully retrieved snapshot list: ['test_folder@20240508014820_test_folder', 'test_folder@20240508015623_test_folder', 'test_folder@20240508023953_test_folder', 'test_folder@20240508024036_test_folder', 'test_folder@20240508031630_test_folder', 'test_folder1@20240509011149_test_folder1']
+2024-05-09 02:41:55 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-09 02:41:55 INFO: Successfully retrieved snapshot list: ['test_folder@20240508014820_test_folder', 'test_folder@20240508015623_test_folder', 'test_folder@20240508023953_test_folder', 'test_folder@20240508024036_test_folder', 'test_folder@20240508031630_test_folder', 'test_folder1@20240509011149_test_folder1']
+2024-05-09 02:45:08 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 02:45:09 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-05-09 02:45:09 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 02:45:09 ERROR: gRPC call for rsync start preperation failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:50051: Failed to connect to remote host: Connection refused
+2024-05-09 02:45:09 INFO: Metadata file created with IP and username at: /tmp/tmptiuwtx2d/metadata.json
+2024-05-09 02:45:09 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 02:45:09 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-05-09 02:45:10 INFO: Backup data rsync completed successfully.
+2024-05-09 02:45:10 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-05-09 02:45:11 INFO: Metadata file rsync completed successfully.
+2024-05-09 02:45:11 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-05-09 02:45:12 INFO: Configuration file rsync completed successfully.
+2024-05-09 02:45:12 INFO: Backup to server completed successfully.
+2024-05-09 02:45:12 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 02:45:12 ERROR: gRPC call for taking a zfs snapshot failed: failed to connect to all addresses; last error: UNKNOWN: ipv4:5.77.254.92:50051: Failed to connect to remote host: Connection refused
+2024-05-09 02:45:12 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 02:45:13 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 02:45:13 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 02:45:25 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 02:45:25 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder1
+2024-05-09 02:45:25 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 02:45:25 ERROR: Failed to prepare dataset for folder 'test_folder1': Command '['sudo', 'chown', '-R', 'user1808:user1808', '/backup-pool/backup_data/test_folder1/data']' returned non-zero exit status 1.
+2024-05-09 02:45:25 INFO: Metadata file created with IP and username at: /tmp/tmpzqcq1lrj/metadata.json
+2024-05-09 02:45:25 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 02:45:25 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/data/
+2024-05-09 02:45:26 INFO: Backup data rsync completed successfully.
+2024-05-09 02:45:26 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-05-09 02:45:27 INFO: Metadata file rsync completed successfully.
+2024-05-09 02:45:27 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder1/etc/
+2024-05-09 02:45:28 INFO: Configuration file rsync completed successfully.
+2024-05-09 02:45:28 INFO: Backup to server completed successfully.
+2024-05-09 02:45:28 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 02:45:28 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 02:45:28 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 02:45:28 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 02:45:28 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 02:45:41 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-09 02:45:41 INFO: Successfully retrieved snapshot list: ['test_folder@20240508014820_test_folder', 'test_folder@20240508015623_test_folder', 'test_folder@20240508023953_test_folder', 'test_folder@20240508024036_test_folder', 'test_folder@20240508031630_test_folder', 'test_folder1@20240509011149_test_folder1', 'test_folder1@20240509024528_test_folder1']
+2024-05-09 02:46:08 INFO: GRPC insecure channel established for recovering a snapshot: 5.77.254.92:50051
+2024-05-09 02:46:08 ERROR: Snapshot recovery failed: Failed to recover snapshot 'test_folder1@20240509024528_test_folder1': Command 'sudo rsync -av --delete -e 'ssh -p 22' /backup-pool/backup_data/test_folder1/data/.zfs/snapshot/20240509024528_test_folder1/ yura@10.35.0.195:/home/yura/Desktop/recovered' returned non-zero exit status 14.

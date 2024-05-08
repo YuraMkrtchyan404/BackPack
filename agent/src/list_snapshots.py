@@ -1,9 +1,11 @@
 import argparse
+import getpass
 import toml
 import grpc_handler
 
+user_name = getpass.getuser()
 def load_config():
-    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open(f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml", "r") as file:
         config = toml.load(file)
     return config
 

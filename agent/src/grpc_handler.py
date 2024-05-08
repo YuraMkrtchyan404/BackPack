@@ -1,3 +1,4 @@
+import getpass
 import logging
 import socket
 import toml
@@ -8,8 +9,9 @@ import os
 # os.environ['GRPC_VERBOSITY'] = 'DEBUG'
 # os.environ['GRPC_TRACE'] = 'all'
 
+user_name = getpass.getuser()
 def load_config():
-    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open(f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml", "r") as file:
         config = toml.load(file)
     return config
 
@@ -17,11 +19,12 @@ config = load_config()
 server_ip = config.get("server_ip")
 grpc_port = config.get("grpc_port")
 
+log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
+                        logging.FileHandler(log_path),
                         logging.StreamHandler()
                     ])
 

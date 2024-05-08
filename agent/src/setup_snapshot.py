@@ -10,8 +10,10 @@ import tempfile
 
 from grpc_handler import notify_server_about_rsync_completion, notify_server_about_rsync_start
 
+user_name = getpass.getuser()
+config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
 def load_config():
-    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open(config_path, "r") as file:
         config = toml.load(file)
     return config
 
@@ -22,14 +24,14 @@ rsync_port = config.get("rsync_port")
 grpc_port = config.get("grpc_port")
 folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
-config_path = "/home/yura/capstone/OS_Snapshots/agent/config.toml"
 ssh_password = config.get("ssh_password")
 
+log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
+                        logging.FileHandler(log_path),
                         logging.StreamHandler()
                     ])
 
