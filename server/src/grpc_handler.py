@@ -18,7 +18,9 @@ logging.basicConfig(level=logging.INFO,
                     ])
 
 class RsyncNotificationsService(RsyncNotificationsServicer):    
+    
     def PrepareDatasetBeforeRsyncStart(self, request, context):
+        
         full_folder_path = request.folder_name
         folder_name = basename(full_folder_path)
         dataset_path = f"backup-pool/backup_data/{folder_name}"
@@ -69,18 +71,24 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             return SnapshotCompletionResponse(success=False, message=error_msg)
         
     def ListSnapshots(self, request, context):
+        
         folder_name = request.folder_name
         logging.info(f"Request to list snapshots for folder: '{folder_name}' (empty means all)")
         try:
+            base_path = "backup-pool/backup_data"
             if folder_name:
-                snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', f"backup-pool/backup_data/{folder_name}"]
+                snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', f"{base_path}/{folder_name}"]
             else:
-                snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', 'backup-pool/backup_data']
+                snapshot_search_command = ['sudo', 'zfs', 'list', '-t', 'snapshot', '-o', 'name', '-s', 'creation', '-r', base_path]
+
             result = subprocess.run(snapshot_search_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             if result.returncode == 0:
-                snapshots = result.stdout.strip().split('\n')[1:][::-1]
-                logging.info(f"Snapshots retrieved successfully: {snapshots}")
-                return ListSnapshotsResponse(success=True, snapshots=snapshots, message="Snapshots listed successfully")
+                filtered_snapshots = [
+                    snap.replace(f'{base_path}/', '') for snap in result.stdout.strip().split('\n')[1:]
+                    if '@' in snap and not ('/etc@' in snap or '/data@' in snap)
+                ]
+                logging.info(f"Snapshots retrieved successfully: {filtered_snapshots}")
+                return ListSnapshotsResponse(success=True, snapshots=filtered_snapshots, message="Snapshots listed successfully")
             else:
                 error_msg = f"Error listing snapshots: {result.stderr.strip()}"
                 logging.error(error_msg)
@@ -91,17 +99,16 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             return ListSnapshotsResponse(success=False, message=error_msg)
         
     def RecoverSnapshot(self, request, context):
+        
         snapshot_name = request.snapshot_name
         recovery_mode = request.mode
         recovery_mode_name = RecoveryMode.Name(recovery_mode)
         logging.info(f"Received request to recover snapshot '{snapshot_name}' with mode {recovery_mode_name}")
 
         try:
-            # Parse the snapshot name to determine the dataset and the specific snapshot
             folder_name, snapshot_identifier = snapshot_name.split('@')
             dataset_path = f"/backup-pool/backup_data/{folder_name}"
 
-            # Read metadata from the snapshot itself
             metadata = self.read_metadata(snapshot_name)
 
             if recovery_mode == RecoveryMode.ORIGINAL:
@@ -111,7 +118,6 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             else:
                 raise ValueError("Invalid recovery mode specified")
 
-            # Assuming the client's IP address and user are part of the recovery mode configuration
             client_ip = metadata['client_ip']
             client_username = metadata['client_username']
             remote_target_directory = f"{client_username}@{client_ip}:{target_directory}"
@@ -132,12 +138,12 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             return SnapshotCompletionResponse(success=False, message=error_msg)
 
     def read_metadata(self, snapshot_name):
+
         try:
-            # Assuming snapshot_name is formatted as 'folder_name@timestamp_info'
+            # Assuming snapshot_name is formatted as 'folder_name@snapshot_identifier'
             folder_name, snapshot_identifier = snapshot_name.split('@')
             metadata_path = f"/backup-pool/backup_data/{folder_name}/etc/.zfs/snapshot/{snapshot_identifier}/metadata.json"
 
-            # Read the metadata file
             with open(metadata_path, 'r') as file:
                 return json.load(file)
         except json.JSONDecodeError:
@@ -149,7 +155,9 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
         except Exception as e:
             logging.error(f"Failed to read metadata for snapshot '{snapshot_name}': {str(e)}")
             raise
+
 def serve():
+
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=5))
     add_RsyncNotificationsServicer_to_server(RsyncNotificationsService(), server)
     server.add_insecure_port('[::]:50051')
