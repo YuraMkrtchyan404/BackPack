@@ -98,11 +98,10 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
 
         try:
             # Parse the snapshot name to determine the dataset and the specific snapshot
-            folder_name, snapshot_detail = snapshot_name.split('@')
-            dataset_path = f"backup-pool/backup_data/{folder_name}"
+            folder_name, snapshot_identifier = snapshot_name.split('@')
+            dataset_path = f"/backup-pool/backup_data/{folder_name}"
 
             # Read metadata from the snapshot itself
-            metadata_path = f"{dataset_path}/etc/metadata.json@{snapshot_detail}"
             metadata = self.read_metadata(snapshot_name)
 
             if recovery_mode == RecoveryMode.ORIGINAL:
@@ -113,7 +112,7 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
                 raise ValueError("Invalid recovery mode specified")
 
             # Perform the recovery using rsync
-            source_directory = f"{dataset_path}@{snapshot_detail}/data"
+            source_directory = f"{dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/*"
             rsync_command = ['sudo', 'rsync', '-a', '--delete', source_directory, target_directory]
             result = subprocess.run(rsync_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             
@@ -132,7 +131,7 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
         try:
             # Assuming snapshot_name is formatted as 'folder_name@timestamp_info'
             folder_name, snapshot_identifier = snapshot_name.split('@')
-            metadata_path = f"/backup-pool/backup_data/{folder_name}/.zfs/snapshot/{snapshot_identifier}/etc/metadata.json"
+            metadata_path = f"/backup-pool/backup_data/{folder_name}/etc/.zfs/snapshot/{snapshot_identifier}/metadata.json"
 
             # Read the metadata file
             with open(metadata_path, 'r') as file:
