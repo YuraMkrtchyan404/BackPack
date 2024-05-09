@@ -57,7 +57,7 @@ def insert_metadata_file(temp_dir, original_folder_path, standard_recovery_path)
     try:
         with open(metadata_file_path, 'w') as file:
             json.dump(metadata, file)
-        logging.info(f"Metadata file created with IP and username at: {metadata_file_path}")
+        logging.info(f"Metadata file created at: {metadata_file_path}")
         return metadata_file_path
     except IOError as e:
         logging.error(f"Failed to write metadata file: {e}")

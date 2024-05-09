@@ -4,8 +4,9 @@ import toml
 import grpc_handler
 
 user_name = getpass.getuser()
+config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
 def load_config():
-    with open(f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open(config_path, "r") as file:
         config = toml.load(file)
     return config
 
