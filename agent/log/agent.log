@@ -601,3 +601,119 @@ drwxrwxr-x 2 yura yura 4096 Մայ  3 00:46 justFolder/
 2024-05-09 01:35:07 ERROR: Failed to retrieve snapshot list: Error listing snapshots: cannot open 'backup-pool/backup_data/': trailing slash in name
 2024-05-09 01:36:54 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
 2024-05-09 01:36:54 INFO: Successfully retrieved snapshot list: ['test_folder@20240508014820_test_folder', 'test_folder@20240508015623_test_folder', 'test_folder@20240508023953_test_folder', 'test_folder@20240508024036_test_folder', 'test_folder@20240508031630_test_folder', 'test_folder1@20240509011149_test_folder1']
+2024-05-09 22:21:19 ERROR: Error occurred while running df command.
+df: /home/yura/capstone/test_folder1: No such file or directory
+
+2024-05-09 22:21:19 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 22:21:42 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 22:21:43 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-09 22:21:43 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 22:21:47 INFO: Dataset test_folder2 prepared successfully
+2024-05-09 22:21:47 INFO: Metadata file created with IP and username at: /tmp/tmp17cjwgv7/metadata.json
+2024-05-09 22:21:47 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 22:21:47 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-09 22:21:47 INFO: Backup data rsync completed successfully.
+2024-05-09 22:21:47 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 22:21:48 INFO: Metadata file rsync completed successfully.
+2024-05-09 22:21:48 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 22:21:49 INFO: Configuration file rsync completed successfully.
+2024-05-09 22:21:49 INFO: Backup to server completed successfully.
+2024-05-09 22:21:49 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 22:21:49 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 22:21:49 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 22:21:50 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 22:21:50 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 22:22:00 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 22:22:00 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-09 22:22:00 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 22:22:00 ERROR: Failed to prepare dataset for folder 'test_folder2': Command '['sudo', 'chown', '-R', 'user1808:user1808', '/backup-pool/backup_data/test_folder2/data']' returned non-zero exit status 1.
+2024-05-09 22:22:00 INFO: Metadata file created with IP and username at: /tmp/tmpoi0zwz82/metadata.json
+2024-05-09 22:22:00 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 22:22:00 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-09 22:22:02 INFO: Backup data rsync completed successfully.
+2024-05-09 22:22:02 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 22:22:03 INFO: Metadata file rsync completed successfully.
+2024-05-09 22:22:03 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 22:22:03 INFO: Configuration file rsync completed successfully.
+2024-05-09 22:22:03 INFO: Backup to server completed successfully.
+2024-05-09 22:22:03 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 22:22:04 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 22:22:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 22:22:04 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 22:22:04 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 22:24:47 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-09 22:24:47 INFO: Successfully retrieved snapshot list: ['test_folder@20240508014820_test_folder', 'test_folder@20240508015623_test_folder', 'test_folder@20240508023953_test_folder', 'test_folder@20240508024036_test_folder', 'test_folder@20240508031630_test_folder', 'test_folder1@20240509011149_test_folder1', 'test_folder1@20240509024528_test_folder1', 'test_folder1@20240509204240_test_folder1', 'test_folder2@20240509222149_test_folder2', 'test_folder2@20240509222203_test_folder2']
+2024-05-09 22:25:15 INFO: GRPC insecure channel established for recovering a snapshot: 5.77.254.92:50051
+2024-05-09 22:25:15 ERROR: Snapshot recovery failed: Failed to recover snapshot 'test_folder2@20240509222203_test_folder2': Command 'sudo rsync -av --delete -e 'ssh -p 22' /backup-pool/backup_data/test_folder2/data/.zfs/snapshot/20240509222203_test_folder2/ yura@10.35.0.195:/home/yura/capstone/test_folder2' returned non-zero exit status 14.
+2024-05-09 22:39:57 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 22:39:57 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-09 22:39:58 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 22:39:58 ERROR: Failed to prepare dataset for folder 'test_folder2': Command '['sudo', 'chown', '-R', 'user1808:user1808', '/backup-pool/backup_data/test_folder2/data']' returned non-zero exit status 1.
+2024-05-09 22:39:58 INFO: Metadata file created with IP and username at: /tmp/tmprnhelejz/metadata.json
+2024-05-09 22:39:58 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 22:39:58 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-09 22:39:58 INFO: Backup data rsync completed successfully.
+2024-05-09 22:39:58 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 22:39:59 INFO: Metadata file rsync completed successfully.
+2024-05-09 22:39:59 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 22:40:00 INFO: Configuration file rsync completed successfully.
+2024-05-09 22:40:00 INFO: Backup to server completed successfully.
+2024-05-09 22:40:00 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 22:40:00 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 22:40:00 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 22:40:01 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 22:40:01 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 23:00:38 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 23:00:39 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-09 23:00:39 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 23:00:43 ERROR: Failed to prepare dataset for folder 'test_folder2': Command '['sudo', 'chown', '-R', 'user1808:user1808', '/backup-pool/backup_data/test_folder2/data']' returned non-zero exit status 1.
+2024-05-09 23:00:43 INFO: Metadata file created with IP and username at: /tmp/tmpshapmdvz/metadata.json
+2024-05-09 23:00:43 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 23:00:43 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-09 23:00:43 INFO: Backup data rsync completed successfully.
+2024-05-09 23:00:43 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 23:00:44 INFO: Metadata file rsync completed successfully.
+2024-05-09 23:00:44 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 23:00:44 INFO: Configuration file rsync completed successfully.
+2024-05-09 23:00:44 INFO: Backup to server completed successfully.
+2024-05-09 23:00:44 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 23:00:44 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 23:00:45 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 23:00:45 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 23:00:45 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 23:02:11 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 23:02:12 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-09 23:02:12 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 23:02:13 INFO: Dataset test_folder2 prepared successfully
+2024-05-09 23:02:13 INFO: Metadata file created with IP and username at: /tmp/tmpdk4x9tpf/metadata.json
+2024-05-09 23:02:13 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 23:02:13 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-09 23:02:13 INFO: Backup data rsync completed successfully.
+2024-05-09 23:02:13 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 23:02:14 INFO: Metadata file rsync completed successfully.
+2024-05-09 23:02:14 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 23:02:15 INFO: Configuration file rsync completed successfully.
+2024-05-09 23:02:15 INFO: Backup to server completed successfully.
+2024-05-09 23:02:15 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 23:02:15 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 23:02:16 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 23:02:16 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 23:02:16 INFO: Snapshot setup and backup completed successfully.
+2024-05-09 23:08:34 INFO: Snapshot mounted successfully at /var/OS_Snapshot/data/elastio-snap0.
+2024-05-09 23:08:35 INFO: Full path of the mounted folder in snapshot: /var/OS_Snapshot/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-09 23:08:35 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 23:08:35 ERROR: Failed to prepare dataset for folder 'test_folder2': Command '['sudo', 'chown', '-R', 'user1808:user1808', '/backup-pool/backup_data/test_folder2/data']' returned non-zero exit status 1.
+2024-05-09 23:08:35 INFO: Metadata file created at: /tmp/tmp05uc_jcc/metadata.json
+2024-05-09 23:08:35 INFO: Metadata file prepared and stored temporarily.
+2024-05-09 23:08:35 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-09 23:08:36 INFO: Backup data rsync completed successfully.
+2024-05-09 23:08:36 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 23:08:37 INFO: Metadata file rsync completed successfully.
+2024-05-09 23:08:37 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-09 23:08:37 INFO: Configuration file rsync completed successfully.
+2024-05-09 23:08:37 INFO: Backup to server completed successfully.
+2024-05-09 23:08:37 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-09 23:08:38 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-09 23:08:38 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-09 23:08:38 INFO: Snapshot 0 successfully destroyed.
+2024-05-09 23:08:38 INFO: Snapshot setup and backup completed successfully.

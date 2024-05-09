@@ -1,15 +1,16 @@
+import getpass
 import logging
-import socket
 import toml
 import grpc
 import communication_pb2
 import communication_pb2_grpc
-import os
 # os.environ['GRPC_VERBOSITY'] = 'DEBUG'
 # os.environ['GRPC_TRACE'] = 'all'
 
+user_name = getpass.getuser()
+config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
 def load_config():
-    with open("/home/yura/capstone/OS_Snapshots/agent/config.toml", "r") as file:
+    with open(config_path, "r") as file:
         config = toml.load(file)
     return config
 
@@ -21,7 +22,7 @@ logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler("/home/yura/capstone/OS_Snapshots/agent/log/agent.log"),
+                        logging.FileHandler(f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"),
                         logging.StreamHandler()
                     ])
 
@@ -86,4 +87,3 @@ def recover_snapshot(snapshot_name, recovery_mode, server_ip, grpc_port):
     except grpc.RpcError as e:
         logging.error(f"gRPC call for recovering snapshot failed: {e.details()}")
         return f"Failed to recover snapshot due to a gRPC error: {e.details()}"
-
