@@ -26,11 +26,12 @@ folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
 ssh_password = config.get("ssh_password")
 
+log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler(f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"),
+                        logging.FileHandler(log_path),
                         logging.StreamHandler()
                     ])
 

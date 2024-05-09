@@ -18,11 +18,12 @@ config = load_config()
 server_ip = config.get("server_ip")
 grpc_port = config.get("grpc_port")
 
+log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
-                        logging.FileHandler(f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"),
+                        logging.FileHandler(log_path),
                         logging.StreamHandler()
                     ])
 
