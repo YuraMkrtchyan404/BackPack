@@ -1,4 +1,4 @@
-#!/home/yura/capstone/OS_Snapshots/agent/agentenv/bin/python3
+#!/home/aivanyan/capstone/OS_Snapshots/agent/agentenv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
