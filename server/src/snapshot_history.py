@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO,
 
 def create_snapshot(folder_name):
     dataset_path = f"backup-pool/backup_data/{folder_name}"
-    snapshot_name = datetime.now().strftime("%Y%m%d%H%M%S") + "_" + folder_name
+    snapshot_name = datetime.now().strftime("%Y.%m.%d.%H.%M.%S")
 
     try:
         subprocess.run(['sudo', 'zfs', 'snapshot', '-r', f'{dataset_path}@{snapshot_name}'], check=True)
