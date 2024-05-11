@@ -92,7 +92,7 @@ compile-install:
 clean:
 	@rm -f *.deb
 	@rm -rf agentenv
-	@rm -rf debian_version
+	@rm -rf debian_version main.spec
 	@find . -type f -name '*.pyc' -delete
 	@find . -type d -name 'pycache' -delete
 

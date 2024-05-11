@@ -5,7 +5,7 @@ def get_cron_format(backup_frequency):
     parts = backup_frequency.split()
     
     if len(parts) > 2:
-        raise ValueError("Invalid frequency format. Use formats like 'hourly' or 'weekly 2'.")
+        raise ValueError("Invalid frequency format")
     
     if len(parts) == 1:
         frequencies = {
@@ -44,7 +44,7 @@ def get_cron_format(backup_frequency):
 
 def setup_cron_job(command, backup_frequency):
     cron = CronTab(user=getpass.getuser())
-    cron.remove_all(comment='snapshot_job') #TODO this part I need to make sure that to make unique identifiers so that we can later remove repeated cron jobs
+    cron.remove_all(comment='snapshot_job') #TODO this comment is used to delete cron jobs with the same comment (need to configure this any way)
     job = cron.new(command=command, comment='snapshot_job')
     cron_format = get_cron_format(backup_frequency)
     job.setall(cron_format)

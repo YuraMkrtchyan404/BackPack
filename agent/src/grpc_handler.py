@@ -2,8 +2,8 @@ import getpass
 import logging
 import toml
 import grpc
-import communication_pb2
-import communication_pb2_grpc
+from . import communication_pb2
+from . import communication_pb2_grpc
 # os.environ['GRPC_VERBOSITY'] = 'DEBUG'
 # os.environ['GRPC_TRACE'] = 'all'
 
