@@ -7,8 +7,11 @@ import toml
 import socket
 import json
 import tempfile
-
 from grpc_handler import notify_server_about_rsync_completion, notify_server_about_rsync_start
+
+APP_NAME = "backpack"
+DATA_DIR = f"/var/{APP_NAME}/data"
+COW_DIR = f"/var/{APP_NAME}/cow"
 
 user_name = getpass.getuser()
 config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
@@ -156,19 +159,19 @@ def backup_to_server(mounted_folder_path, original_folder_path, standard_recover
             server_backup_data_dir = f"{server_backup_dir}/data/"
             server_backup_etc_dir = f"{server_backup_dir}/etc/"
 
-            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port} -o StrictHostKeyChecking=no',
                                 mounted_folder_path + '/', server_backup_data_dir]
             logging.info(f"Starting rsync for backup data to {server_backup_data_dir}")
             subprocess.run(rsync_folder_cmd, check=True)
             logging.info("Backup data rsync completed successfully.")
 
-            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port} -o StrictHostKeyChecking=no',
                                   metadata_file_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for metadata file to {server_backup_etc_dir}")
             subprocess.run(rsync_metadata_cmd, check=True)
             logging.info("Metadata file rsync completed successfully.")
 
-            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port}',
+            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port} -o StrictHostKeyChecking=no',
                                 config_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
             subprocess.run(rsync_config_cmd, check=True)
@@ -181,10 +184,17 @@ def backup_to_server(mounted_folder_path, original_folder_path, standard_recover
         return False
 
 def setup_snapshot():
-    block_devices = set()  
+    block_devices = set()
     folder_mapping = {}
 
+    if not folders:
+        logging.error("No folders provided for setup_snapshot.")
+        return False
+    
     for folder in folders:
+        if not os.path.exists(folder):
+            logging.error(f"Folder does not exist: {folder}")
+            return False
         block_device = get_block_device_for_folder(folder)
         if block_device:
             block_devices.add(block_device)
@@ -193,31 +203,38 @@ def setup_snapshot():
             else:
                 folder_mapping[block_device] = [folder]
 
+    if not block_devices:
+        logging.error("No valid block devices found for the folders.")
+        return False
+    
     for block_device in block_devices:
         minor = get_free_minor()
         if not minor:
+            logging.error("Failed to obtain a free minor number for device mapping.")
             return False
-        
+
         device_folders = folder_mapping.get(block_device, [])
 
-        folder_directory = os.path.dirname(os.path.abspath(device_folders[0])) if device_folders else ""
+        folder_directory = os.path.dirname(os.path.abspath(device_folders[0])) if device_folders else COW_DIR
 
-        if not folder_directory:
-            folder_directory = "/var/OS_Snapshot/cow"
-            os.makedirs(folder_directory, exist_ok=True)
+        if not os.path.exists(folder_directory):
+            try:
+                os.makedirs(folder_directory, exist_ok=True)
+            except PermissionError as e:
+                logging.error(f"Permission denied when creating directory {folder_directory}: {str(e)}")
+                return False
 
         cow_file_path = os.path.join(folder_directory, f"cow_file{minor}")
-
         cmd = ['sudo', 'elioctl', 'setup-snapshot', block_device, cow_file_path, minor]
-        setup_output = subprocess.run(cmd)
-        
+        setup_output = subprocess.run(cmd, capture_output=True, text=True)
+
         if setup_output.returncode != 0:
-            logging.error("Error occurred while creating snapshot.")
+            logging.error(f"Error occurred while creating snapshot: {setup_output.stderr}")
             return False
 
         snapshot_path = f"/dev/elastio-snap{minor}"
-        mount_point = "/var/OS_Snapshot/data"
-        
+        mount_point = DATA_DIR
+
         if not mount_snapshot(snapshot_path, mount_point):
             destroy_snapshot(minor)
             return False
@@ -234,7 +251,7 @@ def setup_snapshot():
                 destroy_snapshot(minor)
                 return False
             notify_server_about_rsync_completion(folder, server_ip, grpc_port)
-            
+
         umount_snapshot(snapshot_path)
         destroy_snapshot(minor)
 
