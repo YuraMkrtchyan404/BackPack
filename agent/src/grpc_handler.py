@@ -4,6 +4,7 @@ import toml
 import grpc
 from . import communication_pb2
 from . import communication_pb2_grpc
+from .communication_pb2 import RecoveryMode
 # os.environ['GRPC_VERBOSITY'] = 'DEBUG'
 # os.environ['GRPC_TRACE'] = 'all'
 
@@ -76,7 +77,14 @@ def recover_snapshot(snapshot_name, recovery_mode, server_ip, grpc_port):
         with grpc.insecure_channel(f'{server_ip}:{grpc_port}') as channel:
             logging.info(f"GRPC insecure channel established for recovering a snapshot: {server_ip}:{grpc_port}")
             stub = communication_pb2_grpc.RsyncNotificationsStub(channel)
-            mode = communication_pb2.ORIGINAL if recovery_mode == 'original' else communication_pb2.STANDARD
+            print("Recovery mode is (before gRPC call):", recovery_mode)
+            if recovery_mode == 'original':
+                mode = communication_pb2.ORIGINAL
+            elif recovery_mode == 'standard':
+                mode = communication_pb2.STANDARD
+            else:
+                raise ValueError("Invalid recovery mode specified")
+            print(f'Mapped recovery mode is: {RecoveryMode.Name(mode)} : {mode}')
             request = communication_pb2.RecoverSnapshotRequest(snapshot_name=snapshot_name, mode=mode)
             response = stub.RecoverSnapshot(request)
             if response.success:
