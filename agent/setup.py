@@ -37,3 +37,8 @@ setup(
     include_package_data=True,
     zip_safe=False
 )
+
+
+#this is just an example need to write proper one later
+#TODO need to understand how to integrate Makefile will install (so that when user install our app will have everything set up)
+#also later can change the package not src but {backpack_pkg} (not now because not sure about changing some path which may cause errors)

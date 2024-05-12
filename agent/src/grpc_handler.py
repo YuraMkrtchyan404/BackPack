@@ -24,7 +24,7 @@ logging.basicConfig(level=logging.INFO,
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
                         logging.FileHandler(log_path),
-                        logging.StreamHandler()
+                        logging.StreamHandler()   #TODO clean this for not printing in the standard output
                     ])
 
 def notify_server_about_rsync_start(folder, server_ip, grpc_port):
