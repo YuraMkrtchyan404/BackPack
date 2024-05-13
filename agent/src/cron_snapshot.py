@@ -45,7 +45,6 @@ if __name__ == "__main__":
         config = load_config()
         backup_frequency = config.get('backup_frequency', 'daily')
         python_path = get_python_path()
-        print(python_path)
         script_module = "src.cron_snapshot"
         command = f"sudo {python_path} -m {script_module}"
         try:

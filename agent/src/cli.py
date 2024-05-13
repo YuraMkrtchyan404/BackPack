@@ -1,3 +1,4 @@
+import logging
 import click
 import toml
 import getpass
@@ -5,6 +6,15 @@ import subprocess
 import sys
 
 user_name = getpass.getuser()
+log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    handlers=[
+                        logging.FileHandler(log_path),
+                        logging.StreamHandler()
+                    ])
+
 config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
 
 @click.group()
@@ -19,9 +29,9 @@ def start(mode):
             config_data = toml.load(config_file)
     except FileNotFoundError:
         config_data = {}
-        click.echo("No configuration file found, creating a new one.")
+        logging.error("No configuration file found, creating a new one.")
     except Exception as e:
-        click.echo(f"Error loading configuration: {e}")
+        logging.error(f"Error loading configuration: {e}")
         return
 
     folders_input = click.prompt("Folders")
@@ -34,16 +44,16 @@ def start(mode):
     try:
         with open(config_path, 'w') as config_file:
             toml.dump(config_data, config_file)
-        click.echo("Configuration updated successfully.")
+        logging.info("Configuration updated successfully.")
     except Exception as e:
-        click.echo(f"Failed to write configuration: {e}")
+        logging.error(f"Failed to write configuration: {e}")
 
     if mode == "manual":
         from .create_snapshot import setup_snapshot
         if setup_snapshot():
-            click.echo("Snapshot setup completed successfully.")
+            logging.info("Snapshot setup completed successfully.")
         else:
-            click.echo("Failed to set up snapshot.")
+            logging.error("Failed to set up snapshot.")
     else:
         package_path = 'src.cron_snapshot'
         subprocess.run([sys.executable, '-m', package_path], check=True)
@@ -57,7 +67,7 @@ def list(folder_name=None):
     try:
         subprocess.run(args, check=True)
     except subprocess.CalledProcessError as e:
-        click.echo(f"Failed to list snapshots: {e}")
+        logging.error(f"Failed to list snapshots: {e}")
 
 @backpack.command()
 @click.argument('snapshot_name')
@@ -68,6 +78,7 @@ def recover(snapshot_name, mode):
     try:
         subprocess.run(args, check=True)
     except subprocess.CalledProcessError as e:
-        click.echo(f"Failed to recover snapshot: {e}")
+        logging.error(f"Failed to recover snapshot: {e}")
+
 if __name__ == '__main__':
     backpack()

@@ -3281,3 +3281,80 @@ sudo: a terminal is required to read the password; either use the -S option to r
 2024-05-13 04:26:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
 2024-05-13 04:26:04 INFO: Snapshot 0 successfully destroyed.
 2024-05-13 04:26:04 INFO: Snapshot setup and backup completed successfully.
+2024-05-13 05:48:14 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-13 05:48:14 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
+2024-05-13 05:48:14 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:48:14 INFO: Dataset test prepared successfully
+2024-05-13 05:48:14 INFO: Metadata file created at: /tmp/tmpiesn6cqt/metadata.json
+2024-05-13 05:48:14 INFO: Metadata file prepared and stored temporarily.
+2024-05-13 05:48:14 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
+2024-05-13 05:48:15 INFO: Backup data rsync completed successfully.
+2024-05-13 05:48:15 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:48:15 INFO: Metadata file rsync completed successfully.
+2024-05-13 05:48:15 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:48:16 INFO: Configuration file rsync completed successfully.
+2024-05-13 05:48:16 INFO: Backup to server completed successfully.
+2024-05-13 05:48:16 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:48:16 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-13 05:48:16 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-13 05:48:17 INFO: Snapshot 0 successfully destroyed.
+2024-05-13 05:48:17 INFO: Snapshot setup and backup completed successfully.
+2024-05-13 05:49:01 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-13 05:49:01 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
+2024-05-13 05:49:01 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:49:02 INFO: Dataset test prepared successfully
+2024-05-13 05:49:02 INFO: Metadata file created at: /tmp/tmpwb9txl1i/metadata.json
+2024-05-13 05:49:02 INFO: Metadata file prepared and stored temporarily.
+2024-05-13 05:49:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
+2024-05-13 05:49:02 INFO: Backup data rsync completed successfully.
+2024-05-13 05:49:02 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:49:02 INFO: Metadata file rsync completed successfully.
+2024-05-13 05:49:02 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:49:03 INFO: Configuration file rsync completed successfully.
+2024-05-13 05:49:03 INFO: Backup to server completed successfully.
+2024-05-13 05:49:03 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:49:03 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-13 05:49:03 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-13 05:49:03 INFO: Snapshot 0 successfully destroyed.
+2024-05-13 05:49:03 INFO: Snapshot setup and backup completed successfully.
+2024-05-13 05:51:21 INFO: Configuration updated successfully.
+2024-05-13 05:51:22 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-13 05:51:22 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
+2024-05-13 05:51:22 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:51:22 INFO: Dataset test prepared successfully
+2024-05-13 05:51:22 INFO: Metadata file created at: /tmp/tmpldqc7mmd/metadata.json
+2024-05-13 05:51:22 INFO: Metadata file prepared and stored temporarily.
+2024-05-13 05:51:22 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
+2024-05-13 05:51:22 INFO: Backup data rsync completed successfully.
+2024-05-13 05:51:22 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:51:23 INFO: Metadata file rsync completed successfully.
+2024-05-13 05:51:23 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:51:23 INFO: Configuration file rsync completed successfully.
+2024-05-13 05:51:23 INFO: Backup to server completed successfully.
+2024-05-13 05:51:23 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:51:24 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-13 05:51:24 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-13 05:51:24 INFO: Snapshot 0 successfully destroyed.
+2024-05-13 05:51:24 INFO: Snapshot setup and backup completed successfully.
+2024-05-13 05:52:02 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-13 05:52:02 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
+2024-05-13 05:52:02 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:52:02 INFO: Dataset test prepared successfully
+2024-05-13 05:52:02 INFO: Metadata file created at: /tmp/tmp54eumgmd/metadata.json
+2024-05-13 05:52:02 INFO: Metadata file prepared and stored temporarily.
+2024-05-13 05:52:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
+2024-05-13 05:52:03 INFO: Backup data rsync completed successfully.
+2024-05-13 05:52:03 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:52:03 INFO: Metadata file rsync completed successfully.
+2024-05-13 05:52:03 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
+2024-05-13 05:52:04 INFO: Configuration file rsync completed successfully.
+2024-05-13 05:52:04 INFO: Backup to server completed successfully.
+2024-05-13 05:52:04 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-13 05:52:04 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-13 05:52:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-13 05:52:04 INFO: Snapshot 0 successfully destroyed.
+2024-05-13 05:52:04 INFO: Snapshot setup and backup completed successfully.
+2024-05-13 05:53:33 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-13 05:53:33 INFO: Successfully retrieved snapshot list: ['test@2024.05.11.18.10.51', 'test@2024.05.11.20.10.24', 'test@2024.05.12.01.21.03', 'test@2024.05.12.01.21.49', 'test@2024.05.12.01.27.20', 'test@2024.05.12.01.29.48', 'test@2024.05.12.01.30.22', 'test@2024.05.12.02.20.22', 'test@2024.05.12.02.34.15', 'test@2024.05.12.02.57.09', 'test@2024.05.12.03.07.30', 'test@2024.05.12.03.35.07', 'test@2024.05.12.03.35.27', 'test@2024.05.12.03.38.36', 'test@2024.05.12.03.44.25', 'test@2024.05.12.04.32.14', 'test@2024.05.12.04.35.09', 'test@2024.05.12.04.51.40', 'test@2024.05.13.01.25.41', 'test@2024.05.13.01.27.55', 'test@2024.05.13.01.57.29', 'test@2024.05.13.02.00.31', 'test@2024.05.13.02.02.22', 'test@2024.05.13.02.13.13', 'test@2024.05.13.02.18.39', 'test@2024.05.13.02.19.02', 'test@2024.05.13.02.20.40', 'test@2024.05.13.02.21.28', 'test@2024.05.13.02.22.04', 'test@2024.05.13.02.23.03', 'test@2024.05.13.02.24.04', 'test@2024.05.13.02.25.04', 'test@2024.05.13.02.26.03', 'test@2024.05.13.02.27.03', 'test@2024.05.13.02.27.22', 'test@2024.05.13.02.28.04', 'test@2024.05.13.02.29.04', 'test@2024.05.13.02.30.04', 'test@2024.05.13.02.30.26', 'test@2024.05.13.02.31.03', 'test@2024.05.13.02.32.03', 'test@2024.05.13.02.33.17', 'test@2024.05.13.02.33.24', 'test@2024.05.13.02.34.04', 'test@2024.05.13.02.35.03', 'test@2024.05.13.02.36.04', 'test@2024.05.13.02.37.04', 'test@2024.05.13.02.38.03', 'test@2024.05.13.02.39.04', 'test@2024.05.13.02.40.03', 'test@2024.05.13.02.40.59', 'test@2024.05.13.02.41.03', 'test@2024.05.13.02.42.03', 'test@2024.05.13.02.43.03', 'test@2024.05.13.02.44.04', 'test@2024.05.13.02.45.04', 'test@2024.05.13.02.45.25', 'test@2024.05.13.02.47.24', 'test@2024.05.13.02.49.09', 'test@2024.05.13.03.01.21', 'test@2024.05.13.03.31.13', 'test@2024.05.13.03.31.51', 'test@2024.05.13.03.32.21', 'test@2024.05.13.03.36.58', 'test@2024.05.13.03.41.08', 'test@2024.05.13.03.43.33', 'test@2024.05.13.03.57.00', 'test@2024.05.13.03.57.04', 'test@2024.05.13.03.58.03', 'test@2024.05.13.04.08.36', 'test@2024.05.13.04.09.05', 'test@2024.05.13.04.15.45', 'test@2024.05.13.04.18.37', 'test@2024.05.13.04.18.56', 'test@2024.05.13.04.19.17', 'test@2024.05.13.04.20.01', 'test@2024.05.13.04.20.16', 'test@2024.05.13.04.20.56', 'test@2024.05.13.04.21.15', 'test@2024.05.13.04.21.32', 'test@2024.05.13.04.22.03', 'test@2024.05.13.04.24.04', 'test@2024.05.13.04.26.04', 'test@2024.05.13.04.34.29', 'test@2024.05.13.04.34.49', 'test@2024.05.13.04.36.05', 'test@2024.05.13.05.30.55', 'test@2024.05.13.05.37.17', 'test@2024.05.13.05.39.17', 'test@2024.05.13.05.39.32', 'test@2024.05.13.05.48.16', 'test@2024.05.13.05.49.03', 'test@2024.05.13.05.51.24', 'test@2024.05.13.05.52.04']
+2024-05-13 05:53:39 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-13 05:53:40 INFO: Successfully retrieved snapshot list: ['test_folder2@2024.05.10.09.40.42', 'test_folder2@2024.05.11.17.01.09', 'test@2024.05.11.18.10.51', 'test@2024.05.11.20.10.24', 'test_file@2024.05.12.01.19.57', 'test@2024.05.12.01.21.03', 'test_file@2024.05.12.01.21.47', 'test@2024.05.12.01.21.49', 'test@2024.05.12.01.27.20', 'test_file@2024.05.12.01.27.57', 'test@2024.05.12.01.29.48', 'test@2024.05.12.01.30.22', 'test_file@2024.05.12.01.30.24', 'test@2024.05.12.02.20.22', 'test@2024.05.12.02.34.15', 'test@2024.05.12.02.57.09', 'test@2024.05.12.03.07.30', 'test@2024.05.12.03.35.07', 'test@2024.05.12.03.35.27', 'test@2024.05.12.03.38.36', 'test@2024.05.12.03.44.25', 'test@2024.05.12.04.32.14', 'test@2024.05.12.04.35.09', 'test@2024.05.12.04.51.40', 'test_folder2@2024.05.12.15.12.53', 'test_folder2@2024.05.12.15.37.36', 'test@2024.05.13.01.25.41', 'test@2024.05.13.01.27.55', 'test@2024.05.13.01.57.29', 'test@2024.05.13.02.00.31', 'test@2024.05.13.02.02.22', 'test@2024.05.13.02.13.13', 'test@2024.05.13.02.18.39', 'test@2024.05.13.02.19.02', 'test@2024.05.13.02.20.40', 'test@2024.05.13.02.21.28', 'test@2024.05.13.02.22.04', 'test@2024.05.13.02.23.03', 'test@2024.05.13.02.24.04', 'test@2024.05.13.02.25.04', 'test@2024.05.13.02.26.03', 'test@2024.05.13.02.27.03', 'test@2024.05.13.02.27.22', 'test@2024.05.13.02.28.04', 'test@2024.05.13.02.29.04', 'test@2024.05.13.02.30.04', 'test@2024.05.13.02.30.26', 'test@2024.05.13.02.31.03', 'test@2024.05.13.02.32.03', 'test@2024.05.13.02.33.17', 'test@2024.05.13.02.33.24', 'test@2024.05.13.02.34.04', 'test@2024.05.13.02.35.03', 'test@2024.05.13.02.36.04', 'test@2024.05.13.02.37.04', 'test@2024.05.13.02.38.03', 'test@2024.05.13.02.39.04', 'test@2024.05.13.02.40.03', 'test@2024.05.13.02.40.59', 'test@2024.05.13.02.41.03', 'test@2024.05.13.02.42.03', 'test@2024.05.13.02.43.03', 'test@2024.05.13.02.44.04', 'test@2024.05.13.02.45.04', 'test@2024.05.13.02.45.25', 'test@2024.05.13.02.47.24', 'test@2024.05.13.02.49.09', 'test@2024.05.13.03.01.21', 'test@2024.05.13.03.31.13', 'test@2024.05.13.03.31.51', 'test@2024.05.13.03.32.21', 'test@2024.05.13.03.36.58', 'test@2024.05.13.03.41.08', 'test@2024.05.13.03.43.33', 'test@2024.05.13.03.57.00', 'test@2024.05.13.03.57.04', 'test@2024.05.13.03.58.03', 'test@2024.05.13.04.08.36', 'test_file@2024.05.13.04.08.38', 'test@2024.05.13.04.09.05', 'test@2024.05.13.04.15.45', 'test@2024.05.13.04.18.37', 'test@2024.05.13.04.18.56', 'test@2024.05.13.04.19.17', 'test@2024.05.13.04.20.01', 'test@2024.05.13.04.20.16', 'test@2024.05.13.04.20.56', 'test@2024.05.13.04.21.15', 'test@2024.05.13.04.21.32', 'test@2024.05.13.04.22.03', 'test@2024.05.13.04.24.04', 'test@2024.05.13.04.26.04', 'test@2024.05.13.04.34.29', 'test_file@2024.05.13.04.34.31', 'test@2024.05.13.04.34.49', 'test@2024.05.13.04.36.05', 'test@2024.05.13.05.30.55', 'test@2024.05.13.05.37.17', 'test@2024.05.13.05.39.17', 'test@2024.05.13.05.39.32', 'test@2024.05.13.05.48.16', 'test@2024.05.13.05.49.03', 'test@2024.05.13.05.51.24', 'test@2024.05.13.05.52.04']
