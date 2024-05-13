@@ -14,7 +14,7 @@ DATA_DIR = f"/var/{APP_NAME}/data"
 COW_DIR = f"/var/{APP_NAME}/cow"
 
 user_name = getpass.getuser()
-config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
+config_path = f"/home/aivanyan/capstone/OS_Snapshots/agent/config.toml"
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)
@@ -29,7 +29,7 @@ folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
 ssh_password = config.get("ssh_password")
 
-log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
+log_path = f"/home/aivanyan/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',

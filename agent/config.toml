@@ -1,8 +1,8 @@
-folders = [ "jenf",]
+folders = [ "/home/aivanyan/test",]
 server_ip = "5.77.254.92"
 rsync_port = 9122
 grpc_port = 50051
 server_username = "user1808"
 standard_recovery_path = "/home/aivanyan/Desktop/recovered"
 ssh_password = 1808
-backup_frequency = "jfejfe"
+backup_frequency = "minutely 2"
