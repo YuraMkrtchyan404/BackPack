@@ -5,6 +5,8 @@ import subprocess
 from .cronjob import setup_cron_job, get_cron_format
 from .create_snapshot import setup_snapshot
 
+#TODO here to understand why getpass not working properly
+
 log_path = "/home/aivanyan/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
@@ -44,11 +46,15 @@ if __name__ == "__main__":
     if cron_snap():
         config = load_config()
         backup_frequency = config.get('backup_frequency', 'daily')
+        folder_name = config.get('folders')
         python_path = get_python_path()
         script_module = "src.cron_snapshot"
         command = f"sudo {python_path} -m {script_module}"
         try:
             cron_format = get_cron_format(backup_frequency)
-            setup_cron_job(command, backup_frequency)
+            setup_cron_job(command, backup_frequency, folder_name)
         except ValueError as e:
             print(f"Error getting cron format: {e}")
+
+
+#need to give the python_path explictly in order not repetition of cron jobs
