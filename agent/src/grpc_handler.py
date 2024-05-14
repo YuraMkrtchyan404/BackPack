@@ -2,13 +2,14 @@ import getpass
 import logging
 import toml
 import grpc
-import communication_pb2
-import communication_pb2_grpc
+from . import communication_pb2
+from . import communication_pb2_grpc
+from .communication_pb2 import RecoveryMode
 # os.environ['GRPC_VERBOSITY'] = 'DEBUG'
 # os.environ['GRPC_TRACE'] = 'all'
 
 user_name = getpass.getuser()
-config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
+config_path = f"/home/aivanyan/capstone/OS_Snapshots/agent/config.toml"
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)
@@ -18,13 +19,13 @@ config = load_config()
 server_ip = config.get("server_ip")
 grpc_port = config.get("grpc_port")
 
-log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
+log_path = f"/home/aivanyan/capstone/OS_Snapshots/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
                         logging.FileHandler(log_path),
-                        logging.StreamHandler()
+                        logging.StreamHandler()   #TODO clean this for not printing in the standard output
                     ])
 
 def notify_server_about_rsync_start(folder, server_ip, grpc_port):
@@ -76,7 +77,14 @@ def recover_snapshot(snapshot_name, recovery_mode, server_ip, grpc_port):
         with grpc.insecure_channel(f'{server_ip}:{grpc_port}') as channel:
             logging.info(f"GRPC insecure channel established for recovering a snapshot: {server_ip}:{grpc_port}")
             stub = communication_pb2_grpc.RsyncNotificationsStub(channel)
-            mode = communication_pb2.ORIGINAL if recovery_mode == 'original' else communication_pb2.STANDARD
+            print("Recovery mode is (before gRPC call):", recovery_mode)
+            if recovery_mode == 'original':
+                mode = communication_pb2.ORIGINAL
+            elif recovery_mode == 'standard':
+                mode = communication_pb2.STANDARD
+            else:
+                raise ValueError("Invalid recovery mode specified")
+            print(f'Mapped recovery mode is: {RecoveryMode.Name(mode)} : {mode}')
             request = communication_pb2.RecoverSnapshotRequest(snapshot_name=snapshot_name, mode=mode)
             response = stub.RecoverSnapshot(request)
             if response.success:

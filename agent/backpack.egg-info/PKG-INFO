@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: backpack
+Version: 0.1.0
+Summary: Incremental backup system
+Home-page: https://github.com/YuraMkrtchyan404/OS_Snapshots.git
+Author: Yura Mkrtchyan, Ani Ivanyan
+Author-email: contact1@example.com, contact1@example.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Build Tools
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown

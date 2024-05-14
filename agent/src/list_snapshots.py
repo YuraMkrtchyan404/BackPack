@@ -1,10 +1,11 @@
 import argparse
 import getpass
 import toml
-import grpc_handler
+from . import grpc_handler
 
 user_name = getpass.getuser()
 config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
+
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)
@@ -14,7 +15,7 @@ config = load_config()
 server_ip = config.get("server_ip")
 grpc_port = config.get("grpc_port")
 
-def main():
+def list_snap():
     parser = argparse.ArgumentParser(description='List snapshots from the backup server')
     parser.add_argument('--folder_name', type=str, help='Specify a folder name to list snapshots for that folder only', default='')
     args = parser.parse_args()
@@ -32,4 +33,4 @@ def main():
         print("No snapshots available or failed to retrieve snapshots.")
 
 if __name__ == "__main__":
-    main()
+    list_snap()

@@ -17,10 +17,10 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-class RsyncNotificationsService(RsyncNotificationsServicer):    
-    
+class RsyncNotificationsService(RsyncNotificationsServicer):
+
     def PrepareDatasetBeforeRsyncStart(self, request, context):
-        
+
         full_folder_path = request.folder_name
         folder_name = basename(full_folder_path)
         dataset_path = f"backup-pool/backup_data/{folder_name}"
@@ -33,7 +33,7 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             if result.returncode != 0:
                 subprocess.run(['sudo', 'zfs', 'create', dataset_path], check=True)
                 logging.info(f"Dataset created successfully for folder '{folder_name}'")
-            
+
                 subprocess.run(['sudo', 'zfs', 'allow', 'user1808', 'create,mount,send,receive', dataset_path], check=True)
                 logging.info(f"ZFS permissions set for user 'user1808' on '{dataset_path}'")
 
@@ -48,7 +48,8 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
                     subprocess.run(['sudo', 'chmod', '-R', 'u+rwX', f"/{sub_dataset}"], check=True)
                     logging.info(f"Permissions configured for '{sub_dataset}'")
             else:
-                logging.info("The neccessary datasets are already in place")
+                logging.info("The necessary datasets are already in place")
+
             return SnapshotCompletionResponse(success=True, message=f"Dataset {folder_name} prepared successfully")
         except Exception as e:
             error_msg = f"Failed to prepare dataset for folder '{folder_name}': {str(e)}"
@@ -56,7 +57,7 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             return SnapshotCompletionResponse(success=False, message=error_msg)
 
     def TakeSnapshotAfterRsyncCompletion(self, request, context):
-        
+
         full_folder_path = request.folder_name
         folder_name = basename(full_folder_path)
         logging.info(f"Received rsync completion notification for folder '{folder_name}'")
@@ -70,9 +71,9 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             error_msg = f"Failed to create ZFS snapshot for folder '{folder_name}': {str(e)}"
             logging.error(error_msg, exc_info=True)
             return SnapshotCompletionResponse(success=False, message=error_msg)
-        
+
     def ListSnapshots(self, request, context):
-        
+
         folder_name = request.folder_name
         logging.info(f"Request to list snapshots for folder: '{folder_name}' (empty means all)")
         try:
@@ -98,13 +99,13 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             error_msg = f"Failed to list snapshots: {str(e)}"
             logging.error(error_msg, exc_info=True)
             return ListSnapshotsResponse(success=False, message=error_msg)
-        
+
     def RecoverSnapshot(self, request, context):
-        
+
         snapshot_name = request.snapshot_name
         recovery_mode = request.mode
         recovery_mode_name = RecoveryMode.Name(recovery_mode)
-        logging.info(f"Received request to recover snapshot '{snapshot_name}' with mode {recovery_mode_name}")
+        logging.info(f"Received request to recover snapshot '{snapshot_name}' with mode {recovery_mode_name}: {recovery_mode}")
 
         try:
             folder_name, snapshot_identifier = snapshot_name.split('@')
@@ -124,11 +125,13 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             remote_target_directory = f"{client_username}@{client_ip}:{target_directory}"
 
             ssh_options = "-e 'ssh -p 22'"  # Define SSH options
-            rsync_command = ['sudo', 'rsync', '-av', '--delete', ssh_options, f"{dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/", remote_target_directory]
-            result = subprocess.run(rsync_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            
+            mypassword = '1' # I know this is a bad way to handle passwords
+            rsync_command = f'sudo sshpass -p {mypassword} rsync -av {ssh_options} {dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/ {remote_target_directory}'
+            logging.info(f'The rsync command: {rsync_command}')
+            result = subprocess.run(rsync_command, shell = True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
             if result.returncode == 0:
-                logging.info(f"Snapshot '{snapshot_name}' recovered successfully to {target_directory} on remote client {client_ip}")
+                logging.info(f"Snapshot '{snapshot_name}' recovered successfully to {target_directory} on remote client {client_ip}: {result.stdout}")
                 return SnapshotCompletionResponse(success=True, message="Snapshot recovered successfully")
             else:
                 raise subprocess.CalledProcessError(result.returncode, ' '.join(rsync_command), result.stderr)

@@ -1,11 +1,12 @@
 from crontab import CronTab
 import getpass
+import logging
 
 def get_cron_format(backup_frequency):
     parts = backup_frequency.split()
     
     if len(parts) > 2:
-        raise ValueError("Invalid frequency format. Use formats like 'hourly' or 'weekly 2'.")
+        raise ValueError("Invalid frequency format")
     
     if len(parts) == 1:
         frequencies = {
@@ -42,12 +43,12 @@ def get_cron_format(backup_frequency):
     else:
         raise ValueError("Incorrect frequency or interval format.")
 
-def setup_cron_job(command, backup_frequency):
+def setup_cron_job(command, backup_frequency, folder_name):
     cron = CronTab(user=getpass.getuser())
-    cron.remove_all(comment='snapshot_job') #TODO this part I need to make sure that to make unique identifiers so that we can later remove repeated cron jobs
-    job = cron.new(command=command, comment='snapshot_job')
+    cron.remove_all(comment=f'snapshot_job_{folder_name}')
+    job = cron.new(command=command, comment=f'snapshot_job_{folder_name}')
     cron_format = get_cron_format(backup_frequency)
     job.setall(cron_format)
     job.set_command(command)
     cron.write()
-    print(f"Cron job set for {backup_frequency}: {job}")
+    logging.info(f"Cron job set for {backup_frequency} with folder name '{folder_name}': {job}")

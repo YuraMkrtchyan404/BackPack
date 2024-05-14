@@ -1,5 +1,3 @@
-# This Makefile handles system and Python dependencies, downloads, compiles, and installs external libraries.
-
 # Define default shell used by make, ensuring it can use features like pipefail
 SHELL := /bin/bash
 APP_DIR=/var/backpack
@@ -7,12 +5,14 @@ USER_DIR = /home/$(USER)
 DATA_DIR=$(APP_DIR)/data
 COW_DIR=$(APP_DIR)/cow
 RECOVERY_DIR = $(USER_DIR)/recovery
+PYTHON_EXECUTABLE=$(shell which python3)
+PYTHON_PATH := $(shell which python3)
 
 # Default target executed when no arguments are given to make.
 default: full-setup
 
 # Full setup including ownership adjustment, system dependencies, and Python environment.
-full-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install setup-python-env setup-ssh
+full-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install setup-python-env setup-ssh create-app-dirs configure-sudoers
 
 install-ssh-server:
 	@echo "Installing SSH server..."
@@ -46,16 +46,12 @@ adjust-permissions:
 	@sudo chmod -R 775 $(APP_DIR)
 
 configure-sudoers:
-	@echo "Configuring sudoers for passwordless file management commands..."
-	@echo "$(USER) ALL=(root) NOPASSWD: /bin/mkdir, /bin/rm, /bin/mv, /bin/touch, /bin/chmod, /bin/chown" > /tmp/$(USER)_sudoers
-	@sudo cp /tmp/$(USER)_sudoers /etc/sudoers.d/$(USER)_nopasswd
-	@sudo chmod 0440 /etc/sudoers.d/$(USER)_nopasswd
-	@sudo visudo -c && echo "sudoers file is valid" || echo "Error in sudoers file, not applied"
-	@rm /tmp/$(USER)_sudoers
+	@echo "Configuring sudoers for passwordless execution of your command..."
+	@echo "$(USER) ALL=(ALL) NOPASSWD: /bin/mkdir, /bin/rm, /bin/mv, /bin/touch, /bin/chmod, /bin/chown, /usr/bin/elioctl, $(PYTHON_PATH) -m src.cron_snapshot" | sudo EDITOR='tee -a' visudo
 
 setup-python-env:
 	@echo "Setting up Python virtual environment and installing dependencies..."
-	@python3 -m venv agentenv
+	@$(PYTHON_EXECUTABLE) -m venv agentenv
 	@. agentenv/bin/activate; pip install -r requirements.txt
 
 install-prerequisites:
@@ -92,8 +88,8 @@ compile-install:
 clean:
 	@rm -f *.deb
 	@rm -rf agentenv
-	@rm -rf debian_version
+	@rm -rf debian_version main.spec
 	@find . -type f -name '*.pyc' -delete
 	@find . -type d -name 'pycache' -delete
 
-.PHONY: default full-setup create-app-dirs adjust-permissions setup-python-env install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install clean install-ssh-server configure-ssh start-ssh setup-ssh
+.PHONY: default full-setup create-app-dirs adjust-permissions setup-python-env install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install clean install-ssh-server configure-ssh start-ssh setup-ssh configure-sudoers
