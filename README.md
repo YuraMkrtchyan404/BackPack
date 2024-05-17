@@ -12,20 +12,20 @@ Backpack is a CLI application designed to provide a backup and recovery solution
 
 This command initiates the backup process. It has two modes: manual and auto.
 
-- **Manual Mode:**  
-  Prompts users to enter the folder(s) to perform the backup.
+- **Manual Mode:**
+   Prompts users to enter the folder(s) to perform the backup.
 
   ```sh
   backpack start manual
 - **Auto Mode:**
-
+  In auto mode, users are also prompted to enter the backup frequency to schedule backups with cron jobs.
   ```sh
   backpack start auto
 
 #### `list` Command
 
 The list command lists all available snapshots. If a folder name is specified, it lists snapshots only for that particular folder.
-- **Without folder_name:**  
+- **Without folder_name:**
   Lists all snapshots on the server.
 
   ```sh
@@ -38,7 +38,7 @@ The list command lists all available snapshots. If a folder name is specified, i
 #### `recover` Command
 
 This command recovers a specific snapshot with the chosen mode.
-- **Original Mode:**  
+- **Original Mode:**
   Recovers the snapshot to its original state.
 
   ```sh
