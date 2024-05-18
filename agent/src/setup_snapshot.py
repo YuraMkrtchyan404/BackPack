@@ -14,7 +14,7 @@ DATA_DIR = f"/var/{APP_NAME}/data"
 COW_DIR = f"/var/{APP_NAME}/cow"
 
 user_name = getpass.getuser()
-config_path = f"/home/aivanyan/capstone/OS_Snapshots/agent/config.toml"
+config_path = f"/home/yura/capstone/BackPack/agent/config.toml"
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)
@@ -29,7 +29,7 @@ folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
 ssh_password = config.get("ssh_password")
 
-log_path = f"/home/aivanyan/capstone/OS_Snapshots/agent/log/agent.log"
+log_path = f"/home/yura/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -156,19 +156,19 @@ def backup_to_server(mounted_folder_path, original_folder_path, standard_recover
             server_backup_data_dir = f"{server_backup_dir}/data/"
             server_backup_etc_dir = f"{server_backup_dir}/etc/"
 
-            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port} -o StrictHostKeyChecking=no',
+            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '--delete', '--exclude', '.zfs', '-e', f'ssh -p {rsync_port}',
                                 mounted_folder_path + '/', server_backup_data_dir]
             logging.info(f"Starting rsync for backup data to {server_backup_data_dir}")
             subprocess.run(rsync_folder_cmd, check=True)
             logging.info("Backup data rsync completed successfully.")
 
-            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port} -o StrictHostKeyChecking=no',
+            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '--delete', '-e', f'ssh -p {rsync_port}',
                                   metadata_file_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for metadata file to {server_backup_etc_dir}")
             subprocess.run(rsync_metadata_cmd, check=True)
             logging.info("Metadata file rsync completed successfully.")
 
-            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '-e', f'ssh -p {rsync_port} -o StrictHostKeyChecking=no',
+            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '--delete', '-e', f'ssh -p {rsync_port}',
                                 config_path, server_backup_etc_dir]
             logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
             subprocess.run(rsync_config_cmd, check=True)

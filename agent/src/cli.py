@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 user_name = getpass.getuser()
-log_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/log/agent.log"
+log_path = f"/home/{user_name}/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-config_path = f"/home/{user_name}/capstone/OS_Snapshots/agent/config.toml"
+config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"
 
 @click.group()
 def backpack():

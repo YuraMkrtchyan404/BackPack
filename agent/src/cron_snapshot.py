@@ -7,7 +7,7 @@ from .create_snapshot import setup_snapshot
 
 #TODO here to understand why getpass not working properly
 
-log_path = "/home/aivanyan/capstone/OS_Snapshots/agent/log/agent.log"
+log_path = "/home/yura/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-config_path = "/home/aivanyan/capstone/OS_Snapshots/agent/config.toml"
+config_path = "/home/yura/capstone/BackPack/agent/config.toml"
 
 def load_config():
     with open(config_path, "r") as file:
