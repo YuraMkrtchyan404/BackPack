@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/aivanyan/capstone/OS_Snapshots/agent/agentenv"
+VIRTUAL_ENV="/home/yura/capstone/BackPack/agent/agentenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

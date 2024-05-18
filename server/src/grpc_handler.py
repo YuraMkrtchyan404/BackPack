@@ -126,7 +126,7 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
 
             ssh_options = "-e 'ssh -p 22'"  # Define SSH options
             mypassword = '1' # I know this is a bad way to handle passwords
-            rsync_command = f'sudo sshpass -p {mypassword} rsync -av {ssh_options} {dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/ {remote_target_directory}'
+            rsync_command = f'sudo sshpass -p {mypassword} rsync -av --delete {ssh_options} {dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/ {remote_target_directory}'
             logging.info(f'The rsync command: {rsync_command}')
             result = subprocess.run(rsync_command, shell = True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 

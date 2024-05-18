@@ -7,41 +7,23 @@ COW_DIR=$(APP_DIR)/cow
 RECOVERY_DIR = $(USER_DIR)/recovery
 PYTHON_EXECUTABLE=$(shell which python3)
 PYTHON_PATH := $(shell which python3)
+SSH_KEY_NAME=backpack_key
+SSH_KEY_PATH=$(HOME)/.ssh/$(SSH_KEY_NAME)
+SERVER_USER=user1808
+SERVER_IP=5.77.254.92
+SERVER_PORT=9122
 
 # Default target executed when no arguments are given to make.
 default: full-setup
 
-# Full setup including ownership adjustment, system dependencies, and Python environment.
-full-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install setup-python-env setup-ssh create-app-dirs configure-sudoers
+# Full setup including ownership adjustment, system dependencies, Python environment, and SSH key generation.
+full-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install setup-python-env create-app-dirs configure-sudoers generate-ssh-key
 
-install-ssh-server:
-	@echo "Installing SSH server..."
-	@sudo apt-get update
-	@sudo apt-get install -y openssh-server
-	@echo "SSH server installed successfully."
-
-configure-ssh:
-	@echo "Configuring SSH server..."
-	@sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
-	@sudo systemctl enable ssh
-	@echo "SSH server configured and enabled on boot."
-
-start-ssh:
-	@echo "Starting SSH server..."
-	@sudo systemctl start ssh
-	@echo "SSH server started successfully."
-
-setup-ssh: install-ssh-server configure-ssh start-ssh
-	@echo "SSH setup completed successfully."
+elastio-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install
 
 create-app-dirs:
-	@echo "Creating application directories..."
+	@echo "Creating application directories and adjusting permissions..."
 	@sudo mkdir -p $(DATA_DIR) $(COW_DIR) $(RECOVERY_DIR)
-	@sudo chown -R $(USER):$(USER) $(APP_DIR)
-	@sudo chmod -R 775 $(APP_DIR)
-
-adjust-permissions:
-	@echo "Adjusting permissions..."
 	@sudo chown -R $(USER):$(USER) $(APP_DIR)
 	@sudo chmod -R 775 $(APP_DIR)
 
@@ -51,8 +33,9 @@ configure-sudoers:
 
 setup-python-env:
 	@echo "Setting up Python virtual environment and installing dependencies..."
-	@$(PYTHON_EXECUTABLE) -m venv agentenv
-	@. agentenv/bin/activate; pip install -r requirements.txt
+	@$(PYTHON_EXECUTABLE) -m venv agentenv && \
+	source agentenv/bin/activate && \
+	pip install -r requirements.txt
 
 install-prerequisites:
 	@sudo apt-get update
@@ -61,7 +44,7 @@ install-prerequisites:
 detect-version:
 	@debian_ver=$$(grep VERSION_ID /etc/os-release | tr -cd [0-9]); \
 	if [ $$debian_ver -gt 1000 ]; then \
-	    debian_ver=$$(($$debian_ver/200)); \
+		debian_ver=$$(($$debian_ver/200)); \
 	fi; \
 	echo "Detected Debian/Ubuntu version: $$debian_ver" > debian_version
 
@@ -85,11 +68,27 @@ compile-install:
 	sudo make && \
 	sudo make install
 
+generate-ssh-key:
+	@echo "Generating SSH keys for secure communication..."
+	@if [ ! -f $(SSH_KEY_PATH) ]; then \
+		ssh-keygen -t rsa -b 4096 -f $(SSH_KEY_PATH) -N ""; \
+		echo "SSH key generated at $(SSH_KEY_PATH)"; \
+	else \
+		echo "SSH key already exists at $(SSH_KEY_PATH)"; \
+	fi
+	@echo "Copying public key to the server..."
+	@ssh-copy-id -i $(SSH_KEY_PATH).pub -p $(SERVER_PORT) $(SERVER_USER)@$(SERVER_IP)
+	@chmod 600 $(SSH_KEY_PATH)
+	@echo "SSH key copied to $(SERVER_USER)@$(SERVER_IP)"
+	@echo "Please add the following public key to your server's authorized_keys if not already added:"
+	@cat $(SSH_KEY_PATH).pub
+
 clean:
 	@rm -f *.deb
 	@rm -rf agentenv
+	@rm -rf backpack.egg-info
 	@rm -rf debian_version main.spec
 	@find . -type f -name '*.pyc' -delete
 	@find . -type d -name 'pycache' -delete
 
-.PHONY: default full-setup create-app-dirs adjust-permissions setup-python-env install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install clean install-ssh-server configure-ssh start-ssh setup-ssh configure-sudoers
+.PHONY: default full-setup create-app-dirs setup-python-env install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install clean configure-sudoers generate-ssh-key

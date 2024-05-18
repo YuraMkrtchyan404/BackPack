@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/aivanyan/capstone/OS_Snapshots/agent/agentenv"
+set -gx VIRTUAL_ENV "/home/yura/capstone/BackPack/agent/agentenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

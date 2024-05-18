@@ -2,12 +2,13 @@ import sys
 import logging
 import toml
 import subprocess
+import getpass
 from .cronjob import setup_cron_job, get_cron_format
 from .create_snapshot import setup_snapshot
 
 #TODO here to understand why getpass not working properly
-
-log_path = "/home/aivanyan/capstone/OS_Snapshots/agent/log/agent.log"
+user_name = getpass.getuser()
+log_path = f"/home/{user_name}/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -16,7 +17,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler()
                     ])
 
-config_path = "/home/aivanyan/capstone/OS_Snapshots/agent/config.toml"
+config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"
 
 def load_config():
     with open(config_path, "r") as file:
@@ -49,7 +50,7 @@ if __name__ == "__main__":
         folder_name = config.get('folders')
         python_path = get_python_path()
         script_module = "src.cron_snapshot"
-        command = f"sudo {python_path} -m {script_module}"
+        command = f"{python_path} -m {script_module}"
         try:
             cron_format = get_cron_format(backup_frequency)
             setup_cron_job(command, backup_frequency, folder_name)

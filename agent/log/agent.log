@@ -1,137 +1,109 @@
-2024-05-13 06:30:38 INFO: Configuration updated successfully.
-2024-05-13 06:30:39 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
-2024-05-13 06:30:39 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
-2024-05-13 06:30:39 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:30:39 INFO: Dataset test prepared successfully
-2024-05-13 06:30:39 INFO: Metadata file created at: /tmp/tmp5nxpfuhn/metadata.json
-2024-05-13 06:30:39 INFO: Metadata file prepared and stored temporarily.
-2024-05-13 06:30:39 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
-2024-05-13 06:30:39 INFO: Backup data rsync completed successfully.
-2024-05-13 06:30:39 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:30:40 INFO: Metadata file rsync completed successfully.
-2024-05-13 06:30:40 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:30:40 INFO: Configuration file rsync completed successfully.
-2024-05-13 06:30:40 INFO: Backup to server completed successfully.
-2024-05-13 06:30:40 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:30:41 INFO: Snapshot successfully added to the ZFS history on the server
-2024-05-13 06:30:41 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-05-13 06:30:41 INFO: Snapshot 0 successfully destroyed.
-2024-05-13 06:30:41 INFO: Snapshot setup and backup completed successfully.
-2024-05-13 06:30:41 INFO: Cron job set for minutely 1 with folder name '['/home/aivanyan/test']': * * * * * /home/aivanyan/capstone/OS_Snapshots/agent/agentenv/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/aivanyan/test']
-2024-05-13 06:31:01 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
-2024-05-13 06:31:01 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
-2024-05-13 06:31:01 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:31:01 INFO: Dataset test prepared successfully
-2024-05-13 06:31:01 INFO: Metadata file created at: /tmp/tmp_6reqt1l/metadata.json
-2024-05-13 06:31:01 INFO: Metadata file prepared and stored temporarily.
-2024-05-13 06:31:01 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
-2024-05-13 06:31:01 ERROR: Failed during backup operation: Command '['sudo', 'sshpass', '-p', '1808', 'rsync', '-av', '-e', 'ssh -p 9122 -o StrictHostKeyChecking=no', '/var/backpack/data/elastio-snap0/home/aivanyan/test/', 'user1808@5.77.254.92:/backup-pool/backup_data/test/data/']' returned non-zero exit status 1.
-2024-05-13 06:31:01 ERROR: Error occurred while umounting snapshot.
-2024-05-13 06:31:01 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:06 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:11 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:16 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:21 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:26 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:31 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:36 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:41 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:46 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:52 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:31:57 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:32:01 ERROR: Error occurred while creating snapshot: driver returned an error performing specified action. check dmesg for more info: Invalid argument
-
-2024-05-13 06:32:01 ERROR: Failed to set up snapshot.
-2024-05-13 06:32:02 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:32:07 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:32:12 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:32:17 ERROR: Unable to destroy snapshot 0 after 15 retries.
-2024-05-13 06:32:17 ERROR: Failed to set up snapshot.
-2024-05-13 06:33:01 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
-2024-05-13 06:33:01 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
-2024-05-13 06:33:01 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:33:01 INFO: Dataset test prepared successfully
-2024-05-13 06:33:01 INFO: Metadata file created at: /tmp/tmp0mkimfdo/metadata.json
-2024-05-13 06:33:01 INFO: Metadata file prepared and stored temporarily.
-2024-05-13 06:33:01 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
-2024-05-13 06:33:01 ERROR: Failed during backup operation: Command '['sudo', 'sshpass', '-p', '1808', 'rsync', '-av', '-e', 'ssh -p 9122 -o StrictHostKeyChecking=no', '/var/backpack/data/elastio-snap0/home/aivanyan/test/', 'user1808@5.77.254.92:/backup-pool/backup_data/test/data/']' returned non-zero exit status 1.
-2024-05-13 06:33:02 ERROR: Error occurred while umounting snapshot.
-2024-05-13 06:33:02 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:07 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:12 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:17 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:22 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:27 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:32 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:37 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:42 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:47 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:52 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:33:57 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:34:02 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:34:07 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:34:12 ERROR: Failed to destroy snapshot 0. Retrying...
-2024-05-13 06:34:17 ERROR: Unable to destroy snapshot 0 after 15 retries.
-2024-05-13 06:34:17 ERROR: Failed to set up snapshot.
-2024-05-13 06:34:55 INFO: Configuration updated successfully.
-2024-05-13 06:34:55 ERROR: Error occurred while creating snapshot: driver returned an error performing specified action. check dmesg for more info: Invalid argument
-
-2024-05-13 06:34:55 ERROR: Failed to set up snapshot.
-2024-05-13 06:35:18 INFO: Configuration updated successfully.
-2024-05-13 06:35:18 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
-2024-05-13 06:35:18 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
-2024-05-13 06:35:18 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:35:18 INFO: Dataset test prepared successfully
-2024-05-13 06:35:18 INFO: Metadata file created at: /tmp/tmpzom2nnhk/metadata.json
-2024-05-13 06:35:18 INFO: Metadata file prepared and stored temporarily.
-2024-05-13 06:35:18 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
-2024-05-13 06:35:19 INFO: Backup data rsync completed successfully.
-2024-05-13 06:35:19 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:35:19 INFO: Metadata file rsync completed successfully.
-2024-05-13 06:35:19 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:35:20 INFO: Configuration file rsync completed successfully.
-2024-05-13 06:35:20 INFO: Backup to server completed successfully.
-2024-05-13 06:35:20 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:35:20 INFO: Snapshot successfully added to the ZFS history on the server
-2024-05-13 06:35:20 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-05-13 06:35:20 INFO: Snapshot 0 successfully destroyed.
-2024-05-13 06:35:20 INFO: Snapshot setup and backup completed successfully.
-2024-05-13 06:35:20 INFO: Cron job set for minutely 1 with folder name '['/home/aivanyan/test']': * * * * * sudo /home/aivanyan/capstone/OS_Snapshots/agent/agentenv/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/aivanyan/test']
-2024-05-13 06:36:01 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
-2024-05-13 06:36:01 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
-2024-05-13 06:36:01 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:36:02 INFO: Dataset test prepared successfully
-2024-05-13 06:36:02 INFO: Metadata file created at: /tmp/tmp3cjbzzh1/metadata.json
-2024-05-13 06:36:02 INFO: Metadata file prepared and stored temporarily.
-2024-05-13 06:36:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
-2024-05-13 06:36:02 INFO: Backup data rsync completed successfully.
-2024-05-13 06:36:02 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:36:02 INFO: Metadata file rsync completed successfully.
-2024-05-13 06:36:02 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:36:03 INFO: Configuration file rsync completed successfully.
-2024-05-13 06:36:03 INFO: Backup to server completed successfully.
-2024-05-13 06:36:03 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:36:03 INFO: Snapshot successfully added to the ZFS history on the server
-2024-05-13 06:36:03 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-05-13 06:36:03 INFO: Snapshot 0 successfully destroyed.
-2024-05-13 06:36:03 INFO: Snapshot setup and backup completed successfully.
-2024-05-13 06:36:03 INFO: Cron job set for minutely 1 with folder name '['/home/aivanyan/test']': * * * * * sudo /usr/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/aivanyan/test']
-2024-05-13 06:37:02 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
-2024-05-13 06:37:02 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/aivanyan/test
-2024-05-13 06:37:02 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:37:02 INFO: Dataset test prepared successfully
-2024-05-13 06:37:02 INFO: Metadata file created at: /tmp/tmp7ekib1pc/metadata.json
-2024-05-13 06:37:02 INFO: Metadata file prepared and stored temporarily.
-2024-05-13 06:37:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test/data/
-2024-05-13 06:37:03 INFO: Backup data rsync completed successfully.
-2024-05-13 06:37:03 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:37:03 INFO: Metadata file rsync completed successfully.
-2024-05-13 06:37:03 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test/etc/
-2024-05-13 06:37:04 INFO: Configuration file rsync completed successfully.
-2024-05-13 06:37:04 INFO: Backup to server completed successfully.
-2024-05-13 06:37:04 INFO: GRPC insecure channel established: 5.77.254.92:50051
-2024-05-13 06:37:04 INFO: Snapshot successfully added to the ZFS history on the server
-2024-05-13 06:37:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
-2024-05-13 06:37:04 INFO: Snapshot 0 successfully destroyed.
-2024-05-13 06:37:04 INFO: Snapshot setup and backup completed successfully.
-2024-05-13 06:37:04 INFO: Cron job set for minutely 1 with folder name '['/home/aivanyan/test']': * * * * * sudo /usr/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/aivanyan/test']
+2024-05-19 00:28:12 INFO: Configuration updated successfully.
+2024-05-19 00:28:12 ERROR: Folder does not exist: /home/yura/capstone/test_folderx1b[B
+2024-05-19 00:28:12 ERROR: Failed to set up snapshot.
+2024-05-19 00:28:55 INFO: Configuration updated successfully.
+2024-05-19 00:28:55 ERROR: Folder does not exist: /home/yura/capstone/test_folde
+2024-05-19 00:28:55 ERROR: Failed to set up snapshot.
+2024-05-19 00:29:14 INFO: Configuration updated successfully.
+2024-05-19 00:29:15 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-19 00:29:15 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-19 00:29:15 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:29:15 INFO: Dataset test_folder2 prepared successfully
+2024-05-19 00:29:15 INFO: Metadata file created at: /tmp/tmpfk8i3p40/metadata.json
+2024-05-19 00:29:15 INFO: Metadata file prepared and stored temporarily.
+2024-05-19 00:29:15 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-19 00:29:16 INFO: Backup data rsync completed successfully.
+2024-05-19 00:29:16 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:29:16 INFO: Metadata file rsync completed successfully.
+2024-05-19 00:29:16 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:29:17 INFO: Configuration file rsync completed successfully.
+2024-05-19 00:29:17 INFO: Backup to server completed successfully.
+2024-05-19 00:29:17 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:29:17 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-19 00:29:17 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-19 00:29:18 INFO: Snapshot 0 successfully destroyed.
+2024-05-19 00:29:18 INFO: Snapshot setup and backup completed successfully.
+2024-05-19 00:29:18 INFO: Cron job set for minutely 2 with folder name '['/home/yura/capstone/test_folder2']': */2 * * * * /home/yura/capstone/BackPack/agent/agentenv/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/yura/capstone/test_folder2']
+2024-05-19 00:30:02 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-19 00:30:02 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-19 00:30:02 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:30:02 INFO: Dataset test_folder2 prepared successfully
+2024-05-19 00:30:02 INFO: Metadata file created at: /tmp/tmp0mnveo4y/metadata.json
+2024-05-19 00:30:02 INFO: Metadata file prepared and stored temporarily.
+2024-05-19 00:30:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-19 00:30:03 INFO: Backup data rsync completed successfully.
+2024-05-19 00:30:03 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:30:05 INFO: Metadata file rsync completed successfully.
+2024-05-19 00:30:05 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:30:05 INFO: Configuration file rsync completed successfully.
+2024-05-19 00:30:05 INFO: Backup to server completed successfully.
+2024-05-19 00:30:06 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:30:06 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-19 00:30:06 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-19 00:30:06 INFO: Snapshot 0 successfully destroyed.
+2024-05-19 00:30:06 INFO: Snapshot setup and backup completed successfully.
+2024-05-19 00:30:06 INFO: Cron job set for minutely 2 with folder name '['/home/yura/capstone/test_folder2']': */2 * * * * /usr/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/yura/capstone/test_folder2']
+2024-05-19 00:32:02 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-19 00:32:02 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-19 00:32:02 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:32:02 INFO: Dataset test_folder2 prepared successfully
+2024-05-19 00:32:02 INFO: Metadata file created at: /tmp/tmplo5y0u7p/metadata.json
+2024-05-19 00:32:02 INFO: Metadata file prepared and stored temporarily.
+2024-05-19 00:32:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-19 00:32:03 INFO: Backup data rsync completed successfully.
+2024-05-19 00:32:03 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:32:03 INFO: Metadata file rsync completed successfully.
+2024-05-19 00:32:03 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:32:03 INFO: Configuration file rsync completed successfully.
+2024-05-19 00:32:03 INFO: Backup to server completed successfully.
+2024-05-19 00:32:03 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:32:03 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-19 00:32:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-19 00:32:04 INFO: Snapshot 0 successfully destroyed.
+2024-05-19 00:32:04 INFO: Snapshot setup and backup completed successfully.
+2024-05-19 00:32:04 INFO: Cron job set for minutely 2 with folder name '['/home/yura/capstone/test_folder2']': */2 * * * * /usr/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/yura/capstone/test_folder2']
+2024-05-19 00:32:19 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-19 00:32:19 INFO: Successfully retrieved snapshot list: ['test_folder2@2024.05.19.00.29.17', 'test_folder2@2024.05.19.00.30.06', 'test_folder2@2024.05.19.00.32.03']
+2024-05-19 00:33:52 INFO: GRPC insecure channel established for listing snapshots: 5.77.254.92:50051
+2024-05-19 00:33:52 INFO: Successfully retrieved snapshot list: ['test_folder2@2024.05.19.00.29.17', 'test_folder2@2024.05.19.00.30.06', 'test_folder2@2024.05.19.00.32.03']
+2024-05-19 00:34:01 INFO: Snapshot mounted successfully at /var/backpack/data/elastio-snap0.
+2024-05-19 00:34:02 INFO: Full path of the mounted folder in snapshot: /var/backpack/data/elastio-snap0/home/yura/capstone/test_folder2
+2024-05-19 00:34:02 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:34:02 INFO: Dataset test_folder2 prepared successfully
+2024-05-19 00:34:02 INFO: Metadata file created at: /tmp/tmpbfixtal1/metadata.json
+2024-05-19 00:34:02 INFO: Metadata file prepared and stored temporarily.
+2024-05-19 00:34:02 INFO: Starting rsync for backup data to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/data/
+2024-05-19 00:34:03 INFO: Backup data rsync completed successfully.
+2024-05-19 00:34:03 INFO: Starting rsync for metadata file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:34:03 INFO: Metadata file rsync completed successfully.
+2024-05-19 00:34:03 INFO: Starting rsync for configuration file to user1808@5.77.254.92:/backup-pool/backup_data/test_folder2/etc/
+2024-05-19 00:34:04 INFO: Configuration file rsync completed successfully.
+2024-05-19 00:34:04 INFO: Backup to server completed successfully.
+2024-05-19 00:34:04 INFO: GRPC insecure channel established: 5.77.254.92:50051
+2024-05-19 00:34:04 INFO: Snapshot successfully added to the ZFS history on the server
+2024-05-19 00:34:04 INFO: Snapshot umounted successfully at /dev/elastio-snap0.
+2024-05-19 00:34:06 INFO: Snapshot 0 successfully destroyed.
+2024-05-19 00:34:06 INFO: Snapshot setup and backup completed successfully.
+2024-05-19 00:34:06 INFO: Cron job set for minutely 2 with folder name '['/home/yura/capstone/test_folder2']': */2 * * * * /usr/bin/python3 -m src.cron_snapshot # snapshot_job_['/home/yura/capstone/test_folder2']
+2024-05-19 00:34:20 INFO: Configuration loaded successfully.
+2024-05-19 00:34:20 INFO: Snapshot name: test_folder2
+2024-05-19 00:34:20 INFO: Recovery mode: standard
+2024-05-19 00:34:20 INFO: Recovery folder: /home/yura/Desktop/recovered/test_folder2
+2024-05-19 00:34:20 INFO: Directory already exists: /home/yura/Desktop/recovered/test_folder2
+2024-05-19 00:34:20 INFO: GRPC insecure channel established for recovering a snapshot: 5.77.254.92:50051
+2024-05-19 00:34:20 ERROR: Snapshot recovery failed: Failed to recover snapshot 'test_folder2': not enough values to unpack (expected 2, got 1)
+2024-05-19 00:34:20 INFO: Snapshot recovery initiated successfully.
+2024-05-19 00:34:46 INFO: Configuration loaded successfully.
+2024-05-19 00:34:46 INFO: Snapshot name: test_folder2
+2024-05-19 00:34:46 INFO: Recovery mode: standard
+2024-05-19 00:34:46 INFO: Recovery folder: /home/yura/Desktop/recovered/test_folder2
+2024-05-19 00:34:46 INFO: Directory already exists: /home/yura/Desktop/recovered/test_folder2
+2024-05-19 00:34:46 INFO: GRPC insecure channel established for recovering a snapshot: 5.77.254.92:50051
+2024-05-19 00:34:46 ERROR: Snapshot recovery failed: Failed to recover snapshot 'test_folder2': not enough values to unpack (expected 2, got 1)
+2024-05-19 00:34:46 INFO: Snapshot recovery initiated successfully.
+2024-05-19 00:34:56 INFO: Configuration loaded successfully.
+2024-05-19 00:34:56 INFO: Snapshot name: test_folder2
+2024-05-19 00:34:56 INFO: Recovery mode: original
+2024-05-19 00:34:56 INFO: GRPC insecure channel established for recovering a snapshot: 5.77.254.92:50051
+2024-05-19 00:34:56 ERROR: Snapshot recovery failed: Failed to recover snapshot 'test_folder2': not enough values to unpack (expected 2, got 1)
+2024-05-19 00:34:56 INFO: Snapshot recovery initiated successfully.
