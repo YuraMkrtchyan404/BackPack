@@ -28,6 +28,7 @@ grpc_port = config.get("grpc_port")
 folders = config.get("folders")
 standard_recovery_path = config.get("standard_recovery_path")
 ssh_password = config.get("ssh_password")
+ssh_key_path = "~/.ssh/backpack_key"
 
 log_path = f"/home/yura/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
@@ -156,20 +157,29 @@ def backup_to_server(mounted_folder_path, original_folder_path, standard_recover
             server_backup_data_dir = f"{server_backup_dir}/data/"
             server_backup_etc_dir = f"{server_backup_dir}/etc/"
 
-            rsync_folder_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '--delete', '--exclude', '.zfs', '-e', f'ssh -p {rsync_port}',
-                                mounted_folder_path + '/', server_backup_data_dir]
+            rsync_folder_cmd = [
+                'rsync', '-av', '--delete', '--exclude', '.zfs',
+                '-e', f'ssh -i {ssh_key_path} -p {rsync_port}',
+                mounted_folder_path + '/', server_backup_data_dir
+            ]
             logging.info(f"Starting rsync for backup data to {server_backup_data_dir}")
             subprocess.run(rsync_folder_cmd, check=True)
             logging.info("Backup data rsync completed successfully.")
 
-            rsync_metadata_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '--delete', '-e', f'ssh -p {rsync_port}',
-                                  metadata_file_path, server_backup_etc_dir]
+            rsync_metadata_cmd = [
+                'rsync', '-av', '--delete',
+                '-e', f'ssh -i {ssh_key_path} -p {rsync_port}',
+                metadata_file_path, server_backup_etc_dir
+            ]
             logging.info(f"Starting rsync for metadata file to {server_backup_etc_dir}")
             subprocess.run(rsync_metadata_cmd, check=True)
             logging.info("Metadata file rsync completed successfully.")
 
-            rsync_config_cmd = ['sudo', 'sshpass', '-p', str(ssh_password), 'rsync', '-av', '--delete', '-e', f'ssh -p {rsync_port}',
-                                config_path, server_backup_etc_dir]
+            rsync_config_cmd = [
+                'rsync', '-av', '--delete',
+                '-e', f'ssh -i {ssh_key_path} -p {rsync_port}',
+                config_path, server_backup_etc_dir
+            ]
             logging.info(f"Starting rsync for configuration file to {server_backup_etc_dir}")
             subprocess.run(rsync_config_cmd, check=True)
             logging.info("Configuration file rsync completed successfully.")
