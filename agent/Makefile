@@ -33,8 +33,9 @@ configure-sudoers:
 
 setup-python-env:
 	@echo "Setting up Python virtual environment and installing dependencies..."
-	@$(PYTHON_EXECUTABLE) -m venv agentenv
-	@. agentenv/bin/activate; pip install -r requirements.txt
+	@$(PYTHON_EXECUTABLE) -m venv agentenv && \
+	source agentenv/bin/activate && \
+	pip install -r requirements.txt
 
 install-prerequisites:
 	@sudo apt-get update
@@ -85,6 +86,7 @@ generate-ssh-key:
 clean:
 	@rm -f *.deb
 	@rm -rf agentenv
+	@rm -rf backpack.egg-info
 	@rm -rf debian_version main.spec
 	@find . -type f -name '*.pyc' -delete
 	@find . -type d -name 'pycache' -delete

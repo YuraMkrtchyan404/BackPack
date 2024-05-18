@@ -1,4 +1,4 @@
-#!/home/aivanyan/capstone/OS_Snapshots/agent/agentenv/bin/python3
+#!/home/yura/capstone/BackPack/agent/agentenv/bin/python3
 # EASY-INSTALL-ENTRY-SCRIPT: 'backpack','console_scripts','backpack'
 __requires__ = 'backpack'
 import re
