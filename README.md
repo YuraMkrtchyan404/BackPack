@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Backpack is a CLI application designed to provide a backup and recovery solution for Ubuntu systems (versions earlier than 22.04). It utilizes block-level snapshots created with the `elastio-snap` open source kernel module. After extracting the selected folder from the mounted block-level snapshot, the data is transferred to the server using `rsync` over SSH. The project leverages ZFS (Zettabyte File System) for snapshot management on the server side, allowing users to capture the state of entire directories at precise moments in time. Once the data reaches the server successfully, a ZFS snapshot is taken to maintain the backup history. These snapshots can then be transferred over a network for backup or recovery purposes using `rsync` and SSH, with gRPC facilitating remote procedure calls between the client and server. Additionally, backups can be scheduled using cronjobs, which provide different options for backup frequency.
+Backpack is a CLI application designed to provide a backup and recovery solution for Ubuntu systems. It utilizes block-level snapshots created with the `elastio-snap` open source kernel module. After extracting the selected folder from the mounted block-level snapshot, the data is transferred to the server using `rsync` over SSH. The project leverages ZFS (Zettabyte File System) for snapshot management on the server side, allowing users to capture the state of entire directories at precise moments in time. Once the data reaches the server successfully, a ZFS snapshot is taken to maintain the backup history. These snapshots can then be transferred over a network for backup or recovery purposes using `rsync` and SSH, with gRPC facilitating remote procedure calls between the client and server. Additionally, backups can be scheduled using cronjobs, which provide different options for backup frequency.
 
 ## Clone the Repository
 
@@ -13,26 +13,14 @@ Backpack is a CLI application designed to provide a backup and recovery solution
 
 ## System-Level Configuration
 
-- **Run elastio-setup**
+- **Elastio Setup**
    If this is not working, you can refer to the [Elastio-snap manual installation guide](https://github.com/elastio/elastio-snap/blob/master/INSTALL.md) for detailed instructions.
   ```sh
   make elastio-setup
  
-- **Create Application Directories**
+- **System Setup**
   ```sh
-  make create-app-dirs
-  
-- **Setup Python Environment**
-  ```sh
-  make setup-python-env
-
-- **Configure Sudoers**
-  ```sh
-  make configure-sudoers
-
-- **Generate SSH Key**
-  ```sh
-  make generate-ssh-key
+  make system-setup
 
 ## Python Package Installation
 
