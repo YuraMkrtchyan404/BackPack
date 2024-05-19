@@ -14,7 +14,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
     handlers=[
         logging.FileHandler(log_path),
-        logging.StreamHandler()  # TODO: Clean this for not printing in the standard output
+        # logging.StreamHandler()  
     ]
 )
 
@@ -33,7 +33,7 @@ def load_config():
 config = load_config()
 server_ip = config.get("server_ip")
 grpc_port = config.get("grpc_port")
-standard_recovery_path = config.get("standard_recovery_path")
+standard_recovery_path = f"/home/{user_name}/recovered"
 
 def recover_snap():
     try:

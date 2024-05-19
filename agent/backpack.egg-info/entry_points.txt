@@ -1,3 +1,0 @@
-[console_scripts]
-backpack = src.cli:backpack
-

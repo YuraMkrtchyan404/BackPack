@@ -5,11 +5,9 @@ import grpc
 from . import communication_pb2
 from . import communication_pb2_grpc
 from .communication_pb2 import RecoveryMode
-# os.environ['GRPC_VERBOSITY'] = 'DEBUG'
-# os.environ['GRPC_TRACE'] = 'all'
 
 user_name = getpass.getuser()
-config_path = f"/home/yura/capstone/BackPack/agent/config.toml"
+config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)
@@ -19,13 +17,13 @@ config = load_config()
 server_ip = config.get("server_ip")
 grpc_port = config.get("grpc_port")
 
-log_path = f"/home/yura/capstone/BackPack/agent/log/agent.log"
+log_path = f"/home/{user_name}/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
                         logging.FileHandler(log_path),
-                        logging.StreamHandler()   #TODO clean this for not printing in the standard output
+                        # logging.StreamHandler()
                     ])
 
 def notify_server_about_rsync_start(folder, server_ip, grpc_port):

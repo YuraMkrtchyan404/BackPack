@@ -6,7 +6,6 @@ import getpass
 from .cronjob import setup_cron_job, get_cron_format
 from .create_snapshot import setup_snapshot
 
-#TODO here to understand why getpass not working properly
 user_name = getpass.getuser()
 log_path = f"/home/{user_name}/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
@@ -14,7 +13,7 @@ logging.basicConfig(level=logging.INFO,
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
                         logging.FileHandler(log_path),
-                        logging.StreamHandler()
+                        # logging.StreamHandler() // For standard output of logs
                     ])
 
 config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"

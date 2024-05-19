@@ -2,12 +2,15 @@ from concurrent import futures
 import json
 import logging
 import subprocess
+import os
 import grpc
 from communication_pb2 import SnapshotCompletionResponse, ListSnapshotsResponse, RecoveryMode
 from communication_pb2_grpc import RsyncNotificationsServicer, add_RsyncNotificationsServicer_to_server
 
 from snapshot_history import create_snapshot
 from os.path import basename
+
+ssh_key_path = "~/.ssh/backpack_key"
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
@@ -116,7 +119,7 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             if recovery_mode == RecoveryMode.ORIGINAL:
                 target_directory = metadata['original_path']
             elif recovery_mode == RecoveryMode.STANDARD:
-                target_directory = metadata['standard_recovery_path']
+                target_directory = os.path.join(metadata['standard_recovery_path'], folder_name)
             else:
                 raise ValueError("Invalid recovery mode specified")
 
@@ -124,9 +127,9 @@ class RsyncNotificationsService(RsyncNotificationsServicer):
             client_username = metadata['client_username']
             remote_target_directory = f"{client_username}@{client_ip}:{target_directory}"
 
-            ssh_options = "-e 'ssh -p 22'"  # Define SSH options
-            mypassword = '1' # I know this is a bad way to handle passwords
-            rsync_command = f'sudo sshpass -p {mypassword} rsync -av --delete {ssh_options} {dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/ {remote_target_directory}'
+            ssh_options = f"-i {ssh_key_path} -p 22"
+            rsync_command = f'rsync -av --delete -e "ssh {ssh_options}" {dataset_path}/data/.zfs/snapshot/{snapshot_identifier}/ {remote_target_directory}'
+
             logging.info(f'The rsync command: {rsync_command}')
             result = subprocess.run(rsync_command, shell = True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 

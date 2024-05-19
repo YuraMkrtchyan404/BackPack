@@ -1,4 +1,3 @@
-# Define default shell used by make, ensuring it can use features like pipefail
 SHELL := /bin/bash
 APP_DIR=/var/backpack
 USER_DIR = /home/$(USER)
@@ -13,13 +12,13 @@ SERVER_USER=user1808
 SERVER_IP=5.77.254.92
 SERVER_PORT=9122
 
-# Default target executed when no arguments are given to make.
 default: full-setup
 
-# Full setup including ownership adjustment, system dependencies, Python environment, and SSH key generation.
-full-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install setup-python-env create-app-dirs configure-sudoers generate-ssh-key
+full-setup: elastio-setup system-setup
 
 elastio-setup: install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install
+
+system-setup: create-app-dirs setup-python-env configure-sudoers generate-ssh-key
 
 create-app-dirs:
 	@echo "Creating application directories and adjusting permissions..."
@@ -79,9 +78,7 @@ generate-ssh-key:
 	@echo "Copying public key to the server..."
 	@ssh-copy-id -i $(SSH_KEY_PATH).pub -p $(SERVER_PORT) $(SERVER_USER)@$(SERVER_IP)
 	@chmod 600 $(SSH_KEY_PATH)
-	@echo "SSH key copied to $(SERVER_USER)@$(SERVER_IP)"
-	@echo "Please add the following public key to your server's authorized_keys if not already added:"
-	@cat $(SSH_KEY_PATH).pub
+
 
 clean:
 	@rm -f *.deb
@@ -89,6 +86,6 @@ clean:
 	@rm -rf backpack.egg-info
 	@rm -rf debian_version main.spec
 	@find . -type f -name '*.pyc' -delete
-	@find . -type d -name 'pycache' -delete
+	@find . -type d -name '__pycache__' -delete
 
-.PHONY: default full-setup create-app-dirs setup-python-env install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install clean configure-sudoers generate-ssh-key
+.PHONY: default full-setup create-app-dirs setup-python-env install-prerequisites detect-version download-package install-package install-elastio install-headers compile-install clean configure-sudoers generate-ssh-key elastio-setup system-setup

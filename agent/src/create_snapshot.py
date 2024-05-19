@@ -6,7 +6,7 @@ from .setup_snapshot import *
 
 
 user_name = getpass.getuser()
-config_path = f"/home/yura/capstone/BackPack/agent/config.toml"
+config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)

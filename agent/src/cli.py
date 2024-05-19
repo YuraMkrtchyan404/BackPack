@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO,
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
                         logging.FileHandler(log_path),
-                        logging.StreamHandler()
+                        # logging.StreamHandler() // For standard output of logs
                     ])
 
 config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"

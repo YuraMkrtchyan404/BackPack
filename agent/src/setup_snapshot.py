@@ -14,7 +14,7 @@ DATA_DIR = f"/var/{APP_NAME}/data"
 COW_DIR = f"/var/{APP_NAME}/cow"
 
 user_name = getpass.getuser()
-config_path = f"/home/yura/capstone/BackPack/agent/config.toml"
+config_path = f"/home/{user_name}/capstone/BackPack/agent/config.toml"
 def load_config():
     with open(config_path, "r") as file:
         config = toml.load(file)
@@ -26,17 +26,18 @@ server_username = config.get("server_username")
 rsync_port = config.get("rsync_port")
 grpc_port = config.get("grpc_port")
 folders = config.get("folders")
-standard_recovery_path = config.get("standard_recovery_path")
+standard_recovery_path = f"/home/{user_name}/recovered"
+
 ssh_password = config.get("ssh_password")
 ssh_key_path = "~/.ssh/backpack_key"
 
-log_path = f"/home/yura/capstone/BackPack/agent/log/agent.log"
+log_path = f"/home/{user_name}/capstone/BackPack/agent/log/agent.log"
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     handlers=[
                         logging.FileHandler(log_path),
-                        logging.StreamHandler()
+                        # logging.StreamHandler()
                     ])
 
 def get_client_ip():
